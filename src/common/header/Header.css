@@ -104,7 +104,10 @@ header ul li a {
 header ul li a:hover {
   color: #2596be;
 }
-
+.logo h1{
+  color: #2596be;
+  font-size: 190%;
+}
 .open {
   display: none;
 }

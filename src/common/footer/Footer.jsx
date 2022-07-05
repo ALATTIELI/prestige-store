@@ -44,9 +44,9 @@ const Footer = () => {
           <div className='box'>
             <h2>Contact Us</h2>
             <ul>
-              <li>70 Washington Square South, New York, NY 10012, United States </li>
-              <li>Email: uilib.help@gmail.com</li>
-              <li>Phone: +1 1123 456 780</li>
+              <li>Ghuwayfah St - Al Nahyan - Abu Dhabi - United Arab Emirates </li>
+              <li>Email: info@prestigestore.ae</li>
+              <li>Phone: +971529744450</li>
             </ul>
           </div>
         </div>
