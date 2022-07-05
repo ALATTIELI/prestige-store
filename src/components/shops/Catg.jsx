@@ -3,11 +3,11 @@ import React from "react"
 const Catg = () => {
   const data = [
     {
-      cateImg: "./images/category/cat-1.png",
+      cateImg: "https://img.icons8.com/material-rounded/24/000000/mac-os.png",
       cateName: "Apple",
     },
     {
-      cateImg: "./images/category/cat-2.png",
+      cateImg: "https://img.icons8.com/color/48/000000/samsung.png",
       cateName: "Samasung",
     },
     {
