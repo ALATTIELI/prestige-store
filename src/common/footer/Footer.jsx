@@ -6,7 +6,6 @@ const Footer = () => {
     <>
       <footer>
         <div className='container grid2'>
-
           <div className='box'>
             <h2>About Us</h2>
             <ul>
@@ -34,6 +33,9 @@ const Footer = () => {
               <li>Email: info@prestigestore.ae</li>
               <li>Phone: +971529744450</li>
             </ul>
+          </div>
+          <div className='box'>
+            <h1 className="pres">Prestige Store</h1>
           </div>
         </div>
       </footer>
