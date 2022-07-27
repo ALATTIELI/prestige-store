@@ -31,7 +31,7 @@ const Search = ({ CartItem }) => {
               </Link>
             </div>
             <i className="icon-circle">
-              <a href="https://wa.me/971505451140">
+              <a href="https://wa.me/971529744450">
                 <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" />
               </a>
             </i>
