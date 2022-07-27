@@ -8,6 +8,7 @@ import Cart from "./common/Cart/Cart"
 import Footer from "./common/footer/Footer"
 import Sdata from "./components/shops/Sdata"
 
+
 function App() {
   /*
   step1 :  const { productItems } = Data 
