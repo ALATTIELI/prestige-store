@@ -35,7 +35,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className='box footer-logo'>
-            <img src="./images/pslogo.png"></img>
+            <img src="./images/pslogo.png" alt="footer-logo"/>
           </div>
         </div>
       </footer>
