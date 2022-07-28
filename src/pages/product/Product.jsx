@@ -22,7 +22,7 @@ export default function Product({ productItems, addToCart, CartItem }) {
 
 
         <div class="product-product-price">
-          <span>980$</span>
+          <span>980 AED</span>
           <a href="" class="cart-btn">Add to cart</a>
         </div>
       </div>
