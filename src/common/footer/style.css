@@ -1,16 +1,16 @@
 footer {
-  background-color: #2596be;
+  background-color:var(--maincolor);
   padding: 100px 0;
   color: #fff;
 }
 footer h1 {
   margin-bottom: 30px;
-  color: #2596be;
+  color: var(--maincolor);
   font-weight: 800;
   font-style: italic;
 }
 footer .img {
-  background-color: #2596be;
+  background-color: var(--maincolor);
   padding: 15px 20px;
   border-radius: 5px;
 }

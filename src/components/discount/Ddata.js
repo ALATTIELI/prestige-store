@@ -7,6 +7,7 @@ const Ddata = [
   {
     cover: "./images/discount/discount-2.png",
     name: "Sony TV 1080p",
+    originalprice: "AED 900",
     price: "AED 450",
   },
   {

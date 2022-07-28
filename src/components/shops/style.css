@@ -55,5 +55,5 @@
   transition: 0.5s;
 }
 .shop .product:hover {
-  box-shadow: #2596be 0px 4px 16px;
+  box-shadow: var(--maincolor) 0px 4px 16px;
 }

@@ -24,6 +24,7 @@ const Dcard = () => {
                   <img src={value.cover} alt='' width='100%' />
                 </div>
                 <h4>{value.name}</h4>
+                <span style={{textDecoration: 'line-through'}}>{value.originalprice}</span> 
                 <span>{value.price}</span>
               </div>
             </>
