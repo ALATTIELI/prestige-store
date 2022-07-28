@@ -34,8 +34,8 @@ const Footer = () => {
               <li>Phone: +971529744450</li>
             </ul>
           </div>
-          <div className='box'>
-            <img classname="footer-logo" src="./images/pslogo.png"></img>
+          <div className='box footer-logo'>
+            <img src="./images/pslogo.png"></img>
           </div>
         </div>
       </footer>
