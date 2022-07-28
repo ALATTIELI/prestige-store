@@ -20,11 +20,18 @@ const Catg = () => {
     },
     {
       cateImg: "./images/category/cat-1.png",
-      cateName: "Redimi",
+      cateName: "Redmi",
     },
     {
       cateImg: "./images/category/cat-2.png",
       cateName: "Sony",
+    },{
+      cateImg: "./images/category/cat-1.png",
+      cateName: "Huawei",
+    },
+    {
+      cateImg: "./images/category/cat-2.png",
+      cateName: "Xiaomi",
     },
   ]
   return (
