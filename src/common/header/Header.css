@@ -107,7 +107,8 @@ header ul li a:hover {
 }
 .logo h1{
   color: var(--maincolor);
-  font-size: 190%;
+  font-size: 170%;
+  font-family: 'swiss-721-black-rounded-bt' !important;
 }
 .open {
   display: none;

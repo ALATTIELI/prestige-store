@@ -1,11 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@font-face {
+  font-family: "swiss-721-black-rounded-bt";
+  src: url("../public/fonts/Swiss-721-Black-Rounded-BT.ttf")
+}
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-:root{
-  --maincolor: #00A9E0;
+:root {
+  --maincolor: #00a9e0;
 }
 html {
   scroll-behavior: smooth;
