@@ -23,7 +23,7 @@
   }
 
   .cate_body_card:hover {
-    box-shadow: 0px 4px 16px #00a9e0;
+    box-shadow: 0px 4px 16px var(--maincolor);
     transform: scale(1.1);
     transition: all 0.5s ease-in-out;
   }
