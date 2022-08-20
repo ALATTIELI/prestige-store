@@ -21,7 +21,7 @@
 }
 .homeSlide ul li button::before {
   font-size: 15px !important;
-  color: #2596be;
+  color: var(--maincolor);
   position: absolute;
   top: 2px;
   left: 0;

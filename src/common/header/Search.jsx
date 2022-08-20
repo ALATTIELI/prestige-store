@@ -12,7 +12,7 @@ const Search = ({ CartItem }) => {
     <>
       <section className="search">
         <div className="container c_flex">
-          <div className="logo width ">
+          <div className="logo width">
             <h1>Prestige Store</h1>
           </div>
 
@@ -32,7 +32,7 @@ const Search = ({ CartItem }) => {
             </div>
             <i className="icon-circle">
               <a href="https://wa.me/971529744450">
-                <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" />
+                <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="whatsapp-logo"/>
               </a>
             </i>
           </div>

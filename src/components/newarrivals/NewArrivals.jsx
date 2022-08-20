@@ -9,8 +9,8 @@ const NewArrivals = () => {
         <div className='container'>
           <div className='heading d_flex'>
             <div className='heading-left row  f_flex'>
-            <img src="https://img.icons8.com/ios-filled/50/2596be/new.png"/>
-              <h2>New Arrivals </h2>
+            <img src="https://img.icons8.com/ios-filled/100/00a9e0/new.png"/>
+            <h2>New Arrivals </h2>
             </div>
             <div className='heading-right row '>
               <span>View all</span>

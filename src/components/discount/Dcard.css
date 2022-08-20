@@ -1,0 +1,10 @@
+.DiscountPrice{
+    display: flex;
+    flex-direction: column;
+}
+.DiscountPrice>.DiscountOriginalPrice{
+    font-size: 14px;
+    color: #999;
+    text-decoration: line-through;
+    margin-bottom: 5px;
+}

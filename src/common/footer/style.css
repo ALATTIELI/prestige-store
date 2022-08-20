@@ -1,16 +1,18 @@
 footer {
-  background-color: #2596be;
-  padding: 100px 0;
+  background-color: var(--maincolor);
+  padding: 5rem 0 5rem 0;
   color: #fff;
+  position: absolute;
+  width: 100%;
 }
 footer h1 {
   margin-bottom: 30px;
-  color: #2596be;
+  color: var(--maincolor);
   font-weight: 800;
   font-style: italic;
 }
 footer .img {
-  background-color: #2596be;
+  background-color: var(--maincolor);
   padding: 15px 20px;
   border-radius: 5px;
 }
@@ -33,4 +35,15 @@ footer h2 {
 footer li {
   margin-bottom: 10px;
   opacity: 0.5;
+}
+.pres {
+  color: #fff;
+  font-size: 40px;
+}
+.footer-logo img {
+  height: 16rem;
+  margin: 0 0 0 1rem;
+  width: 100%;
+  scale: 100%;
+  object-fit: scale-down;
 }

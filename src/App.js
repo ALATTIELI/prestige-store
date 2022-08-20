@@ -8,6 +8,8 @@ import Cart from "./common/Cart/Cart";
 import Footer from "./common/footer/Footer";
 import Sdata from "./components/shops/Sdata";
 import Product from "./pages/product/Product";
+import Categories from "./pages/categories/Categories";
+import User from "./pages/user/User";
 
 
 function App() {
@@ -102,6 +104,12 @@ function App() {
           </Route>
           <Route path="/product/:id">
             <Product addToCart={addToCart} />
+          </Route>
+          <Route path="/categories">
+            <Categories addToCart={addToCart} />
+          </Route>
+          <Route path="/user">
+            <User addToCart={addToCart} />
           </Route>
         </Switch>
         <Footer />

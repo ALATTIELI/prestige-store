@@ -11,12 +11,12 @@
   font-weight: 400;
 }
 .NewArrivals span {
-  color: #2596be;
+  color: var(--maincolor);
   font-size: 15px;
   font-weight: 500;
 }
 .NewArrivals .box:hover{
-  box-shadow: #2596be 0px 4px 16px;
+  box-shadow: var(--maincolor) 0px 4px 16px;
   transition: ease-in 0.6s;
 }
 .NewArrivals .box img {
