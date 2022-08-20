@@ -1,4 +1,4 @@
-  .cate_card {
+.brnd_card {
     background: #fff;
     padding: 70px;
     margin: 50px 0px 50px 0px;
@@ -10,7 +10,7 @@
     justify-content: center;
   }
 
-  .cate_body_card {
+  .brnd_body_card {
     box-shadow: 10px 5px 17px 10px rgba(0, 0, 0, 0.1);
     padding: 5px;
     border-radius: 10px;
@@ -22,20 +22,20 @@
     overflow: hidden;
   }
 
-  .cate_body_card:hover {
+  .brnd_body_card:hover {
     box-shadow: 10px 5px 17px 10px #00a8e058;
     transform: scale(1.1);
     transition: all 0.5s ease-in-out;
   }
 
-  .cate_img_card {
+  .brnd_img_card {
     height: 12rem;
     width: 100%;
     scale: 90%;
     object-fit: scale-down;
   }
 
-  .cate_title_card{
+  .brnd_title_card{
     padding: 10px;
     text-align: center;
   }
