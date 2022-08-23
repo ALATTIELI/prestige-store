@@ -56,7 +56,7 @@ const Categories = () => {
             </div>
           )
         })}
-        <div className='box f_flex'>
+        <div className='box mainpage_categories_viewAll'>
           <span>View All Brands</span>
         </div>
       </div>
