@@ -1,7 +1,10 @@
 import React from "react";
 import "./user.css";
+import { useTranslation } from "react-i18next";
 
 const User = () => {
+  const { t, i18n } = useTranslation();
+
     return (
       <div class="user_container">
         <div class="leftbox_user">
@@ -17,7 +20,7 @@ const User = () => {
         </div>
         <div class="rightbox_user">
           <div class="profile tabShow">
-            <h1>Presonal Info</h1>
+            <h1>{t("user.Presonal_Info")}</h1>
             
             <h2>Full Name</h2>
             <input type="text" class="input" value="Ahmed Mohamed"></input>

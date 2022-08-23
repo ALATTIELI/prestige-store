@@ -1,39 +1,44 @@
 import React from "react";
-
+import Flag from "react-world-flags";
 import { useTranslation } from "react-i18next";
 
-
 const LanguageSelector = () => {
-
   const { t, i18n } = useTranslation();
 
-
   const changeLanguage = (event) => {
-
     i18n.changeLanguage(event.target.value);
-
   };
 
-
   return (
-
     <div onChange={changeLanguage}>
+      <label>
+        <i>
+          <Flag code="gb" height={10} />
+        </i>
+        <input
+          type="radio"
+          value="en"
+          name="language"
+          defaultChecked
+          style={{ display: "none" }}
+        />
+        EN
+      </label>
 
-      <input type="radio" value="en" name="language" defaultChecked /> English
-
-      <input type="radio" value="zh-hk" name="language" /> Chinese
-
-      <input type="radio" value="de" name="language" />
-
-      German
-
-      <input type="radio" value="ar" name="language" /> Arabic
-
+      <label>
+        <i>
+          <Flag code="ae" height={10} />
+        </i>
+        <input
+          type="radio"
+          value="ar"
+          name="language"
+          style={{ display: "none" }}
+        />
+        AR
+      </label>
     </div>
-
   );
-
 };
-
 
 export default LanguageSelector;

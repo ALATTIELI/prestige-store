@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./common/header/Header";
@@ -86,6 +86,7 @@ function App() {
 
   return (
     <>
+    <Suspense fallback={<div>Loading...</div>}>
       <Router>
         <Header CartItem={CartItem} />
         <Switch>
@@ -118,6 +119,7 @@ function App() {
         </Switch>
         <Footer />
       </Router>
+    </Suspense>
     </>
   );
 }

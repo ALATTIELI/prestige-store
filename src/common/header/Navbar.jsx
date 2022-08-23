@@ -12,7 +12,7 @@ const Navbar = () => {
         <div className="container d_flex">
           <div className="catgrories d_flex">
             <span class="fa-solid fa-border-all"></span>
-            <h4>Categories</h4>
+            <h4>{t('navbar.categories')}</h4>
           </div>
 
           <div className="navlink">
@@ -24,7 +24,7 @@ const Navbar = () => {
             >
               {/*<ul className='link f_flex uppercase {MobileMenu ? "nav-links-MobileMenu" : "nav-links"} onClick={() => setMobileMenu(false)}'>*/}
               <li>
-                <Link to="/">home</Link>
+                <Link to="/">{t("navbar.home")}</Link>
               </li>
               <li>
                 <Link to="/contact">contact</Link>

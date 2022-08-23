@@ -1,6 +1,6 @@
 import React from "react";
-import Flag from "react-world-flags";
 
+import LanguageSelector from "../../components/languageSelector/LanguageSelector";
 const Head = () => {
   return (
     <>
@@ -13,10 +13,7 @@ const Head = () => {
             <label> info@prestigestore.ae </label>
           </div>
           <div className="right_row_RText">
-            <i><Flag code="gb" height={10}/></i> 
-            <label>EN</label>
-            <i><Flag code="ae" height={10}/></i> 
-            <label>AR</label>
+            <LanguageSelector />
           </div>
         </div>
       </section>
