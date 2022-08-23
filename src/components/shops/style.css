@@ -24,7 +24,7 @@
   height: auto;
 }
 .shop .category .box:hover {
-  background-color: #fff;
+  background-color: var(--maincolor);
   box-shadow: rgb(43 52 69 / 10%) 0px 4px 16px;
 }
 .shop .box2 {

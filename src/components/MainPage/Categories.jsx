@@ -42,10 +42,7 @@ const Categories = () => {
       cateImg: "./images/category/cat10.png",
       cateName: "Groceries",
     },
-    {
-      cateImg: "./images/category/cat11.png",
-      cateName: "Books",
-    },
+    
   ]
 
   return (
@@ -59,6 +56,9 @@ const Categories = () => {
             </div>
           )
         })}
+        <div className='box f_flex'>
+          <span>View All Brands</span>
+        </div>
       </div>
     </>
   )
