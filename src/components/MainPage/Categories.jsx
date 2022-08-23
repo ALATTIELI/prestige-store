@@ -57,7 +57,7 @@ const Categories = () => {
           )
         })}
         <div className='box mainpage_categories_viewAll'>
-          <span>View All Brands</span>
+          <span>All Categories</span>
         </div>
       </div>
     </>

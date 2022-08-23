@@ -12,7 +12,7 @@ const Search = ({ CartItem }) => {
     <>
       <section className="search">
         <div className="container c_flex">
-          <div className="logo width">
+          <div className="logo_width">
             <h1>Prestige Store</h1>
           </div>
 
@@ -24,7 +24,7 @@ const Search = ({ CartItem }) => {
             </div>
             <div className="suggestion">
               <ul>
-              <li className="sugg_listItem">
+                <li className="sugg_listItem">
                   <span>Samsung</span>
                 </li>
                 <li className="sugg_listItem">
@@ -32,7 +32,8 @@ const Search = ({ CartItem }) => {
                 </li>
                 <li className="sugg_listItem">
                   <span>Iphone</span>
-                </li>                <li className="sugg_listItem">
+                </li>{" "}
+                <li className="sugg_listItem">
                   <span>Samsung</span>
                 </li>
                 <li className="sugg_listItem">
@@ -40,7 +41,8 @@ const Search = ({ CartItem }) => {
                 </li>
                 <li className="sugg_listItem">
                   <span>Iphone</span>
-                </li>                <li className="sugg_listItem">
+                </li>{" "}
+                <li className="sugg_listItem">
                   <span>Samsung</span>
                 </li>
                 <li className="sugg_listItem">
@@ -48,7 +50,8 @@ const Search = ({ CartItem }) => {
                 </li>
                 <li className="sugg_listItem">
                   <span>Iphone</span>
-                </li>                <li className="sugg_listItem">
+                </li>{" "}
+                <li className="sugg_listItem">
                   <span>Samsung</span>
                 </li>
                 <li className="sugg_listItem">
