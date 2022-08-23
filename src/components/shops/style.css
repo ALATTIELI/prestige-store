@@ -1,7 +1,6 @@
 .shop .category {
   padding: 30px;
-  height: 90vh;
-  overflow-y: scroll;
+  height: fit-content;
 }
 .chead h1 {
   font-size: 20px;
