@@ -12,7 +12,7 @@ const Search = ({ CartItem }) => {
     <>
       <section className="search">
         <div className="container c_flex">
-          <div className="logo_width">
+          <div className="logo width">
             <h1>Prestige Store</h1>
           </div>
 
