@@ -1,4 +1,5 @@
-import React from "react"
+import React from "react";
+import { Link, link } from "react-router-dom";
 
 const Categories = () => {
   const data = [
@@ -42,26 +43,27 @@ const Categories = () => {
       cateImg: "./images/category/cat10.png",
       cateName: "Groceries",
     },
-    
-  ]
+  ];
 
   return (
     <>
-      <div className='category'>
+      <div className="category">
         {data.map((value, index) => {
           return (
-            <div className='box f_flex' key={index}>
-              <img src={value.cateImg} alt='' />
+            <div className="box f_flex" key={index}>
+              <img src={value.cateImg} alt="" />
               <span>{value.cateName}</span>
             </div>
-          )
+          );
         })}
-        <div className='box mainpage_categories_viewAll'>
-          <span>All Categories</span>
+        <div className="box mainpage_categories_viewAll">
+          <Link to="/categories">
+            <span>All Categories</span>
+          </Link>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Categories
+export default Categories;

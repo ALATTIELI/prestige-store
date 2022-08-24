@@ -46,7 +46,7 @@
 ::placeholder {
   font-size: 15px;
 }
-.search-box span {
+.search-box a {
   width: 20%;
   opacity: 0.5;
   border-left: 2px solid rgba(0, 0, 0, 0.1);
