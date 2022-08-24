@@ -20,7 +20,9 @@ const Search = ({ CartItem }) => {
             <div className="search-box f_flex">
               <i className="fa fa-search"></i>
               <input type="text" placeholder="Search and hit enter..." />
-              <span>All Category</span>
+              <Link to="/categories">
+                <span>All Category</span>
+              </Link>
             </div>
             <div className="suggestion">
               <ul>

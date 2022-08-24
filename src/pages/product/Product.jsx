@@ -1,6 +1,7 @@
 import "./product.css"
 
 export default function Product({ productItems, addToCart, CartItem }) {
+  var TITLE = window.location.pathname.split("/").pop();
   return (
     <div>
             <main class="product-container">
@@ -12,7 +13,7 @@ export default function Product({ productItems, addToCart, CartItem }) {
 
         <div class="product-product-description">
           <span>Phones</span>
-          <h1>iPhone Mini 13</h1>
+          <h1>{TITLE}</h1>
           <p>Ceramic Shield front <br/> Glass back and aluminum design</p>
         </div>
 
