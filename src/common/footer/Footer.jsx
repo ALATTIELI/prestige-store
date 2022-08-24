@@ -6,7 +6,7 @@ const Footer = () => {
     <>
       <footer>
         <div className=" footer-container">
-          <div className="footer-left">
+          <div className="container footer-left">
             <div className="footer-box">
               <h2>About Us</h2>
               <ul>
@@ -31,17 +31,17 @@ const Footer = () => {
               <h2>Contact Us</h2>
               <ul>
                 <li>
-                  Ghuwayfah St - Al Nahyan - Abu Dhabi - United Arab Emirates{" "}
+                  Ghuwayfah St - Al Nahyan - Abu Dhabi - United Arab Emirates
                 </li>
                 <li>Email: info@prestigestore.ae</li>
                 <li>Phone: +971529744450</li>
               </ul>
             </div>
           </div>
-        </div>
-        <div className="footer-right">
-          <div className="box footer-logo">
-            <img src="./images/pslogo.png" alt="footer-logo" />
+          <div className="footer-right">
+            <div className="box footer-logo">
+              <img src="./images/pslogo.png" alt="footer-logo" />
+            </div>
           </div>
         </div>
       </footer>

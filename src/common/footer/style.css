@@ -49,9 +49,31 @@ footer li {
 }
 .footer-box{
   margin-top: 1rem;
+  margin-left: 1rem;
 }
 
-@media (max-width: 480px) {
+.footer-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-left {
+  flex: 3;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  text-align: left;
+}
+.footer-right {
+  flex: 1;
+  width: 100%;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
   footer {
     background-color: var(--maincolor);
     /* padding: 5rem 0 5rem 0; */
