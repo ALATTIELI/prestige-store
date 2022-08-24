@@ -9,7 +9,7 @@ const NewArrivals = () => {
         <div className='container'>
           <div className='heading d_flex'>
             <div className='heading-left row  f_flex'>
-            <img src="https://img.icons8.com/ios-filled/100/00a9e0/new.png"/>
+            <img src="https://img.icons8.com/ios-filled/100/00a9e0/new.png" alt="img"/>
             <h2>New Arrivals </h2>
             </div>
             <div className='heading-right row '>
