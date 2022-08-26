@@ -12,7 +12,7 @@ const Search = ({ CartItem }) => {
     <>
       <section className="search">
         <div className="container c_flex">
-          <div className="logo width">
+          <div className="logo_width">
             <h1>Prestige Store</h1>
           </div>
 
@@ -66,7 +66,7 @@ const Search = ({ CartItem }) => {
             </div>
           </div>
 
-          <div className="icon f_flex width">
+          <div className="header_icons">
             <i className="fa fa-user icon-circle"></i>
             <div className="cart">
               <Link to="/cart">

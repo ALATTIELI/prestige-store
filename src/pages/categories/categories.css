@@ -1,78 +1,74 @@
-  .cate_card {
-    background: #fff;
-    padding: 70px;
-    margin: 50px 0px 50px 0px;
-    border-radius: 10px;
+.cate_card {
+  background: #fff;
+  padding: 70px;
+  margin: 50px 0px 50px 0px;
+  border-radius: 10px;
 
-    display: grid;
-    grid-template-columns:repeat(auto-fit, minmax(12rem, 16rem));
-    gap: 5rem;
-    justify-content: center;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 16rem));
+  gap: 5rem;
+  justify-content: center;
+}
 
-  .cate_body_card {
-    box-shadow: 10px 5px 17px 10px rgba(0, 0, 0, 0.1);
-    padding: 5px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 200ms;
-    justify-content: space-between;
-    flex-direction: column;
-    display: flex;
-    overflow: hidden;
-  }
+.cate_body_card {
+  box-shadow: 10px 5px 17px 10px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 200ms;
+  justify-content: space-between;
+  flex-direction: column;
+  display: flex;
+  overflow: hidden;
+}
 
-  .cate_body_card:hover {
-    box-shadow: 0px 4px 16px #00a9e0;
-    transform: scale(1.1);
-    transition: all 0.5s ease-in-out;
-  }
+.cate_body_card:hover {
+  box-shadow: 0px 4px 16px #00a9e0;
+  transform: scale(1.1);
+  transition: all 0.5s ease-in-out;
+}
 
-  .cate_img_card {
-    height: 12rem;
+.cate_img_card {
+  height: 12rem;
+  width: 100%;
+  scale: 90%;
+  object-fit: scale-down;
+}
+
+.cate_title_card {
+  padding: 10px;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  body {
     width: 100%;
-    scale: 90%;
-    object-fit: scale-down;
+    margin: 0 auto;
   }
 
-  .cate_title_card{
+  .header {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .head .left_row {
+    zoom: 0.7;
     padding: 10px;
     text-align: center;
+    width: 100%;
   }
 
-  @media (max-width: 480px) {
-    body {
-      width: 100%;
-      margin: 0 auto;
-      background: #cab9e5;
-    }
-
-    .header {
-      width: 100%;
-      margin: 0 auto;
-      background: #cab9e5;
-    }
-
-    .head .left_row{
-      zoom: 0.7;
-      padding: 10px;
-      text-align: center;
-      width: 100%;
-      background: #cab9e5;
-    }
-
-    .head .right_row_RText{
-      zoom: 0.7;
-      text-align: center;
-      padding: 10px;
-      width: 100%;
-      background: #cab9e5;
-    }
-
-    .search-box.f_flex span{
-      font-size: 80%;
-      border: 20px;
-      padding-right: 10px;
-      margin: 0 auto;
-    }
+  .head .right_row_RText {
+    zoom: 0.7;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
   }
+
+  .search-box.f_flex span {
+    font-size: 80%;
+    border: 20px;
+    padding-right: 10px;
+    margin: 0 auto;
+  }
+}

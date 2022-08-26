@@ -72,6 +72,24 @@ button {
   text-align: center;
   border-radius: 50%;
 }
+
+.header_icons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.logo_width h1 {
+  color: var(--maincolor);
+  font-size: 170%;
+  padding: 20px;
+  width: 100%;
+  text-align: left;
+  font-family: "swiss-721-black-rounded-bt" !important;
+}
+
 .boxShadow {
   box-shadow: rgb(43 52 69 / 10%) 0px 4px 16px;
 }
