@@ -1,77 +1,58 @@
-import React, { useState } from "react"
-import Slider from "react-slick"
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
+import React, { useState } from "react";
 
-const SampleNextArrow = (props) => {
-  const { onClick } = props
-  return (
-    <div className='control-btn' onClick={onClick}>
-      <button className='next'>
-        <i className='fa fa-long-arrow-alt-right'></i>
-      </button>
-    </div>
-  )
-}
-const SamplePrevArrow = (props) => {
-  const { onClick } = props
-  return (
-    <div className='control-btn' onClick={onClick}>
-      <button className='prev'>
-        <i className='fa fa-long-arrow-alt-left'></i>
-      </button>
-    </div>
-  )
-}
 const FlashCard = ({ productItems, addToCart }) => {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
   const increment = () => {
-    setCount(count + 1)
+    setCount(count + 1);
+  };
+
+  const flash_card = document.querySelector(".flash_card_container");
+  function leftScroll() {
+    flash_card.scrollBy({ left: -300, behavior: "smooth" });
   }
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+  function rightScroll() {
+    flash_card.scrollBy({ left: 300, top: 0, behavior: "smooth" });
   }
 
   return (
     <>
-      <Slider {...settings}>
-        {productItems.map((productItems) => {
-          return (
-            <div className='box'>
-              <div className='product mtop'>
-                <div className='img'>
-                  <span className='discount'>{productItems.discount}% Off</span>
-                  <img src={productItems.cover} alt='' />
-                  <div className='product-like'>
-                    <label>{count}</label> <br />
-                    <i className='fa-regular fa-heart' onClick={increment}></i>
+      <div className="flash_card">
+        {/* add arrows to scroll */}
+        <span className="prev" onClick={leftScroll}>
+          <i className="fa fa-long-arrow-alt-left"></i>
+        </span>
+        <div className="flash_card_container">
+          {productItems.map((productItems) => {
+            return (
+                <div className="flash_card_product">
+                  <div className="flash_card_product_img">
+                    <span className="discount">
+                      {productItems.discount}% Off
+                    </span>
+                    <img src={productItems.cover} alt="" />
+                  </div>
+                  <div className="flash_card_product_details">
+                    <h3>{productItems.name}</h3>
+                    <div className="price">
+                      <h4>AED {productItems.price}.00 </h4>
+                      {/* step : 3  
+                      if hami le button ma click garryo bahne 
+                     */}
+                      <button onClick={() => addToCart(productItems)}>
+                        <i className="fa fa-plus"></i>
+                      </button>
+                    </div>
                   </div>
                 </div>
-                <div className='product-details'>
-                  <h3>{productItems.name}</h3>
-                  <div className='price'>
-                    <h4>AED {productItems.price}.00 </h4>
-                    {/* step : 3  
-                     if hami le button ma click garryo bahne 
-                    */}
-                    <button onClick={() => addToCart(productItems)}>
-                      <i className='fa fa-plus'></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )
-        })}
-      </Slider>
+            );
+          })}
+        </div>
+        <span className="next" onClick={rightScroll}>
+          <i className="fa fa-long-arrow-alt-right"></i>
+        </span>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default FlashCard
+export default FlashCard;
