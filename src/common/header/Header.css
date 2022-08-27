@@ -215,8 +215,12 @@ header ul li a:hover {
   .search-box input {
     width: 100%;
     padding: 10px;
-    font-size: 18px;
+    font-size: 16px;
     font-family: "Poppins", sans-serif !important;
+  }
+
+  ::placeholder {
+    font-size: 16px;
   }
 
   .search-box a {
@@ -270,10 +274,6 @@ header ul li a:hover {
     box-shadow: 10px 5px 17px 10px rgba(0, 0, 0, 0.1);
   }
 
-  .container {
-    flex-direction: column;
-  }
-
   .catgrories h4{
     margin: 0 0 0 0; 
     padding: 10px;
@@ -296,5 +296,89 @@ header ul li a:hover {
     background-color: #fff;
     box-shadow: -1px 11px 24px -11px rgba(0, 0, 0, 0.2);
     transition: 0.5s;
+  }
+
+  .category {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: rgb(43 52 69 / 10%) 0px 4px 16px;
+    background-color: #fff;
+    width: 100%;
+    height: auto;
+    padding: 15px 0;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+
+  .shop .contentWidth {
+    margin: 0;
+    padding: 0;
+    scale:  0.98;
+  }
+  
+  .contentWidth {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: rgb(43 52 69 / 10%) 0px 4px 16px;
+  }
+
+  .homeSlide p {
+    margin: 20px 0 20px 10px;
+    font-size: 12px;
+  }
+
+  .btn-primary {
+    background: var(--maincolor);
+    padding: 13px 20px;
+    margin-left: 5px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 5px;
+  }
+
+  .right{
+    scale: 0.8;
+    display: block;
+  }
+
+  .shop .category {
+    margin: 0 0 20px 0;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .grid1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+  }
+
+  .product {
+    background: #fff;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: #03004717 0px 1px 3px;
+    margin: 5px;
+    cursor: pointer;
+  }
+
+  .slick-slide {
+    display: none;
+    height:  auto;
+    min-height: 1px;
   }
 }
