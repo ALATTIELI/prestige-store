@@ -1,9 +1,86 @@
 {
   "navbar":{
     "home": "Home",
-    "categories": "Categories"
+    "categories": "Categories",
+    "all_categories": "All Categories",
+    "search_and_hit _enter": "Search and hit enter",
+    "contact": "Contact"
   },
-  "user": {
-    "Presonal_Info": "Presonal Info"
+
+  "categories": {
+    "fashion": "Fashion",
+    "electronic": "Electronic",
+    "home_and_garden": "Home and Garden",
+    "cars": "Cars",
+    "gifts": "Gifts",
+    "music": "Music",
+    "health_and_beauty": "Health and Beauty",
+    "pets": "Pets",
+    "baby_toys": "Baby Toys",
+    "groceries": "Groceries"
+  },
+
+  "flashDeals": {
+    "flash_deals": "Flash Deals"
+  },
+
+  "topcategory": {
+    "top_categories": "Top Categories"
+  },
+
+  "newArrivals": {
+    "new_arrivals": "New Arrivals"
+  },
+
+  "discounts": {
+    "discounts": "Discounts"
+  },
+
+  "brands": {
+    "brands": "Brands"
+  },
+
+  "mobilephones": {
+    "mobile_phones": "Mobilephones"
+  },
+
+  "worldwidedelivery": {
+    "worldwide_delivery": "Worldwide Delivery"
+  },
+
+  "safepayment": {
+    "safe_payment": "Safe Payment"
+  },
+
+  "shopewithconfidence": {
+    "shop_with_confidence": "Shop with confidence"
+  },
+
+  "24/7support": {
+    "24_7_support": "24/7 support"
+  },
+
+  "aboutus": {
+    "about_us": "About Us",
+    "careers": "Careers",
+    "our_stores": "Our Stores",
+    "our_cares": "Our Cares",
+    "terms_and_conditions": "Terms and Conditions",
+    "privacy_policy": "Privacy Policy"
+  },
+
+  "costumerservice": {
+    "costumer_service": "Costumer Service",
+    "help_center": "Help Center",
+    "how_to_buy": "How to buy",
+    "track_your_order": "Track your order",
+    "coporate_and_bulk_orders": "Coporate & Bulk Orders",
+    "return_and_refunds": "Return & Refunds"
+  },
+
+  "contactus": {
+    "email": "Email",
+    "phone": "Phone"
   }
+
 }
