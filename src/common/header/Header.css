@@ -311,11 +311,11 @@ header ul li a:hover {
     margin-top: 10px;
   }
 
-  .shop .contentWidth {
+  /* .shop .contentWidth {
     margin: 0;
     padding: 0;
     scale:  0.98;
-  }
+  } */
   
   .contentWidth {
     width: 100%;
@@ -352,14 +352,14 @@ header ul li a:hover {
     justify-content: space-between;
     width: 100%;
   }
-
+/* 
   .grid1 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
     align-items: center;
     justify-content: center;
-  }
+  } */
 
   .grid {
     display: grid;
@@ -367,14 +367,14 @@ header ul li a:hover {
     grid-gap: 30px;
   }
 
-  .product {
+  /* .product {
     background: #fff;
     position: relative;
     border-radius: 8px;
     box-shadow: #03004717 0px 1px 3px;
     margin: 5px;
     cursor: pointer;
-  }
+  } */
 
   .slick-slide {
     display: none;
