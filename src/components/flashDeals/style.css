@@ -2,3 +2,89 @@
   background: #f6f9fc;
   padding: 50px 0;
 }
+.flash_card {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 30px;
+}
+.flash_card_container {
+  width: 100%;
+  margin: 5px;
+  display: flex;
+  overflow: auto;
+  overflow-x: scroll;
+}
+.flash_card_container::-webkit-scrollbar {
+  display: none;
+}
+.flash_card_product {
+  width: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  background-color: #fff;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  /* grid-gap: 10px; */
+  box-shadow: rgb(43 52 69 / 10%) 0px 4px 16px;
+  cursor: pointer;
+}
+
+.flash_card_product:hover {
+  box-shadow: var(--maincolor) 0px 4px 16px;
+  transition: 0.5s;
+}
+.flash_card_product_img {
+  width: auto;
+}
+.flash_card_product_img img {
+  width: auto;
+  object-fit: cover;
+}
+.flash_card_product_details .price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: var(--maincolor);
+  margin-top: 10px;
+}
+.prev {
+  color: var(--maincolor);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.next {
+  color: var(--maincolor);
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .flash_card_product{
+    width: auto;
+  }
+  .flash_card_product_img img {
+    width: 20vh;
+  }
+  .flash_card_product_details {
+    font-size: 1rem;
+  }
+  .prev {
+    visibility: hidden;
+  }
+  .next {
+    visibility: hidden;
+  }
+}
