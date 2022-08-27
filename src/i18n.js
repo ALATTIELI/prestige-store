@@ -22,7 +22,7 @@ i18n
     backend: {
       /* translation file path */
 
-      loadPath: "http://localhost:3000/{{ns}}/{{lng}}.json",
+      loadPath: "/{{ns}}/{{lng}}.json",
     },
 
     /* can have multiple namespace, in case you want to divide a huge translation into smaller pieces and load them on demand */
