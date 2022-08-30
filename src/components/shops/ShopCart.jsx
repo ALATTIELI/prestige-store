@@ -59,7 +59,7 @@ const ShopCart = ({ shopItems, addToCart }) => {
           <div className='box'>
             <div className='product mtop'>
               <div className='img'>
-                <span className='discount'>{shopItems.discount}% Off</span>
+                <span className='top_left_popup'>{shopItems.discount}% Off</span>
                 <img src={shopItems.cover} alt='' />
                 <div className='product-like'>
                   <label>{count}</label> <br />

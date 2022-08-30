@@ -3,10 +3,10 @@ import DiscountCard from "./DiscountCard";
 import "./style.css";
 import DiscountIcon from "@mui/icons-material/Discount";
 
-const FlashDeals = ({ productItems, addToCart }) => {
+const Discount = ({ productItems, addToCart }) => {
   return (
     <>
-      <section className="discount">
+      <section className="discount_section">
         <div className="container">
           <div className="heading f_flex">
             {/* <i className='fa fa-bolt'></i> */}
@@ -21,4 +21,4 @@ const FlashDeals = ({ productItems, addToCart }) => {
   );
 };
 
-export default FlashDeals;
+export default Discount;

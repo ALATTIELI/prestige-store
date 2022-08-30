@@ -33,7 +33,7 @@ const DiscountCard = ({ productItems, addToCart }) => {
             return (
               <div className="discount_card_product">
                 <div className="discount_card_product_img">
-                  <span className="discount">{productItems.discount}% Off</span>
+                  <span className="top_left_popup">{productItems.discount}% Off</span>
                   <img src={productItems.cover} alt="" />
                 </div>
                 <div className="discount_card_product_details">
