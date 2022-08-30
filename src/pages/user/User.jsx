@@ -14,9 +14,6 @@ const User = () => {
             <div class="col-8">
               <h3 class="mb-0">My account</h3>
             </div>
-            <div class="col-4 text-right">
-              <a href="#!" class="btn btn-sm btn-primary">Settings</a>
-            </div>
           </div>
         </div>
       </div>
@@ -30,7 +27,7 @@ const User = () => {
                     <div class="col-lg-6">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-username">Username</label>
-                        <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username" value="lucky.jesse"/>
+                        <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username"/>
                       </div>
                     </div>
                     <div class="col-lg-6">
@@ -57,7 +54,6 @@ const User = () => {
                 </div>
                 <hr class="my-4"/>
 
-                /* Address */
 
                 <h6 class="heading-small text-muted mb-4">Contact information</h6>
                 <div class="pl-lg-4">
@@ -90,20 +86,9 @@ const User = () => {
                     </div>
                   </div>
                 </div>
-                <hr class="my-4"/>
-
-                /* Description */
-
-                <h6 class="heading-small text-muted mb-4">About me</h6>
-                <div class="pl-lg-4">
-                  <div class="form-group focused">
-                    <label>About Me</label>
-                    <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about you ...">A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</textarea>
-                  </div>
-                </div>
               </form>
           </div>
-          </div>
+        </div>
 
     );
   };
