@@ -3,7 +3,6 @@
   padding: 70px;
   margin: 50px 0px 50px 0px;
   border-radius: 10px;
-
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(12rem, 16rem));
   gap: 5rem;

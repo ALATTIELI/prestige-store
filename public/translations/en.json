@@ -81,6 +81,10 @@
   "contactus": {
     "email": "Email",
     "phone": "Phone"
+  },
+
+  "user":{
+    "my profile": "My Profile"
   }
 
 }

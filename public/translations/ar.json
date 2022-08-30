@@ -3,7 +3,7 @@
     "home": "رئيسي",
     "categories": "أصناف"
   },
-  "user": {
-    "Presonal_Info": "معلومات شخصية"
+  "user":{
+    "my profile": "بروفايلي"
   }
 }

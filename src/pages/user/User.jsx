@@ -6,56 +6,102 @@ const User = () => {
   const { t, i18n } = useTranslation();
 
     return (
-      <div class="user_container">
-        <div class="leftbox_user">
-          <nav>
-              <a onclick="tabs(0)" class="tab active">
-                  <i class="fa fa-user"></i>
-              </a>
-
-              <a onclick="tabs(1)" class="tab active">
-                  <i class="fa fa-credit-card"></i>
-              </a>
-          </nav>
-        </div>
-        <div class="rightbox_user">
-          <div class="profile tabShow">
-            <h1>{t("user.Presonal_Info")}</h1>
-            
-            <h2>Full Name</h2>
-            <input type="text" class="input" value="Ahmed Mohamed"></input>
-            
-            <h2>Birthday</h2>
-            <input type="text" class="input" value="01/08/2022"></input>
-            
-            <h2>Gender</h2>
-            <input type="radio" class="input"></input>
-            <input type="radio" class="input"></input>
-
-            <h2>Email</h2>
-            <input type="text" class="input" value="ahmedmohamed@gmail.com"></input>
-
-            <h2>Password</h2>
-            <input type="password" class="input" value="prestigestore"></input>
-            <button class="update_btn">Update</button>
-          </div>
-          <div class="payment tabShow">
-            <h1>Payment Info</h1>
-            
-            <h2>Payment Method</h2>
-            <input type="text" class="input" value="MasterCard - 0212 **** **** 7665"></input>
-            
-            <h2>Billing Address</h2>
-            <input type="text" class="input" value="1234 some street in a town"></input>
-            
-            <h2>ZipCode</h2>
-            <input type="text" class="input" value="419911"></input>
-
-            <h2>Billing Date</h2>
-            <input type="text" class="input" value="jan 19,2022"></input>
+      <div className="user_body">
+        <div class="col-xl-8 order-xl-1">
+      <div class="card bg-secondary shadow">
+        <div class="card-header bg-white border-0">
+          <div class="row align-items-center">
+            <div class="col-8">
+              <h3 class="mb-0">My account</h3>
+            </div>
+            <div class="col-4 text-right">
+              <a href="#!" class="btn btn-sm btn-primary">Settings</a>
+            </div>
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="card-body">
+              <form>
+                <h6 class="heading-small text-muted mb-4">User information</h6>
+                <div class="pl-lg-4">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group focused">
+                        <label class="form-control-label" for="input-username">Username</label>
+                        <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username" value="lucky.jesse"/>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-email">Email address</label>
+                        <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com"/>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group focused">
+                        <label class="form-control-label" for="input-first-name">First name</label>
+                        <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" value="Lucky"/>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group focused">
+                        <label class="form-control-label" for="input-last-name">Last name</label>
+                        <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" value="Jesse"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr class="my-4"/>
+                /* Address */
+                <h6 class="heading-small text-muted mb-4">Contact information</h6>
+                <div class="pl-lg-4">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group focused">
+                        <label class="form-control-label" for="input-address">Address</label>
+                        <input id="input-address" class="form-control form-control-alternative" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09" type="text"/>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-4">
+                      <div class="form-group focused">
+                        <label class="form-control-label" for="input-city">City</label>
+                        <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="City" value="New York"/>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="form-group focused">
+                        <label class="form-control-label" for="input-country">Country</label>
+                        <input type="text" id="input-country" class="form-control form-control-alternative" placeholder="Country" value="United States"/>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-country">Postal code</label>
+                        <input type="number" id="input-postal-code" class="form-control form-control-alternative" placeholder="Postal code"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr class="my-4"/>
+                /* Description */
+                <h6 class="heading-small text-muted mb-4">About me</h6>
+                <div class="pl-lg-4">
+                  <div class="form-group focused">
+                    <label>About Me</label>
+                    <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about you ...">A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</textarea>
+                  </div>
+                </div>
+              </form>
+          </div>
+          </div>
+
     );
   };
+
   export default User;
