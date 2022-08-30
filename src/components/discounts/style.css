@@ -1,4 +1,4 @@
-.discount {
+.discount_section {
   background: #f6f9fc;
   padding: 50px 0;
 }
@@ -46,6 +46,17 @@
 }
 .discount_card_product_img {
   width: auto;
+}
+.top_left_popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--maincolor);
+  padding: 3px 10px;
+  font-size: 12px;
+  border-radius: 50px;
+  color: #fff;
+  margin: 10px;
 }
 .discount_card_product_img img {
   width: auto;
