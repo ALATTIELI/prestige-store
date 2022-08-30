@@ -3,6 +3,10 @@
   font-family: "swiss-721-black-rounded-bt";
   src: url("../public/fonts/Swiss-721-Black-Rounded-BT.ttf")
 }
+@font-face {
+  font-family: "tajawal-medium";
+  src: url("../public/fonts/Tajawal-Medium.ttf")
+}
 * {
   padding: 0;
   margin: 0;
