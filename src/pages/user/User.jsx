@@ -8,8 +8,8 @@ const User = () => {
     return (
       <div className="user_body">
         <div class="col-xl-8 order-xl-1">
-      <div class="card bg-secondary shadow">
-        <div class="card-header bg-white border-0">
+      <div class="user_card bg-secondary shadow">
+        <div class="card_header bg-white border-0">
           <div class="row align-items-center">
             <div class="col-8">
               <h3 class="mb-0">My account</h3>
@@ -22,7 +22,7 @@ const User = () => {
       </div>
     </div>
 
-    <div class="card-body">
+    <div class="card_body">
               <form>
                 <h6 class="heading-small text-muted mb-4">User information</h6>
                 <div class="pl-lg-4">
@@ -56,7 +56,9 @@ const User = () => {
                   </div>
                 </div>
                 <hr class="my-4"/>
+
                 /* Address */
+
                 <h6 class="heading-small text-muted mb-4">Contact information</h6>
                 <div class="pl-lg-4">
                   <div class="row">
@@ -88,6 +90,14 @@ const User = () => {
                     </div>
                   </div>
                 </div>
+<<<<<<< HEAD
+=======
+                <hr class="my-4"/>
+
+                /* Description */
+
+                <h6 class="heading-small text-muted mb-4">About me</h6>
+>>>>>>> b42a2c8a58ba26df37a3cf2590fe718789b2b051
                 <div class="pl-lg-4">
                 </div>
               </form>
