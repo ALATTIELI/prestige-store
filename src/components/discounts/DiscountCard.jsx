@@ -1,24 +1,24 @@
 import React, { useState } from "react";
 
-const FlashCard = ({ productItems, addToCart }) => {
+const DiscountCard = ({ productItems, addToCart }) => {
   const [count, setCount] = useState(0);
   const increment = () => {
     setCount(count + 1);
   };
 
   const scroll = (direction) => {
-    const flash_card = document.getElementById("flash_card_container");
+    const discount_card = document.getElementById("discount_card_container");
     if (direction === "left") {
-      flash_card.scrollBy({ left: -300, behavior: "smooth" });
+      discount_card.scrollBy({ left: -300, behavior: "smooth" });
     }
     if (direction === "right") {
-      flash_card.scrollBy({ left: 300, behavior: "smooth" });
+      discount_card.scrollBy({ left: 300, behavior: "smooth" });
     }
   };
 
   return (
     <>
-      <div className="flash_card">
+      <div className="discount_card">
         {/* add arrows to scroll */}
         <span
           className="prev"
@@ -28,21 +28,28 @@ const FlashCard = ({ productItems, addToCart }) => {
         >
           <i className="fa fa-long-arrow-alt-left"></i>
         </span>
-        <div className="flash_card_container" id="flash_card_container">
+        <div className="discount_card_container" id="discount_card_container">
           {productItems.map((productItems) => {
             return (
-              <div className="flash_card_product">
-                <div className="flash_card_product_img">
+              <div className="discount_card_product">
+                <div className="discount_card_product_img">
                   <span className="discount">{productItems.discount}% Off</span>
                   <img src={productItems.cover} alt="" />
                 </div>
-                <div className="flash_card_product_details">
+                <div className="discount_card_product_details">
                   <h3>{productItems.name}</h3>
-                  <div className="price">
-                    <h4>AED {productItems.price}.00 </h4>
-                    {/* step : 3  
-                      if hami le button ma click garryo bahne 
-                     */}
+                  <div className="discount_card_product_price">
+                    <div className="DiscountPrice">
+                      <span className="DiscountDPrice">
+                        AED {productItems.price}
+                      </span>
+                      <span
+                        className="DiscountOriginalPrice"
+                        style={{ textDecoration: "line-through" }}
+                      >
+                        AED {productItems.originalprice}
+                      </span>
+                    </div>
                     <button onClick={() => addToCart(productItems)}>
                       <i className="fa fa-plus"></i>
                     </button>
@@ -65,4 +72,4 @@ const FlashCard = ({ productItems, addToCart }) => {
   );
 };
 
-export default FlashCard;
+export default DiscountCard;
