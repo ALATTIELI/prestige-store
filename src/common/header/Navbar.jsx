@@ -6,13 +6,23 @@ const Navbar = () => {
   // Toogle Menu
   const [MobileMenu, setMobileMenu] = useState(false);
   const { t, i18n } = useTranslation();
+
+  console.log(i18n.resolvedLanguage);
+  if (i18n.resolvedLanguage === "ar") {
+    const body = document.getElementsByTagName("body")[0];
+    body.style = "font-family: 'tajawal-regular';";
+  } else {
+    const body = document.getElementsByTagName("body")[0];
+    body.style = "font-family: 'Roboto', sans-serif;";
+  }
+
   return (
     <>
       <header className="header">
         <div className="container d_flex">
           <div className="catgrories d_flex">
             <span class="fa-solid fa-border-all"></span>
-            <h4>{t('navbar.categories')}</h4>
+            <h4>{t("navbar.categories")}</h4>
           </div>
 
           <div className="navlink">
