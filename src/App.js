@@ -11,6 +11,7 @@ import Product from "./pages/product/Product";
 import Categories from "./pages/categories/Categories";
 import User from "./pages/user/User";
 import Brands from "./pages/brands/Brands";
+import ContactUs from "./pages/contactUs/ContactUs";
 
 
 function App() {
@@ -115,6 +116,9 @@ function App() {
           </Route>
           <Route path="/brands">
             <Brands addToCart={addToCart} />
+          </Route>
+          <Route path="/contactus">
+            <ContactUs/>
           </Route>
         </Switch>
         <Footer />
