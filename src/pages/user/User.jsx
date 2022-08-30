@@ -86,19 +86,13 @@ const User = () => {
                     </div>
                   </div>
                 </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
                 <hr class="my-4"/>
 
                 /* Description */
 
                 <h6 class="heading-small text-muted mb-4">About me</h6>
->>>>>>> b42a2c8a58ba26df37a3cf2590fe718789b2b051
                 <div class="pl-lg-4">
                 </div>
-=======
->>>>>>> 754fa59ceb77ee8f121fad3a2ac41d72f3a07457
               </form>
           </div>
         </div>
