@@ -5,13 +5,15 @@ const Data = {
       discount: 50,
       cover: "./images/flash/flash-1.png",
       name: "Shoes",
-      price: 100,
+      originalprice: "500",
+      price: 250,
     },
     {
       id: 2,
       discount: 40,
       cover: "./images/flash/flash-2.png",
       name: "Watch",
+      originalprice: 500,
       price: 20,
     },
     {
@@ -19,6 +21,7 @@ const Data = {
       discount: 40,
       cover: "./images/flash/flash-3.png",
       name: "Smart Mobile Black",
+      originalprice: 500,
       price: 200,
     },
     {
@@ -26,6 +29,7 @@ const Data = {
       discount: 40,
       cover: "./images/flash/flash-4.png",
       name: "Smart Watch Black",
+      originalprice: 500,
       price: 50,
     },
     {
@@ -33,6 +37,7 @@ const Data = {
       discount: 50,
       cover: "./images/flash/flash-1.png",
       name: "Shoes",
+      originalprice: 500,
       price: 100,
     },
     {
@@ -40,8 +45,9 @@ const Data = {
       discount: 50,
       cover: "./images/flash/flash-3.png",
       name: "Shoes",
+      originalprice: 500,
       price: 100,
     },
   ],
-}
-export default Data
+};
+export default Data;
