@@ -92,6 +92,10 @@ const User = () => {
 
                 <h6 class="heading-small text-muted mb-4">About me</h6>
                 <div class="pl-lg-4">
+                  <div class="form-group focused">
+                    <label>About Me</label>
+                    <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about you ...">A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</textarea>
+                  </div>
                 </div>
               </form>
           </div>
