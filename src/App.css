@@ -294,8 +294,7 @@ button {
     position: relative;
     border-radius: 8px;
     box-shadow: #03004717 0px 1px 3px;
-    margin: 5px;
-    cursor: pointer;
+    margin: 7px;
   }
   
   .heading .heading-left h2 {

@@ -2,9 +2,22 @@
     display: flex;
     flex-direction: column;
 }
+
+
+/* my changes */
+
 .DiscountPrice>.DiscountOriginalPrice{
-    font-size: 14px;
+    font-size: 18px;
     color: #999;
     text-decoration: line-through;
     margin-bottom: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .DiscountPrice>.DiscountOriginalPrice{
+        font-size: 11px;
+        color: #999;
+        text-decoration: line-through;
+        margin-bottom: 5px;
+    }
 }

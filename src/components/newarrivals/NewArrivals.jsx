@@ -5,8 +5,8 @@ import "./style.css"
 const NewArrivals = () => {
   return (
     <>
-      <section className='NewArrivals background'>
-        <div className='container'>
+      <section className='NewArrivals_background'>
+        <div className='NewArrivals_container'>
           <div className='heading d_flex'>
             <div className='heading-left row  f_flex'>
             <img src="https://img.icons8.com/ios-filled/100/00a9e0/new.png" alt="img"/>

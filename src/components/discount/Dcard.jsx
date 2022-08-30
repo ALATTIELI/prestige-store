@@ -6,6 +6,7 @@ import Ddata from "./Ddata";
 import "../newarrivals/style.css";
 import "./Dcard.css";
 
+
 const SampleNextArrow = (props) => {
   const { onClick } = props
   return (
@@ -30,7 +31,7 @@ const Dcard = () => {
   const settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 6,
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     nextArrow: <SampleNextArrow />,
