@@ -24,7 +24,8 @@ const Navbar = () => {
           <div className="catgrories d_flex">
             <span class="fa-solid fa-border-all"></span>
             <h4>
-              <button
+            {t("navbar.categories")}
+              {/* <button
                 className="toggle"
                 onClick={() => setMobileMenu(!MobileMenu)}
               >
@@ -33,14 +34,14 @@ const Navbar = () => {
                 ) : (
                   <i className="">{t("navbar.categories")}</i>
                 )}
-              </button>
+              </button> */}
             </h4>
           </div>
 
-          <div
-            className={
-              MobileMenu ? "navlink nav-category open" : "navlink nav-category closed"
-            }
+          <div className="navlink"
+            // className={
+            //   MobileMenu ? "navlink" : "navlink"
+            // }
           >
             <ul
               className={
@@ -49,7 +50,13 @@ const Navbar = () => {
               onClick={() => setMobileMenu(true)}
             >
               {/*<ul className='link f_flex uppercase {MobileMenu ? "nav-links-MobileMenu" : "nav-links"} onClick={() => setMobileMenu(false)}'>*/}
-              <Categories />
+              {/* <Categories /> */}
+              <li>
+                <Link to="/">{t("navbar.home")}</Link>
+              </li>
+              <li>
+                <Link to="/contactUs">Contact Us</Link>
+              </li>
             </ul>
           </div>
         </div>
