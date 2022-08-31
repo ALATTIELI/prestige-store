@@ -37,7 +37,7 @@ const Navbar = () => {
                 <Link to="/">{t("navbar.home")}</Link>
               </li>
               <li>
-                <Link to="/contact">Contact Us</Link>
+                <Link to="/contactUs">Contact Us</Link>
               </li>
             </ul>
 
