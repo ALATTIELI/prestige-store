@@ -210,7 +210,7 @@ header ul li a:hover {
   .logo_width h1 {
     color: var(--maincolor);
     font-size: 170%;
-    padding: 30px;
+    padding: 10px;
     width: 100%;
     text-align: center;
     font-family: "swiss-721-black-rounded-bt" !important;
@@ -254,7 +254,7 @@ header ul li a:hover {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 30px;
+    padding: 20px;
     justify-content: space-between;
   }
 
@@ -293,6 +293,7 @@ header ul li a:hover {
   }
 
   .search.active {
+    padding: 0px;
     height: auto;
     position: fixed;
     top: 0;
