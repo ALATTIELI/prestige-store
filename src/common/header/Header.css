@@ -120,6 +120,7 @@
 header {
   height: 8vh;
   box-shadow: -1px 15px 17px -8px rgba(0, 0, 0, 0.1);
+  height: fit-content;
 }
 header ul {
   line-height: 8vh;
@@ -153,7 +154,16 @@ header ul li a:hover {
   box-shadow: -1px 11px 24px -11px rgba(0, 0, 0, 0.2);
   transition: 0.5s;
 }
-
+.nav-links-MobileMenu{
+  z-index: 1000;
+  position: sticky;
+}
+.nav-category.open{
+  display: block;
+}
+.nav-category.closed{
+  display: none;
+}
 @media (max-width: 768px) {
   header ul {
     padding-top: 30px;
