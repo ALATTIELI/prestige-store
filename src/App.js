@@ -12,6 +12,7 @@ import Categories from "./pages/categories/Categories";
 import User from "./pages/user/User";
 import Brands from "./pages/brands/Brands";
 import ContactUs from "./pages/contactUs/ContactUs";
+import Login from "./pages/Login/Login";
 
 
 function App() {
@@ -119,6 +120,9 @@ function App() {
           </Route>
           <Route path="/contactus">
             <ContactUs/>
+          </Route>
+          <Route path="/login">
+            <Login/>
           </Route>
         </Switch>
         <Footer />

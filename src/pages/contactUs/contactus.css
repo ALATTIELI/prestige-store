@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   height: fit-content;
+ 
 }
 
 .contactus-grid {
@@ -11,6 +12,7 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  padding: 20px 0 20px 0;
 }
 
 .contactus-item {
@@ -21,6 +23,7 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  text-align: left;
 }
 
 .contactus-item-title {
