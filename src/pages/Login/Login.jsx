@@ -3,9 +3,12 @@ import "./login.css"
 
 export default function Login() {
   return (
-    <div>
-      <div className='google-login-button'>Sing in with Google</div>
-      <div className='facebook-login-button'>Sing in with Facebook</div>
+    <div className='Login'>
+      <div className='button-design'>
+        <h1 className='Login-title'>Login Using:</h1>
+      <div className='google-login-button'>Sign in with Google</div>
+      <div className='facebook-login-button'>Sign in with Facebook</div>
+      </div>
     </div>
   )
 }

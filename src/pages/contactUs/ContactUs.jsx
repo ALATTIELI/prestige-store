@@ -20,6 +20,7 @@ export default function ContactUs() {
             <a
               className="contactus-item-detail-mapbtn"
               href="https://goo.gl/maps/Nh5xbQjBg4fbozv99"
+              target="_blank"
             >
               <span>
                 <img
@@ -46,6 +47,7 @@ export default function ContactUs() {
             <a
               className="contactus-item-detail-mapbtn"
               href="https://goo.gl/maps/wCz6VFmZdM2tNHje9"
+              target="_blank"
             >
               <span>
                 <img
@@ -75,6 +77,7 @@ export default function ContactUs() {
             <a
               className="contactus-item-detail-mapbtn"
               href="https://goo.gl/maps/qznkYRPVNdxuJsVR9"
+              target="_blank"
             >
               <span>
                 <img
@@ -100,6 +103,7 @@ export default function ContactUs() {
             <a
               className="contactus-item-detail-mapbtn"
               href="https://goo.gl/maps/i512tbHVHwodTwzV9"
+              target="_blank"
             >
               <span>
                 <img
@@ -123,6 +127,7 @@ export default function ContactUs() {
             <a
               className="contactus-item-detail-mapbtn"
               href="https://goo.gl/maps/nJVkozB4BpzoYtar6"
+              target="_blank"
             >
               <span>
                 <img
@@ -148,6 +153,7 @@ export default function ContactUs() {
             <a
               className="contactus-item-detail-mapbtn"
               href="https://goo.gl/maps/7iDNrsumUAWHWSpV6"
+              target="_blank"
             >
               <span>
                 <img
@@ -171,6 +177,7 @@ export default function ContactUs() {
             <a
               className="contactus-item-detail-mapbtn"
               href="https://goo.gl/maps/nhWeve4FrYpZSuZh8"
+              target="_blank"
             >
               <span>
                 <img
@@ -196,6 +203,7 @@ export default function ContactUs() {
             <a
               className="contactus-item-detail-mapbtn"
               href="https://goo.gl/maps/E7WbGcT4qQT1swSD8"
+              target="_blank"
             >
               <span>
                 <img
@@ -221,6 +229,7 @@ export default function ContactUs() {
             <a
               className="contactus-item-detail-mapbtn"
               href="https://goo.gl/maps/K96tFgDSvbU5Hiu38"
+              target="_blank"
             >
               <span>
                 <img
