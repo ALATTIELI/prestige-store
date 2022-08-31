@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import Categories from "../../components/MainPage/Categories";
 
 const Navbar = () => {
   // Toogle Menu
@@ -22,35 +23,34 @@ const Navbar = () => {
         <div className="container d_flex">
           <div className="catgrories d_flex">
             <span class="fa-solid fa-border-all"></span>
-            <h4>{t("navbar.categories")}</h4>
+            <h4>
+              <button
+                className="toggle"
+                onClick={() => setMobileMenu(!MobileMenu)}
+              >
+                {MobileMenu ? (
+                  <i className="">{t("navbar.categories")}</i>
+                ) : (
+                  <i className="">{t("navbar.categories")}</i>
+                )}
+              </button>
+            </h4>
           </div>
 
-          <div className="navlink">
+          <div
+            className={
+              MobileMenu ? "navlink nav-category open" : "navlink nav-category closed"
+            }
+          >
             <ul
               className={
                 MobileMenu ? "nav-links-MobileMenu" : "link f_flex capitalize"
               }
-              onClick={() => setMobileMenu(false)}
+              onClick={() => setMobileMenu(true)}
             >
               {/*<ul className='link f_flex uppercase {MobileMenu ? "nav-links-MobileMenu" : "nav-links"} onClick={() => setMobileMenu(false)}'>*/}
-              <li>
-                <Link to="/">{t("navbar.home")}</Link>
-              </li>
-              <li>
-                <Link to="/contactUs">Contact Us</Link>
-              </li>
+              <Categories />
             </ul>
-
-            <button
-              className="toggle"
-              onClick={() => setMobileMenu(!MobileMenu)}
-            >
-              {MobileMenu ? (
-                <i className="fas fa-times close home-btn"></i>
-              ) : (
-                <i className="fas fa-bars open"></i>
-              )}
-            </button>
           </div>
         </div>
       </header>
