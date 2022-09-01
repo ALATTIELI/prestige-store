@@ -23,10 +23,9 @@ const Navbar = () => {
   window.addEventListener("scroll", function () {
     const dropdown_c = document.querySelector(".categories_menu");
     dropdown_c.classList.toggle("categories_menu_closed", window.scrollY > 100);
-    if (window.scrollY < 100 && Dropdown) {
+    if (window.scrollY <= 100 && Dropdown) {
       dropdown_c.classList.toggle("categories_menu_open");
-    }
-    else if(window.scrollY < 100 && !Dropdown) {
+    } else if (window.scrollY <= 100 && !Dropdown) {
       dropdown_c.classList.toggle("categories_menu_closed");
     }
   });
@@ -36,15 +35,18 @@ const Navbar = () => {
       <header className="header">
         <div className="container d_flex">
           <div className="header_catgrories d_flex">
-            <span class="header_catgrories_icon fa-solid fa-border-all"></span>
             <div className="categories_nav">
               {Dropdown ? (
                 <h4 onClick={() => setDropdown(!Dropdown)}>
+                  <span class="header_catgrories_icon fa-solid fa-border-all"></span>
+
                   <span>{t("navbar.categories")}</span>
-                  <KeyboardArrowUpIcon className="arrow-icon"/>
+                  <KeyboardArrowUpIcon className="arrow-icon" />
                 </h4>
               ) : (
                 <h4 onClick={() => setDropdown(!Dropdown)}>
+                  <span class="header_catgrories_icon fa-solid fa-border-all"></span>
+
                   <span>{t("navbar.categories")}</span>
                   <KeyboardArrowDownIcon className="arrow-icon" />
                 </h4>

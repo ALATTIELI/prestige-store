@@ -36,7 +36,6 @@ const Catg = () => {
       <div className='category'>
         <div className='chead d_flex'>
           <h1>Brands </h1>
-          <h1>Shops </h1>
         </div>
         {data.map((value, index) => {
           return (

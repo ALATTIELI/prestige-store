@@ -2,6 +2,11 @@
   padding: 30px;
   height: fit-content;
 }
+.chead {
+  width: 100%;
+  /* align-items: center; */
+  justify-content: center;
+}
 .chead h1 {
   font-size: 20px;
   margin-bottom: 20px;
@@ -19,8 +24,10 @@
   border-radius: 5px;
 }
 .shop .category img {
-  width: auto;
+  width: 30px;
   height: auto;
+  margin-top: 0px;
+  object-fit: contain;
 }
 .shop .category .box:hover {
   background-color: var(--maincolor);
@@ -39,6 +46,7 @@
 
 .shop .contentWidth {
   margin-left: 30px;
+  padding: 10px;
 }
 
 .grid1 {

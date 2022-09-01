@@ -1,20 +1,23 @@
-import React from "react"
-import Cart from "./Cart"
-import "./style.css"
+import React from "react";
+import Cart from "./Cart";
+import "./style.css";
 
 const NewArrivals = () => {
   return (
     <>
-      <section className='NewArrivals_background'>
-        <div className='NewArrivals_container'>
-          <div className='heading d_flex'>
-            <div className='heading-left row  f_flex'>
-            <img src="https://img.icons8.com/ios-filled/100/00a9e0/new.png" alt="img"/>
-            <h2>New Arrivals </h2>
+      <section className="NewArrivals_background">
+        <div className="NewArrivals_container">
+          <div className="heading d_flex">
+            <div className="heading-left f_flex">
+              <img
+                src="https://img.icons8.com/ios-filled/100/00a9e0/new.png"
+                alt="img"
+              />
+              <h2>New Arrivals </h2>
             </div>
-            <div className='heading-right row '>
+            <div className="heading-right">
               <span>View all</span>
-              <i className='fa-solid fa-caret-right'></i>
+              <i className="fa-solid fa-caret-right"></i>
             </div>
           </div>
 
@@ -22,7 +25,7 @@ const NewArrivals = () => {
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default NewArrivals
+export default NewArrivals;

@@ -8,7 +8,7 @@ const Discount = ({ productItems, addToCart }) => {
     <>
       <section className="discount_section">
         <div className="container">
-          <div className="heading f_flex">
+          <div className="discount_section_heading f_flex">
             {/* <i className='fa fa-bolt'></i> */}
             <DiscountIcon className="discountPage-icon" />
 

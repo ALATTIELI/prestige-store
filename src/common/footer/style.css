@@ -76,7 +76,7 @@ footer li {
 @media (max-width: 600px) {
   footer {
     background-color: var(--maincolor);
-    /* padding: 5rem 0 5rem 0; */
+    padding: 0px;
     color: #fff;
     position: absolute;
     width: 100%;

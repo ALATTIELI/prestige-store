@@ -169,6 +169,7 @@ header ul li a:hover {
   flex-direction: column;
   height: fit-content;
   cursor: pointer;
+  position: static;
 }
 .categories_nav h4 {
   display: flex;
@@ -195,6 +196,9 @@ header ul li a:hover {
   transition: display 0.5s ease-in;
 }
 @media (max-width: 768px) {
+  .search{
+    padding: 0px;
+  }
   header ul {
     padding-top: 30px;
   }
@@ -320,6 +324,20 @@ header ul li a:hover {
     box-shadow: 10px 5px 17px 10px rgba(0, 0, 0, 0.1);
   }
 
+  .header_catgrories{
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    justify-content: center; 
+    width: 100%;
+    /* height: fit-content; */
+  }
+  .categories_nav{
+    width: 100%;
+    text-align: center;
+    justify-content: center; 
+
+  }
   .catgrories h4 {
     margin: 0 0 0 0;
     padding: 10px;
@@ -336,7 +354,7 @@ header ul li a:hover {
   .search.active {
     padding: 0px;
     height: auto;
-    position: fixed;
+    position: sticky;
     top: 0;
     z-index: 1000;
     width: 100%;
