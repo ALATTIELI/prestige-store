@@ -41,12 +41,12 @@ const Navbar = () => {
               {Dropdown ? (
                 <h4 onClick={() => setDropdown(!Dropdown)}>
                   <span>{t("navbar.categories")}</span>
-                  <KeyboardArrowUpIcon />
+                  <KeyboardArrowUpIcon className="arrow-icon"/>
                 </h4>
               ) : (
                 <h4 onClick={() => setDropdown(!Dropdown)}>
                   <span>{t("navbar.categories")}</span>
-                  <KeyboardArrowDownIcon />
+                  <KeyboardArrowDownIcon className="arrow-icon" />
                 </h4>
               )}
 

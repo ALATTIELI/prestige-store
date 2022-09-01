@@ -7,6 +7,12 @@
 .head i {
   margin-right: 5px;
 }
+
+.head .left_row a{
+  color: var(--maincolor);
+  font-size: 14px;
+  margin-right: 10px;
+}
 .head label {
   margin-right: 30px;
   font-size: 15px;
@@ -169,6 +175,10 @@ header ul li a:hover {
   align-items: center;
   /* justify-content: center; */
   text-align: left;
+}
+
+.categories_nav .arrow-icon{
+  color: var(--maincolor);
 }
 .categories_menu {
   position: sticky;

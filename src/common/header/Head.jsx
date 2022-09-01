@@ -8,9 +8,9 @@ const Head = () => {
         <div className="container d_flex">
           <div className="left_row">
             <i className="fa fa-phone"></i>
-            <label> +971529744450</label>
+            <a href="tel:+971529744450"> +971529744450</a>
             <i className="fa fa-envelope"></i>
-            <label> info@prestigestore.ae </label>
+            <a href="mailto: info@prestigestore.ae"> info@prestigestore.ae </a>
           </div>
           <div className="right_row_RText">
             <LanguageSelector />
