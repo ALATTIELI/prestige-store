@@ -20,23 +20,23 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
               const productQty = item.price * item.qty;
 
               return (
-                <div className="cart-list product d_flex" key={item.id}>
+                <div className="cart-list" key={item.id}>
                   <div className="cart-left">
                     <div className="img">
                       <img src={item.cover} alt="" />
                     </div>
                     <div className="cartControl d_flex">
                       <button
-                        className="incCart"
-                        onClick={() => addToCart(item)}
-                      >
-                        <i className="fa-solid fa-plus"></i>
-                      </button>
-                      <button
                         className="desCart"
                         onClick={() => decreaseQty(item)}
                       >
                         <i className="fa-solid fa-minus"></i>
+                      </button>
+                      <button
+                        className="incCart"
+                        onClick={() => addToCart(item)}
+                      >
+                        <i className="fa-solid fa-plus"></i>
                       </button>
                     </div>
                   </div>
@@ -44,8 +44,8 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
                     <div className="cart-details">
                       <h3>{item.name}</h3>
                       <h4>
-                        <span className="final-price">AED {productQty}.00</span>
                         <span className="price-qt"> AED {item.price}.00 * {item.qty} </span>
+                        <span className="final-price">AED {productQty}.00</span>
                       </h4>
                     </div>
                       <div className="cart-items-function">
