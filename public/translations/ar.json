@@ -1,9 +1,89 @@
 {
   "navbar": {
     "home": "رئيسي",
-    "categories": "أصناف"
+    "categories": "أصناف",
+    "all_categories": "جميع الأصناف",
+    "search_and_hit _enter": "ابحث واضغط انتر",
+    "contact_us": "اتصل بنا"
   },
-  "user":{
-    "my profile": "بروفايلي"
+
+  "categories": {
+    "fashion": "موضة",
+    "electronic": "الكترونيات",
+    "home_and_garden": "المنزل والحديقة",
+    "cars": "سيارات",
+    "gifts": "هدايا",
+    "music": "موسيقى",
+    "health_and_beauty": "الصحة والجمال",
+    "pets": "الحيوانات الأليفة",
+    "baby_toys": "العاب الأطفال",
+    "groceries": "المواد الغذائية"
+  },
+
+  "flashDeals": {
+    "flash_deals": "عروض مميزة"
+  },
+
+  "topcategory": {
+    "top_categories": "أفضل الأصناف"
+  },
+
+  "newArrivals": {
+    "new_arrivals": "وصل حديثا"
+  },
+
+  "discounts": {
+    "discounts": "خصومات"
+  },
+
+  "brands": {
+    "brands": "العلامات التجارية"
+  },
+
+  "mobilephones": {
+    "mobile_phones": "هواتف محمولة"
+  },
+
+  "worldwidedelivery": {
+    "worldwide_delivery": "الشحن العالمي"
+  },
+
+  "safepayment": {
+    "safe_payment": "دفع آمن"
+  },
+
+  "shopewithconfidence": {
+    "shop_with_confidence": "تسوق بثقة"
+  },
+
+  "24/7support": {
+    "24_7_support": "دعم 24/7"
+  },
+
+  "aboutus": {
+    "about_us": "معلومات عنا",
+    "careers": "وظائف",
+    "our_stores": "متاجرنا",
+    "our_cares": "رعايتنا",
+    "terms_and_conditions": "الشروط والأحكام",
+    "privacy_policy": "سياسة الخصوصية"
+  },
+
+  "costumerservice": {
+    "costumer_service": "خدمة العملاء",
+    "help_center": "مركز المساعدة",
+    "how_to_buy": "كيفية الشراء",
+    "track_your_order": "تتبع طلبك",
+    "coporate_and_bulk_orders": "طلبات الشركات والجملة",
+    "return_and_refunds": "إرجاع واسترداد"
+  },
+
+  "contactus": {
+    "email": "البريد الإلكتروني",
+    "phone": "هاتف"
+  },
+
+  "user": {
+    "my profile": "ملفي الشخصي"
   }
 }
