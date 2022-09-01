@@ -56,7 +56,7 @@ const Categories = () => {
             </div>
           );
         })}
-        <div className="box mainpage_categories_viewAll">
+        <div className="box mainpage_categories_viewAll" style={{backgroundColor:"#f2f2f2"}}>
           <Link to="/categories">
             <span>All Categories</span>
           </Link>
