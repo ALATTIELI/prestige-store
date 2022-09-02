@@ -6,14 +6,15 @@ import "slick-carousel/slick/slick-theme.css"
 
 const SlideCard = () => {
   const settings = {
-    dots: true,
+    // dots: true,
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    appendDots: (dots) => {
-      return <ul style={{ margin: "0px" }}>{dots}</ul>
-    },
+    arrows: false,
+    // appendDots: (dots) => {
+    //   return <ul style={{ margin: "10px" }}>{dots}</ul>
+    // },
   }
   return (
     <>
@@ -21,7 +22,7 @@ const SlideCard = () => {
         {Sdata.map((value, index) => {
           return (
             <>
-              <div className='box d_flex top' key={index}>
+              <div className='slider-box' key={index}>
                 <div className='left'>
                   <h1>{value.title}</h1>
                   <p>{value.desc}</p>
