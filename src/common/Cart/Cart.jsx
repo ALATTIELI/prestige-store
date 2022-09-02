@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css";
 
 const Cart = ({ CartItem, addToCart, decreaseQty }) => {
+  // check if website is open in mobile or not
+  // const isMobile = window.innerWidth < 768;
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      if (window.innerWidth < 768) {
+        setIsMobile(window.innerWidth < 768);
+      } else {
+        setIsMobile(false);
+      }
+    });
+    // });
+  });
+
   const totalPrice = CartItem.reduce(
     (price, item) => price + item.qty * item.price,
     0
@@ -19,54 +34,115 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
             {CartItem.map((item) => {
               const productQty = item.price * item.qty;
 
+              // eslint-disable-next-line no-lone-blocks
               return (
-                <div className="cart-list" key={item.id}>
-                  <div className="cart-left">
-                    <div className="img">
-                      <img src={item.cover} alt="" />
-                    </div>
-                    <div className="cartControl d_flex">
-                      <button
-                        className="desCart"
-                        onClick={() => decreaseQty(item)}
-                      >
-                        <i className="fa-solid fa-minus"></i>
-                      </button>
-                      <button
-                        className="incCart"
-                        onClick={() => addToCart(item)}
-                      >
-                        <i className="fa-solid fa-plus"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <div className="cart-right">
-                    <div className="cart-details">
-                      <h3>{item.name}</h3>
-                      <h4>
-                        <span className="price-qt"> AED {item.price}.00 * {item.qty} </span>
-                        <span className="final-price">AED {productQty}.00</span>
-                      </h4>
-                    </div>
-                      <div className="cart-items-function">
-                        <div className="removeCart">
-                          <button className="removeCartBtn">
-                            <i className="fa-solid fa-xmark"></i>
+                <>
+                  {isMobile ? (
+                    <>
+                      <div className="cart-list" key={item.id}>
+                        <div className="cart-left">
+                          <div className="img">
+                            <img src={item.cover} alt="" />
+                          </div>
+                          <div className="cartControl d_flex">
+                            <button
+                              className="desCart"
+                              onClick={() => decreaseQty(item)}
+                            >
+                              <i className="fa-solid fa-minus"></i>
+                            </button>
+                            <button
+                              className="incCart"
+                              onClick={() => addToCart(item)}
+                            >
+                              <i className="fa-solid fa-plus"></i>
+                            </button>
+                          </div>
+                        </div>
+                        <div className="cart-right">
+                          <div className="cart-details">
+                            <h3>{item.name}</h3>
+                            <h4>
+                              <span className="price-qt">
+                                {" "}
+                                AED {item.price}.00 * {item.qty}{" "}
+                              </span>
+                              <span className="final-price">
+                                AED {productQty}.00
+                              </span>
+                            </h4>
+                          </div>
+                          <div className="cart-items-function">
+                            <div className="removeCart">
+                              <button className="removeCartBtn">
+                                <i className="fa-solid fa-xmark"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="cart-item-price"></div>
+                      </div>
+                    </>
+                  ) : (
+                    <div className="cart-list" key={item.id}>
+                      <div className="cart-left">
+                        <div className="img">
+                          <img src={item.cover} alt="" />
+                        </div>
+                        {/* <div className="cartControl d_flex">
+                          <button
+                            className="desCart"
+                            onClick={() => decreaseQty(item)}
+                          >
+                            <i className="fa-solid fa-minus"></i>
+                          </button>
+                          <button
+                            className="incCart"
+                            onClick={() => addToCart(item)}
+                          >
+                            <i className="fa-solid fa-plus"></i>
+                          </button>
+                        </div> */}
+                      </div>
+                      <div className="cart-right">
+                        <div className="cart-details">
+                          <h3>{item.name}</h3>
+                          <h4>
+                            <span className="price-qt">
+                              {" "}
+                              AED {item.price}.00 * {item.qty}{" "}
+                            </span>
+                            <span className="final-price">
+                              AED {productQty}.00
+                            </span>
+                          </h4>
+                        </div>
+                        <div className="cart-items-function">
+                          <div className="cartControl">
+                          <button
+                            className="desCart"
+                            onClick={() => decreaseQty(item)}
+                          >
+                            <i className="fa-solid fa-minus"></i>
+                          </button>
+                          <button
+                            className="incCart"
+                            onClick={() => addToCart(item)}
+                          >
+                            <i className="fa-solid fa-plus"></i>
                           </button>
                         </div>
+                          <div className="removeCart">
+                            <button className="removeCartBtn">
+                              <i className="fa-solid fa-xmark"></i>
+                            </button>
+                          </div>
+                        </div>
                       </div>
-                  </div>
-                  {/* <div className='cartControl d_flex'>
-                      <button className='incCart' onClick={() => addToCart(item)}>
-                        <i className='fa-solid fa-plus'></i>
-                      </button>
-                      <button className='desCart' onClick={() => decreaseQty(item)}>
-                        <i className='fa-solid fa-minus'></i>
-                      </button>
-                    </div> */}
-
-                  <div className="cart-item-price"></div>
-                </div>
+                      <div className="cart-item-price"></div>
+                    </div>
+                  )}
+                </>
               );
             })}
           </div>
