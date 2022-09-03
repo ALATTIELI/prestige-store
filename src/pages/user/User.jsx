@@ -40,14 +40,14 @@ const User = () => {
                   <div class="row">
                     <div class="col-lg-6">
                       <div class="form-group focused">
-                        <label class="form-control-label" for="input-first-name">First name</label>
-                        <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" value="Lucky"/>
+                        <label class="form-control-label" for="input-first-name">Full name</label>
+                        <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="Full name" />
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group focused">
-                        <label class="form-control-label" for="input-last-name">Last name</label>
-                        <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" value="Jesse"/>
+                        <label class="form-control-label" for="input-last-name">Phone Number</label>
+                        <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Phone Number" />
                       </div>
                     </div>
                   </div>
@@ -61,7 +61,7 @@ const User = () => {
                     <div class="col-md-12">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-address">Address</label>
-                        <input id="input-address" class="form-control form-control-alternative" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09" type="text"/>
+                        <input id="input-address" class="form-control form-control-alternative" placeholder=" Ghuwayfah St - Al Nahyan - Abu Dhabi - United Arab Emirates" type="text"/>
                       </div>
                     </div>
                   </div>
@@ -69,34 +69,18 @@ const User = () => {
                     <div class="col-lg-4">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-city">City</label>
-                        <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="City" value="New York"/>
+                        <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="City"/>
                       </div>
                     </div>
                     <div class="col-lg-4">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-country">Country</label>
-                        <input type="text" id="input-country" class="form-control form-control-alternative" placeholder="Country" value="United States"/>
-                      </div>
-                    </div>
-                    <div class="col-lg-4">
-                      <div class="form-group">
-                        <label class="form-control-label" for="input-country">Postal code</label>
-                        <input type="number" id="input-postal-code" class="form-control form-control-alternative" placeholder="Postal code"/>
+                        <input type="text" id="input-country" class="form-control form-control-alternative" placeholder="Country" value="United Arab Emirates"/>
                       </div>
                     </div>
                   </div>
                 </div>
                 <hr class="my-4"/>
-
-                /* Description */
-
-                <h6 class="heading-small text-muted mb-4">About me</h6>
-                <div class="pl-lg-4">
-                  <div class="form-group focused">
-                    <label>About Me</label>
-                    <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about you ...">A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</textarea>
-                  </div>
-                </div>
               </form>
           </div>
         </div>

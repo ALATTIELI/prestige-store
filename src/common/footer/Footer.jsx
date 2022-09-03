@@ -10,27 +10,17 @@ const Footer = () => {
             <div className="footer-box">
               <h2>About Us</h2>
               <ul>
-                <li>Careers</li>
-                <li>Our Stores</li>
-                <li>Our Cares</li>
+                <li>About US</li>
                 <li>Terms & Conditions</li>
                 <li>Privacy Policy</li>
-              </ul>
-            </div>
-            <div className="footer-box">
-              <h2>Customer Care</h2>
-              <ul>
-                <li>Help Center </li>
-                <li>How to Buy </li>
-                <li>Track Your Order </li>
-                <li>Corporate & Bulk Purchasing </li>
                 <li>Returns & Refunds </li>
               </ul>
             </div>
             <div className="footer-box">
               <h2>Contact Us</h2>
               <ul>
-                <li>
+                <li>Our Stores</li>
+                   <li>
                   Ghuwayfah St - Al Nahyan - Abu Dhabi - United Arab Emirates
                 </li>
                 <li>Email: info@prestigestore.ae</li>
