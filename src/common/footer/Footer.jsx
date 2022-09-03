@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./style.css";
 
 const Footer = () => {
@@ -19,8 +20,10 @@ const Footer = () => {
             <div className="footer-box">
               <h2>Contact Us</h2>
               <ul>
-                <li>Our Stores</li>
-                   <li>
+                <Link to="/contactUs">
+                  <li>Our Stores</li>
+                </Link>
+                <li>
                   Ghuwayfah St - Al Nahyan - Abu Dhabi - United Arab Emirates
                 </li>
                 <li>Email: info@prestigestore.ae</li>
