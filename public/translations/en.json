@@ -29,7 +29,8 @@
   },
 
   "newArrivals": {
-    "new_arrivals": "New Arrivals"
+    "new_arrivals": "New Arrivals",
+    "view_all": "View All"
   },
 
   "discounts": {
@@ -41,7 +42,8 @@
   },
 
   "mobilephones": {
-    "mobile_phones": "Mobilephones"
+    "mobile_phones": "Mobile phones",
+    "view_all": "View All"
   },
 
   "worldwidedelivery": {
@@ -85,6 +87,10 @@
 
   "user":{
     "my profile": "My Profile"
+  },
+
+  "slidecard":{
+    "view": "View"
   }
 
 }

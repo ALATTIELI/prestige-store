@@ -4,7 +4,7 @@
     "categories": "أصناف",
     "all_categories": "جميع الأصناف",
     "search_and_hit _enter": "ابحث واضغط انتر",
-    "contact_us": "اتصل بنا"
+    "contact_us": "تواصل معنا"
   },
 
   "categories": {
@@ -29,7 +29,8 @@
   },
 
   "newArrivals": {
-    "new_arrivals": "وصل حديثا"
+    "new_arrivals": "وصل حديثا",
+    "view_all": "عرض الكل"
   },
 
   "discounts": {
@@ -41,7 +42,8 @@
   },
 
   "mobilephones": {
-    "mobile_phones": "هواتف محمولة"
+    "mobile_phones": "هواتف محمولة",
+    "view_all": "عرض الكل"
   },
 
   "worldwidedelivery": {
@@ -85,5 +87,9 @@
 
   "user": {
     "my profile": "ملفي الشخصي"
+  },
+
+  "slidecard": {
+    "view": "عرض "
   }
 }
