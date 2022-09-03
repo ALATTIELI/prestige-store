@@ -13,6 +13,10 @@ import User from "./pages/user/User";
 import Brands from "./pages/brands/Brands";
 import ContactUs from "./pages/contactUs/ContactUs";
 import Login from "./pages/Login/Login";
+import AboutUs from "./pages/aboutus/AboutUs";
+import PrivacyPolicy from "./pages/privacyPolicy/PrivacyPolicy";
+import ReturnsandRefunds from "./pages/returnsRefunds/ReturnsandRefunds";
+import TermsandConditions from "./pages/termsConditions/TermsandConditions";
 
 
 function App() {
@@ -121,9 +125,21 @@ function App() {
           <Route path="/contactus">
             <ContactUs/>
           </Route>
-          <Route path="/login">
-            <Login/>
+          <Route path="/aboutus">
+            <AboutUs/>
           </Route>
+          <Route path="/privacypolicy">
+            <PrivacyPolicy/>
+          </Route>
+          <Route path="/returns&Refunds">
+            <ReturnsandRefunds/>
+          </Route>
+          <Route path="/terms&conditions">
+            <TermsandConditions/>
+          </Route>
+          {/* <Route path="/login">
+            <Login/>
+          </Route> */}
         </Switch>
         <Footer />
       </Router>
