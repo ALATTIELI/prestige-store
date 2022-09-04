@@ -1,5 +1,5 @@
 import React from 'react'
-import "./returnsandrefunds.css"
+import "./returnsandRefunds.css"
 
 export default function returnsandRefunds() {
   return (

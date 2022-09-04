@@ -1,5 +1,5 @@
 import React from 'react'
-import "./privacypolicy.css"
+import "./privacyPolicy.css"
 
 export default function privacyPolicy() {
   return (
