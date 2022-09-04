@@ -56,7 +56,7 @@ export default function Order() {
                       <span className="product-name">{product.name}</span>
                     </div>
                     <div className="product-quantity">
-                      <span className="product-info-title">Quantity</span>
+                      <span className="product-info-title">Quantity: </span>
                       <span className="product-info-value">
                         {product.quantity}
                       </span>

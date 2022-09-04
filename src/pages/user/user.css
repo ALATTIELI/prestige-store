@@ -320,6 +320,12 @@
     padding-left: 5px;
     padding-right: 5px;
   }
+  .UserOrderDetailes {
+    width: 100%;
+    padding: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
   .user-container {
     flex-direction: column;
   }
@@ -334,5 +340,37 @@
 
   .user-right-bottom {
     grid-template-columns: 1fr;
+  }
+  .UserOrders .user-right-bottom .order-header{
+    display: none;
+  }
+  .UserOrders .user-right-bottom .order {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 6px 18px;
+    background-color: rgb(255, 255, 255);
+  }
+  .UserOrders .user-right-bottom .order .order-item {
+    flex: 1;
+    margin: 5px;
+  }
+  .UserOrderDetailes .user-right .products-list .products-list-item .product-info .product-name {
+    flex: 1;
+    flex-wrap: wrap;
+  }
+  .UserOrderDetailes .user-right .products-list .products-list-item .product-info .product-quantity {
+    flex: 1;
+    text-align: right;
+  }
+  .UserOrderDetailes .user-right .order-price-detailes{
+    width: 100%;
   }
 }
