@@ -50,6 +50,8 @@
   padding: 10px;
   font-size: 18px;
   font-family: "Poppins", sans-serif !important;
+  align-items: center;
+  margin-bottom: 0px;
 }
 ::placeholder {
   font-size: 18px;
