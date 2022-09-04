@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 
 const Catg = () => {
   const data = [
@@ -46,7 +47,9 @@ const Catg = () => {
           )
         })}
         <div className='box box2'>
+          <Link to='/brands'>
           <button>View All Brands</button>
+          </Link>
         </div>
       </div>
     </>
