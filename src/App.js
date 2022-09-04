@@ -15,8 +15,8 @@ import ContactUs from "./pages/contactUs/ContactUs";
 import Login from "./pages/Login/Login";
 import AboutUs from "./pages/aboutus/AboutUs";
 import PrivacyPolicy from "./pages/privacyPolicy/PrivacyPolicy";
-import ReturnsandRefunds from "./pages/returnsRefunds/ReturnsandRefunds";
-import TermsandConditions from "./pages/termsConditions/TermsandConditions";
+import Returnsandrefunds from "./pages/returnsRefunds/ReturnsandRefunds";
+import Termsandconditions from "./pages/termsandconditions/TermsandConditions";
 
 
 function App() {
@@ -131,11 +131,11 @@ function App() {
           <Route path="/privacypolicy">
             <PrivacyPolicy/>
           </Route>
-          <Route path="/returns&Refunds">
-            <ReturnsandRefunds/>
+          <Route path="/returnsRefunds">
+            <Returnsandrefunds/>
           </Route>
-          <Route path="/terms&conditions">
-            <TermsandConditions/>
+          <Route path="/termsandconditions">
+            <Termsandconditions/>
           </Route>
           {/* <Route path="/login">
             <Login/>
