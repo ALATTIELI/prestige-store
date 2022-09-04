@@ -15,3 +15,18 @@
     color: var(--maincolor);
     margin-bottom: 20px;
 }
+
+@media screen and (max-width: 768px){
+    .privacypage{
+          padding: 10px;
+    }
+     .privacyPolicy{
+         padding: 20px;
+         width: 100%;
+         overflow-wrap: break-word;
+     }
+     .privacyPolicy h1{
+         font-size: 20px;
+     }
+ 
+ }

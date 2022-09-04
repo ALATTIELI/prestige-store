@@ -15,3 +15,18 @@
     color: var(--maincolor);
     margin-bottom: 20px;
 }
+
+@media screen and (max-width: 768px){
+   .aboutuspage{
+         padding: 10px;
+   }
+    .aboutus{
+        padding: 20px;
+        width: 100%;
+        overflow-wrap: break-word;
+    }
+    .aboutus h1{
+        font-size: 20px;
+    }
+
+}

@@ -15,3 +15,18 @@
     color: var(--maincolor);
     margin-bottom: 20px;
 }
+
+@media screen and (max-width: 768px){
+   .termspage{
+         padding: 10px;
+   }
+    .termsandconditions{
+        padding: 20px;
+        width: 100%;
+        overflow-wrap: break-word;
+    }
+    .termsandconditions h1{
+        font-size: 20px;
+    }
+
+}
