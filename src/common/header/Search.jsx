@@ -31,7 +31,9 @@ const Search = ({ CartItem }) => {
         </div>
         <div className="container c_flex">
           <div className="logo_width">
+            <Link to="/">
             <h1>Prestige Store</h1>
+            </Link>
           </div>
 
           <div className="search-box_container">
