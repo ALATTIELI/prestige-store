@@ -1,6 +1,11 @@
 import React, { useState, Suspense } from "react";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import Header from "./common/header/Header";
 import Pages from "./pages/Pages";
 import Data from "./components/Data";
@@ -17,7 +22,9 @@ import AboutUs from "./pages/aboutus/AboutUs";
 import PrivacyPolicy from "./pages/privacyPolicy/PrivacyPolicy";
 import Returnsandrefunds from "./pages/returnsRefunds/ReturnsandRefunds";
 import Termsandconditions from "./pages/termsandconditions/TermsandConditions";
-
+import UserProfile from "./pages/user/UserProfile";
+import UserOrders from "./pages/user/UserOrders";
+import Order from "./pages/user/Order";
 
 function App() {
   /*
@@ -92,58 +99,68 @@ function App() {
 
   return (
     <>
-    <Suspense fallback={<div>Loading...</div>}>
-      <Router>
-        <Header CartItem={CartItem} />
-        <Switch>
-          <Route path="/" exact>
-            <Pages
-              productItems={productItems}
-              addToCart={addToCart}
-              shopItems={shopItems}
-            />
-          </Route>
-          <Route path="/cart" exact>
-            <Cart
-              CartItem={CartItem}
-              addToCart={addToCart}
-              decreaseQty={decreaseQty}
-            />
-          </Route>
-          <Route path="/product/:id">
-            <Product addToCart={addToCart} />
-          </Route>
-          <Route path="/categories">
-            <Categories addToCart={addToCart} />
-          </Route>
-          <Route path="/user">
-            <User addToCart={addToCart} />
-          </Route>
-          <Route path="/brands">
-            <Brands addToCart={addToCart} />
-          </Route>
-          <Route path="/contactus">
-            <ContactUs/>
-          </Route>
-          <Route path="/aboutus">
-            <AboutUs/>
-          </Route>
-          <Route path="/privacypolicy">
-            <PrivacyPolicy/>
-          </Route>
-          <Route path="/returnsRefunds">
-            <Returnsandrefunds/>
-          </Route>
-          <Route path="/termsandconditions">
-            <Termsandconditions/>
-          </Route>
-          {/* <Route path="/login">
+      <Suspense fallback={<div>Loading...</div>}>
+        <Router>
+          <Header CartItem={CartItem} />
+          <Switch>
+            <Route path="/" exact>
+              <Pages
+                productItems={productItems}
+                addToCart={addToCart}
+                shopItems={shopItems}
+              />
+            </Route>
+            <Route path="/cart" exact>
+              <Cart
+                CartItem={CartItem}
+                addToCart={addToCart}
+                decreaseQty={decreaseQty}
+              />
+            </Route>
+            <Route path="/product/:id">
+              <Product addToCart={addToCart} />
+            </Route>
+            <Route path="/categories">
+              <Categories addToCart={addToCart} />
+            </Route>
+            {/* redirect /user to /user/profile */}
+            <Route path="/user" exact>
+              <Redirect to="/user/profile" />
+            </Route>
+            <Route path="/user/profile">
+              <UserProfile />
+            </Route>
+            <Route path="/user/orders">
+              <UserOrders />
+            </Route>
+            <Route path="/user/order/:id">
+              <Order />
+            </Route>
+            <Route path="/brands">
+              <Brands addToCart={addToCart} />
+            </Route>
+            <Route path="/contactus">
+              <ContactUs />
+            </Route>
+            <Route path="/aboutus">
+              <AboutUs />
+            </Route>
+            <Route path="/privacypolicy">
+              <PrivacyPolicy />
+            </Route>
+            <Route path="/returnsRefunds">
+              <Returnsandrefunds />
+            </Route>
+            <Route path="/termsandconditions">
+              <Termsandconditions />
+            </Route>
+            {/* <Route path="/login">
             <Login/>
           </Route> */}
-        </Switch>
-        <Footer />
-      </Router>
-    </Suspense>
+          </Switch>
+          <Footer />
+        </Router>
+      </Suspense>
     </>
   );
 }
