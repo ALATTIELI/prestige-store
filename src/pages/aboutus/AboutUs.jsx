@@ -1,14 +1,17 @@
-import React from 'react'
-import "./aboutus.css"
+import React from "react";
+import { useTranslation } from "react-i18next";
+import "./aboutus.css";
 
-export default function aboutUs() {
+export default function AboutUs() {
+  const { t, i18n } = useTranslation();
   return (
-    <div className='aboutuspage'>
+    <div className="aboutuspage">
       <div className="aboutus">
-        <h1>About Us</h1>
-        <p>jbauoggvousdbbviougouvghojvb9uhfouewbvpipdsishv[WOEWJGPIRBHJNAJIEIRKV[JRBOIHKVNOSHKDSNFKDSHONVLXNVJXHVLNCV</p>
+        <h1>{t("about_us.about_us")}</h1>
+        <p>
+          jbauoggvousdbbviougouvghojvb9uhfo
+        </p>
       </div>
     </div>
-  )
+  );
 }
-

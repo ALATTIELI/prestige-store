@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import User from "./User";
 
 const productsList = [
@@ -29,6 +30,7 @@ const productsList = [
 ];
 
 export default function Order() {
+  const { t, i18n } = useTranslation();
   return (
     <div className="UserOrderDetailes">
       <div className="user-container">
@@ -37,11 +39,11 @@ export default function Order() {
           <div className="order-products-container">
             <div className="top-row">
               <div className="order-id">
-                <span className="order-id-title">Order ID</span>
+                <span className="order-id-title">{t("user.order_id")}</span>
                 <span className="order-id-value">123456789</span>
               </div>
               <div className="order-date">
-                <span className="order-date-title">Order Date</span>
+                <span className="order-date-title">{t("user.date")}</span>
                 <span className="order-date-value">12/12/2020</span>
               </div>
             </div>
@@ -56,7 +58,7 @@ export default function Order() {
                       <span className="product-name">{product.name}</span>
                     </div>
                     <div className="product-quantity">
-                      <span className="product-info-title">Quantity: </span>
+                      <span className="product-info-title">{t("user.quantity")}: </span>
                       <span className="product-info-value">
                         {product.quantity}
                       </span>

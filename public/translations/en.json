@@ -1,96 +1,104 @@
 {
-  "navbar":{
+  "navbar": {
     "home": "Home",
+    "contact_us": "Contact Us",
     "categories": "Categories",
     "all_categories": "All Categories",
-    "search_and_hit _enter": "Search and hit enter",
-    "contact_us": "Contact"
-  },
-
-  "categories": {
-    "fashion": "Fashion",
-    "electronic": "Electronic",
-    "home_and_garden": "Home and Garden",
-    "cars": "Cars",
-    "gifts": "Gifts",
-    "music": "Music",
-    "health_and_beauty": "Health and Beauty",
-    "pets": "Pets",
-    "baby_toys": "Baby Toys",
-    "groceries": "Groceries"
-  },
-
-  "flashDeals": {
-    "flash_deals": "Flash Deals"
-  },
-
-  "topcategory": {
-    "top_categories": "Top Categories"
-  },
-
-  "newArrivals": {
-    "new_arrivals": "New Arrivals",
-    "view_all": "View All"
+    "search_and_hit_enter": "Search and hit enter..."
   },
 
   "discounts": {
-    "discounts": "Discounts"
+    "discounts": "Discounts",
+    "view_all": "View All"
+  },
+
+  "categories": {
+    "categories": "Categories",
+    "view_all": "View All"
+  },
+
+  "slider": {
+    "view": "View"
+  },
+
+  "new_arrivals": {
+    "new_arrivals": "New Arrivals"
   },
 
   "brands": {
-    "brands": "Brands"
+    "brands": "Brands",
+    "view_all_brands": "View All Brands"
   },
 
-  "mobilephones": {
+  "mobile_phones": {
     "mobile_phones": "Mobile phones",
     "view_all": "View All"
   },
 
   "worldwidedelivery": {
-    "worldwide_delivery": "Worldwide Delivery"
+    "worldwide_delivery": "Delivery Across UAE",
+    "description": "We deliver across the UAE within 2-3 days of your order."
   },
 
   "safepayment": {
-    "safe_payment": "Safe Payment"
+    "safe_payment": "Safe Payment",
+    "description": "Your data is safe with us. We use the latest security technology."
   },
 
   "shopewithconfidence": {
-    "shop_with_confidence": "Shop with confidence"
+    "shop_with_confidence": "Shop with confidence",
+    "description": "We are committed to providing you with the best online shopping experience possible."
   },
 
   "24/7support": {
-    "24_7_support": "24/7 support"
+    "24_7_support": "24/7 support",
+    "description": "we are 24/7 available to help you with any questions you may have."
   },
 
-  "aboutus": {
+  "about_us": {
     "about_us": "About Us",
-    "careers": "Careers",
-    "our_stores": "Our Stores",
-    "our_cares": "Our Cares",
     "terms_and_conditions": "Terms and Conditions",
-    "privacy_policy": "Privacy Policy"
+    "privacy_policy": "Privacy Policy",
+    "returns_and_refunds": "Returns and Refunds"
   },
 
-  "costumerservice": {
-    "costumer_service": "Costumer Service",
-    "help_center": "Help Center",
-    "how_to_buy": "How to buy",
-    "track_your_order": "Track your order",
-    "coporate_and_bulk_orders": "Coporate & Bulk Orders",
-    "return_and_refunds": "Return & Refunds"
-  },
-
-  "contactus": {
+  "contact_us": {
+    "contact_us": "Contact Us",
+    "our_stores": "Our Stores",
     "email": "Email",
     "phone": "Phone"
   },
 
-  "user":{
-    "my profile": "My Profile"
+  "user": {
+    "my_account": "My Account",
+    "my_profile": "My Profile",
+    "my_orders": "My Orders",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "order_id": "Order ID",
+    "status": "Status",
+    "date": "Date",
+    "amount": "Amount",
+    "view": "View",
+    "quantity": "Quantity"
   },
 
-  "slidecard":{
-    "view": "View"
-  }
+  "login": {
+    "login_using": "Login using"
+  },
 
+  "cart": {
+    "no_items_in_cart": "No items in cart",
+    "cart_summary": "Cart Summary",
+    "total_price": "Total Price :"
+  },
+
+  "product": {
+    "brand": "Brand",
+    "stock": "Stock",
+    "add_to_cart": "Add to Cart",
+    "description": "Description"
+  }
 }

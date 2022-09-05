@@ -1,9 +1,11 @@
 import { Modal } from "@mui/material";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import Login from "../../pages/Login/Login";
 
 const Search = ({ CartItem }) => {
+  const { t, i18n } = useTranslation();
   // fixed Header
   window.addEventListener("scroll", function () {
     const search = document.querySelector(".search");
@@ -39,9 +41,9 @@ const Search = ({ CartItem }) => {
           <div className="search-box_container">
             <div className="search-box f_flex">
               <i className="fa fa-search"></i>
-              <input type="text" placeholder="Search and hit enter..." />
+              <input type="text" placeholder={t("navbar.search_and_hit_enter")} />
               <Link to="/categories">
-                <span>All Category</span>
+                <span>{t("navbar.all_categories")}</span>
               </Link>
             </div>
             <div className="suggestion">

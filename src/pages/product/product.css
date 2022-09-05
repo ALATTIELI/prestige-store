@@ -171,10 +171,10 @@
   border-bottom: 1px solid #e1e8ee;
   margin-bottom: 20px;
   font-size: 24px;
+  color: var(--maincolor);
 }
 .product-bottom .product-description p{
   font-size: 18px;
-  color: var(--maincolor);
   letter-spacing: 1px;
   /* text-transform: uppercase; */
   /* text-decoration: none; */
@@ -220,5 +220,5 @@
   .product-bottom {
     width: 100%;
   }
-  
+
 }

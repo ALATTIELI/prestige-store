@@ -1,8 +1,10 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import Cart from "./Cart";
 import "./style.css";
 
 const NewArrivals = () => {
+  const { t, i18n } = useTranslation();
   return (
     <>
       <section className="NewArrivals_background">
@@ -13,7 +15,7 @@ const NewArrivals = () => {
                 src="https://img.icons8.com/ios-filled/100/00a9e0/new.png"
                 alt="img"
               />
-              <h2>New Arrivals </h2>
+              <h2>{t("new_arrivals.new_arrivals")}</h2>
             </div>
           </div>
 

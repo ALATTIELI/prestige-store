@@ -1,33 +1,35 @@
-import React from "react"
-import Catg from "./Catg"
-import ShopCart from "./ShopCart"
-import "./style.css"
+import React from "react";
+import { useTranslation } from "react-i18next";
+import Catg from "./Catg";
+import ShopCart from "./ShopCart";
+import "./style.css";
 
 const Shop = ({ addToCart, shopItems }) => {
+  const { t, i18n } = useTranslation();
   return (
     <>
-      <section className='shop background'>
-        <div className='container d_flex'>
+      <section className="shop background">
+        <div className="container d_flex">
           <Catg />
 
-          <div className='contentWidth'>
-            <div className='heading d_flex'>
-              <div className='heading-left f_flex'>
-                <h2>Mobile Phones</h2>
+          <div className="contentWidth">
+            <div className="heading d_flex">
+              <div className="heading-left f_flex">
+                <h2>{t("mobile_phones.mobile_phones")}</h2>
               </div>
-              <div className='heading-right'>
-                <span>View all</span>
-                <i className='fa-solid fa-caret-right'></i>
+              <div className="heading-right">
+                <span>{t("mobile_phones.view_all")}</span>
+                <i className="fa-solid fa-caret-right"></i>
               </div>
             </div>
-            <div className='product-content  grid1'>
+            <div className="product-content  grid1">
               <ShopCart addToCart={addToCart} shopItems={shopItems} />
             </div>
           </div>
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default Shop
+export default Shop;
