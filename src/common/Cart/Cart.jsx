@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
 
-const Cart = ({ CartItem, addToCart, decreaseQty }) => {
+const Cart = ({ CartItem, addToCart, decreaseQty, removeItem }) => {
   // check if website is open in mobile or not
   // const isMobile = window.innerWidth < 768;
   const [isMobile, setIsMobile] = useState(false);
@@ -14,7 +14,6 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
         setIsMobile(false);
       }
     });
-    // });
   });
 
   const totalPrice = CartItem.reduce(
@@ -74,7 +73,10 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
                           </div>
                           <div className="cart-items-function">
                             <div className="removeCart">
-                              <button className="removeCartBtn">
+                              <button
+                                className="removeCartBtn"
+                                onClick={() => removeItem(item)}
+                              >
                                 <i className="fa-solid fa-xmark"></i>
                               </button>
                             </div>
@@ -119,21 +121,24 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
                         </div>
                         <div className="cart-items-function">
                           <div className="cartControl">
-                          <button
-                            className="desCart"
-                            onClick={() => decreaseQty(item)}
-                          >
-                            <i className="fa-solid fa-minus"></i>
-                          </button>
-                          <button
-                            className="incCart"
-                            onClick={() => addToCart(item)}
-                          >
-                            <i className="fa-solid fa-plus"></i>
-                          </button>
-                        </div>
+                            <button
+                              className="desCart"
+                              onClick={() => decreaseQty(item)}
+                            >
+                              <i className="fa-solid fa-minus"></i>
+                            </button>
+                            <button
+                              className="incCart"
+                              onClick={() => addToCart(item)}
+                            >
+                              <i className="fa-solid fa-plus"></i>
+                            </button>
+                          </div>
                           <div className="removeCart">
-                            <button className="removeCartBtn">
+                            <button
+                              className="removeCartBtn"
+                              onClick={() => removeItem(item)}
+                            >
                               <i className="fa-solid fa-xmark"></i>
                             </button>
                           </div>
