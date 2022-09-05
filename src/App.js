@@ -26,6 +26,7 @@ import UserProfile from "./pages/user/UserProfile";
 import UserOrders from "./pages/user/UserOrders";
 import Order from "./pages/user/Order";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+import ProductsPage from "./pages/productsPage/ProductsPage";
 
 function App() {
   /*
@@ -98,6 +99,10 @@ function App() {
     }
   };
 
+  const removeItem = (product) => {
+    setCartItem(CartItem.filter((item) => item.id !== product.id));
+  };
+
   return (
     <>
       <Suspense fallback={<div>Loading...</div>}>
@@ -117,6 +122,7 @@ function App() {
                 CartItem={CartItem}
                 addToCart={addToCart}
                 decreaseQty={decreaseQty}
+                removeItem={removeItem}
               />
             </Route>
             <Route path="/product/:id">
@@ -124,6 +130,9 @@ function App() {
             </Route>
             <Route path="/categories">
               <Categories addToCart={addToCart} />
+            </Route>
+            <Route path="/categorie/:id">
+              <ProductsPage shopItems={shopItems} addToCart={addToCart} />
             </Route>
             {/* redirect /user to /user/profile */}
             <Route path="/user" exact>
@@ -156,9 +165,6 @@ function App() {
             <Route path="/termsandconditions">
               <Termsandconditions />
             </Route>
-            {/* <Route path="/login">
-            <Login/>
-          </Route> */}
           </Switch>
           <Footer />
         </Router>

@@ -1,6 +1,14 @@
 .wrapper {
   text-align: center;
 }
+.wrapper .container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 20px;
+}
 .wrapper .img {
   margin: auto;
   width: 70px;
@@ -21,4 +29,17 @@
   font-size: 15px;
   margin-top: 20px;
   color: grey;
+}
+
+@media screen and (max-width: 480px) {
+  .wrapper {
+    padding: 0px;
+    height: fit-content;
+    width: fit-content;
+    max-width: 100%;
+  }
+  .wrapper .container {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0px;
+  }
 }
