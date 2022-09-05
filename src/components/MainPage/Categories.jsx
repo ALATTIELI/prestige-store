@@ -1,7 +1,9 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Link, link } from "react-router-dom";
 
 const Categories = () => {
+  const { t, i18n } = useTranslation();
   const data = [
     {
       cateImg: "/images/category/cat1.png",
@@ -56,9 +58,12 @@ const Categories = () => {
             </div>
           );
         })}
-        <div className="box mainpage_categories_viewAll" style={{backgroundColor:"#f2f2f2"}}>
+        <div
+          className="box mainpage_categories_viewAll"
+          style={{ backgroundColor: "#f2f2f2" }}
+        >
           <Link to="/categories">
-            <span>All Categories</span>
+            <span>{t("categories.view_all")}</span>
           </Link>
         </div>
       </div>

@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import "./style.css";
 
 const Cart = ({ CartItem, addToCart, decreaseQty, removeItem }) => {
+  const { t, i18n } = useTranslation();
+
   // check if website is open in mobile or not
   // const isMobile = window.innerWidth < 768;
   const [isMobile, setIsMobile] = useState(false);
@@ -27,7 +30,7 @@ const Cart = ({ CartItem, addToCart, decreaseQty, removeItem }) => {
         <div className="container d_flex">
           <div className="cart-details">
             {CartItem.length === 0 && (
-              <h1 className="no-items product">No Items are add in Cart</h1>
+              <h1 className="no-items product">{t("cart.no_items_in_cart")}</h1>
             )}
 
             {CartItem.map((item) => {
@@ -153,9 +156,9 @@ const Cart = ({ CartItem, addToCart, decreaseQty, removeItem }) => {
           </div>
 
           <div className="cart-total product">
-            <h2>Cart Summary</h2>
+            <h2>{t("cart.cart_summary")}</h2>
             <div className=" d_flex">
-              <h4>Total Price :</h4>
+              <h4>{t("cart.total_price")}</h4>
               <h3>AED {totalPrice}.00</h3>
             </div>
           </div>

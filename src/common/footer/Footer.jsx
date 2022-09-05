@@ -1,47 +1,49 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import "./style.css";
 
 const Footer = () => {
+  const { t, i18n } = useTranslation();
   return (
     <>
       <footer>
         <div className=" footer-container">
           <div className="container footer-left">
             <div className="footer-box">
-              <h2>About Us</h2>
+              <h2>{t("about_us.about_us")}</h2>
               <ul>
                 <Link to="/aboutus">
-                <li>About US</li>
+                <li>{t("about_us.about_us")}</li>
                 </Link>
                 <Link to="/termsandConditions">
-                <li>Terms & Conditions</li>
+                <li>{t("about_us.terms_and_conditions")}</li>
                 </Link>
                 <Link to="/privacyPolicy">
-                <li>Privacy Policy</li>
+                <li>{t("about_us.privacy_policy")}</li>
                 </Link>
                 <Link to="/returnsRefunds">
-                <li>Returns & Refunds </li>
+                <li>{t("about_us.returns_and_refunds")} </li>
                 </Link>
               </ul>
             </div>
             <div className="footer-box">
-              <h2>Contact Us</h2>
+              <h2>{t("contact_us.contact_us")}</h2>
               <ul>
                 <Link to="/contactUs">
-                  <li>Our Stores</li>
+                  <li>{t("contact_us.contact_us")}</li>
                 </Link>
                 <li>
                   Ghuwayfah St - Al Nahyan - Abu Dhabi - United Arab Emirates
                 </li>
-                <li>Email: info@prestigestore.ae</li>
-                <li>Phone: +971529744450</li>
+                <li>{t("contact_us.email")}: info@prestigestore.ae</li>
+                <li>{t("contact_us.phone")}: +971529744450</li>
               </ul>
             </div>
           </div>
           <div className="footer-right">
             <div className="box footer-logo">
-              <img src="./images/pslogo.png" alt="footer-logo" />
+              <img src="/images/pslogo.png" alt="footer-logo" />
             </div>
           </div>
         </div>

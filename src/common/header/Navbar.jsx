@@ -91,7 +91,7 @@ const Navbar = () => {
                 <Link to="/">{t("navbar.home")}</Link>
               </li>
               <li>
-                <Link to="/contactUs">Contact Us</Link>
+                <Link to="/contactUs">{t("navbar.contact_us")}</Link>
               </li>
             </ul>
           </div>

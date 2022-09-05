@@ -1,6 +1,9 @@
+import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 import "./product.css";
 
 export default function Product({ productItems, addToCart, CartItem }) {
+  const { t, i18n } = useTranslation();
   var TITLE = window.location.pathname.split("/").pop();
   // Show img from the thumbnail to the main img
   function showImg(e) {
@@ -71,8 +74,8 @@ export default function Product({ productItems, addToCart, CartItem }) {
                 <h1>{TITLE}</h1>
               </div>
               <div className="product-product-description-bottom">
-                <span>BRAND: Apple</span>
-                <span>Stock: 3</span>
+                <span>{t("product.brand")}: Apple</span>
+                <span>{t("product.stock")}: 3</span>
               </div>
             </div>
 
@@ -80,7 +83,7 @@ export default function Product({ productItems, addToCart, CartItem }) {
               <div className="product-product-price">
                 <span>980 AED</span>
                 <a href="" className="cart-btn">
-                  Add to cart
+                  {t("product.add_to_cart")}
                 </a>
               </div>
             </div>
@@ -88,66 +91,25 @@ export default function Product({ productItems, addToCart, CartItem }) {
         </div>
         <div className="product-bottom">
           <div className="product-description">
-            <h1>Product Description</h1>
+            <h1>{t("product.description")}</h1>
             <p>
-            Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla Some words
-              bla bla 
+              Some words bla bla Some words bla bla Some words bla bla Some
+              words bla bla Some words bla bla Some words bla bla Some words bla
+              bla Some words bla bla Some words bla bla Some words bla bla Some
+              words bla bla Some words bla bla Some words bla bla Some words bla
+              bla Some words bla bla Some words bla bla Some words bla bla Some
+              words bla bla Some words bla bla Some words bla bla Some words bla
+              bla Some words bla bla Some words bla bla Some words bla bla Some
+              words bla bla Some words bla bla Some words bla bla Some words bla
+              bla Some words bla bla Some words bla bla Some words bla bla Some
+              words bla bla Some words bla bla Some words bla bla Some words bla
+              bla Some words bla bla Some words bla bla Some words bla bla Some
+              words bla bla Some words bla bla Some words bla bla Some words bla
+              bla Some words bla bla Some words bla bla Some words bla bla Some
+              words bla bla Some words bla bla Some words bla bla Some words bla
+              bla Some words bla bla Some words bla bla Some words bla bla Some
+              words bla bla Some words bla bla Some words bla bla Some words bla
+              bla Some words bla bla
             </p>
           </div>
         </div>
