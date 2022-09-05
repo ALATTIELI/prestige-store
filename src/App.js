@@ -25,6 +25,7 @@ import Termsandconditions from "./pages/termsandconditions/TermsandConditions";
 import UserProfile from "./pages/user/UserProfile";
 import UserOrders from "./pages/user/UserOrders";
 import Order from "./pages/user/Order";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 function App() {
   /*
@@ -101,6 +102,7 @@ function App() {
     <>
       <Suspense fallback={<div>Loading...</div>}>
         <Router>
+          <ScrollToTop />
           <Header CartItem={CartItem} />
           <Switch>
             <Route path="/" exact>

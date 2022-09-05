@@ -286,8 +286,8 @@ header ul li a:hover {
     align-items: center;
     width: 100%;
     max-width: 100%;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .logo_width h1 {
