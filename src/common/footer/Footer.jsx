@@ -41,7 +41,7 @@ const Footer = () => {
           </div>
           <div className="footer-right">
             <div className="box footer-logo">
-              <img src="./images/pslogo.png" alt="footer-logo" />
+              <img src="/images/pslogo.png" alt="footer-logo" />
             </div>
           </div>
         </div>
