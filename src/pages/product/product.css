@@ -69,7 +69,7 @@
   position: relative;
   margin: 0;
   padding: 0;
-  max-width: 100%;
+  max-width: 50%;
   overflow: auto;
   overflow-x: scroll;
 }
@@ -217,6 +217,9 @@
   }
   .product-left-column {
     margin-right: 0;
+    max-width: 100%;
+  }
+  .product-left-column .product-thumbnails {
     max-width: 100%;
   }
   .product-right-column {
