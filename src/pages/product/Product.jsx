@@ -65,6 +65,132 @@ export default function Product({ productItems, addToCart, CartItem }) {
                   alt=""
                 />
               </div>
+              <div>
+                <img
+                  onClick={(e) => showImg(e)}
+                  data-image="red"
+                  className="active"
+                  src="https://image.khaleejtimes.com/?uuid=e61de6df-6f9a-5095-8884-a7f519185dd4&function=fit&type=preview&source=false&q=75&maxsize=1200&scaleup=0"
+                  alt=""
+                />
+              </div>
+              <div>
+                <img
+                  onClick={(e) => showImg(e)}
+                  data-image="red"
+                  className="active"
+                  src="https://image.khaleejtimes.com/?uuid=e61de6df-6f9a-5095-8884-a7f519185dd4&function=fit&type=preview&source=false&q=75&maxsize=1200&scaleup=0"
+                  alt=""
+                />
+              </div>
+              <div>
+                <img
+                  onClick={(e) => showImg(e)}
+                  data-image="red"
+                  className="active"
+                  src="https://image.khaleejtimes.com/?uuid=e61de6df-6f9a-5095-8884-a7f519185dd4&function=fit&type=preview&source=false&q=75&maxsize=1200&scaleup=0"
+                  alt=""
+                />
+              </div>
+              <div>
+                <img
+                  onClick={(e) => showImg(e)}
+                  data-image="red"
+                  className="active"
+                  src="https://image.khaleejtimes.com/?uuid=e61de6df-6f9a-5095-8884-a7f519185dd4&function=fit&type=preview&source=false&q=75&maxsize=1200&scaleup=0"
+                  alt=""
+                />
+              </div>
+              <div>
+                <img
+                  onClick={(e) => showImg(e)}
+                  data-image="red"
+                  className="active"
+                  src="https://image.khaleejtimes.com/?uuid=e61de6df-6f9a-5095-8884-a7f519185dd4&function=fit&type=preview&source=false&q=75&maxsize=1200&scaleup=0"
+                  alt=""
+                />
+              </div>
+              <div>
+                <img
+                  onClick={(e) => showImg(e)}
+                  data-image="red"
+                  className="active"
+                  src="https://image.khaleejtimes.com/?uuid=e61de6df-6f9a-5095-8884-a7f519185dd4&function=fit&type=preview&source=false&q=75&maxsize=1200&scaleup=0"
+                  alt=""
+                />
+              </div>
+              <div>
+                <img
+                  onClick={(e) => showImg(e)}
+                  data-image="red"
+                  className="active"
+                  src="https://image.khaleejtimes.com/?uuid=e61de6df-6f9a-5095-8884-a7f519185dd4&function=fit&type=preview&source=false&q=75&maxsize=1200&scaleup=0"
+                  alt=""
+                />
+              </div>
+              <div>
+                <img
+                  onClick={(e) => showImg(e)}
+                  data-image="red"
+                  className="active"
+                  src="https://image.khaleejtimes.com/?uuid=e61de6df-6f9a-5095-8884-a7f519185dd4&function=fit&type=preview&source=false&q=75&maxsize=1200&scaleup=0"
+                  alt=""
+                />
+              </div>
+              <div>
+                <img
+                  onClick={(e) => showImg(e)}
+                  data-image="red"
+                  className="active"
+                  src="https://image.khaleejtimes.com/?uuid=e61de6df-6f9a-5095-8884-a7f519185dd4&function=fit&type=preview&source=false&q=75&maxsize=1200&scaleup=0"
+                  alt=""
+                />
+              </div>
+              <div>
+                <img
+                  onClick={(e) => showImg(e)}
+                  data-image="red"
+                  className="active"
+                  src="https://image.khaleejtimes.com/?uuid=e61de6df-6f9a-5095-8884-a7f519185dd4&function=fit&type=preview&source=false&q=75&maxsize=1200&scaleup=0"
+                  alt=""
+                />
+              </div>
+              <div>
+                <img
+                  onClick={(e) => showImg(e)}
+                  data-image="red"
+                  className="active"
+                  src="https://image.khaleejtimes.com/?uuid=e61de6df-6f9a-5095-8884-a7f519185dd4&function=fit&type=preview&source=false&q=75&maxsize=1200&scaleup=0"
+                  alt=""
+                />
+              </div>
+              <div>
+                <img
+                  onClick={(e) => showImg(e)}
+                  data-image="red"
+                  className="active"
+                  src="https://image.khaleejtimes.com/?uuid=e61de6df-6f9a-5095-8884-a7f519185dd4&function=fit&type=preview&source=false&q=75&maxsize=1200&scaleup=0"
+                  alt=""
+                />
+              </div>
+              <div>
+                <img
+                  onClick={(e) => showImg(e)}
+                  data-image="red"
+                  className="active"
+                  src="https://image.khaleejtimes.com/?uuid=e61de6df-6f9a-5095-8884-a7f519185dd4&function=fit&type=preview&source=false&q=75&maxsize=1200&scaleup=0"
+                  alt=""
+                />
+              </div>
+              <div>
+                <img
+                  onClick={(e) => showImg(e)}
+                  data-image="red"
+                  className="active"
+                  src="https://image.khaleejtimes.com/?uuid=e61de6df-6f9a-5095-8884-a7f519185dd4&function=fit&type=preview&source=false&q=75&maxsize=1200&scaleup=0"
+                  alt=""
+                />
+              </div>
             </div>
           </div>
           <div className="product-right-column">

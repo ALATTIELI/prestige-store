@@ -70,11 +70,11 @@ export default function Order() {
           </div>
           <div className="order-price-detailes">
             <div className="order-price-detailes-item">
-              <span className="order-price-detailes-title">Total Amount Paid:</span>
+              <span className="order-price-detailes-title">{t("user.total_amount_paid")}:</span>
               <span className="order-price-detailes-value">1100 AED</span>
             </div>
             <div className="order-price-detailes-item">
-              <span className="order-price-detailes-title">Paid by:</span>
+              <span className="order-price-detailes-title">{t("user.paid_by")}:</span>
               <span className="order-price-detailes-value">
                 Debit/Credit card
               </span>
