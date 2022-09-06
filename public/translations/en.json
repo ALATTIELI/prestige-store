@@ -35,22 +35,22 @@
     "view_all": "View All"
   },
 
-  "worldwidedelivery": {
-    "worldwide_delivery": "Delivery Across UAE",
+  "delivery_across_UAE": {
+    "delivery_across_UAE": "Delivery Across UAE",
     "description": "We deliver across the UAE within 2-3 days of your order."
   },
 
-  "safepayment": {
+  "safe_payment": {
     "safe_payment": "Safe Payment",
-    "description": "Your data is safe with us. We use the latest security technology."
+    "description": "You card details will not be stored on our servers."
   },
 
-  "shopewithconfidence": {
+  "shop_with_confidence": {
     "shop_with_confidence": "Shop with confidence",
     "description": "We are committed to providing you with the best online shopping experience possible."
   },
 
-  "24/7support": {
+  "24_7_support": {
     "24_7_support": "24/7 support",
     "description": "we are 24/7 available to help you with any questions you may have."
   },
@@ -82,7 +82,9 @@
     "date": "Date",
     "amount": "Amount",
     "view": "View",
-    "quantity": "Quantity"
+    "quantity": "Quantity",
+    "total_amount_paid": "Total Amount Paid",
+    "paid_by": "Paid By"
   },
 
   "login": {
@@ -100,5 +102,17 @@
     "stock": "Stock",
     "add_to_cart": "Add to Cart",
     "description": "Description"
+  },
+  "locations":{
+    "prestige_one_mobile_Phones_mbz_city_branch": "Prestige One Mobile Phones - MBZ City Branch",
+    "prestige_one_mobile_phones_west_yas_plaza_branch": "Prestige One Mobile Phones - West Yas Plaza Branch",
+    "prestige_one_mobile_phones_defence_road": "Prestige One Mobile Phones - Defence Road",
+    "al_shamkhah_prestige_phones": "Al Shamkhah Prestige Phones",
+    "prestige_zakher_phones": "Prestige Zakher Phones",
+    "prestige_yas_phone_L.L.C": "Prestige Yas Phone L.L.C",
+    "telephono": "Telephono",
+    "prestige_one_mobile_phones_yas_branch": "Prestige One Mobile Phones - Yas Branch",
+    "prestige_yas_phones_L.T.D": "Prestige Yas Phones L.T.D",
+    "view_in_google_maps": "View in Google Maps"
   }
 }

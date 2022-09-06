@@ -1,18 +1,21 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import User from "./User";
 
 export default function UserProfile() {
+  const { t, i18n } = useTranslation();
+
   return (
     <div className="UserProfile">
       <div className="user-container">
         <User />
         <div className="user-right">
           <div className="user-right-top">
-            <span className="title">My Profile</span>
+            <span className="title">{t("user.my_profile")}</span>
           </div>
           <div className="user-right-bottom">
             <div className="user-info">
-              <span className="user-info-title">Name</span>
+              <span className="user-info-title">{t("user.name")}</span>
               <input
                 className="user-info-value"
                 placeholder="Ahmed"
@@ -20,7 +23,7 @@ export default function UserProfile() {
               />
             </div>
             <div className="user-info">
-              <span className="user-info-title">Email</span>
+              <span className="user-info-title">{t("user.email")}</span>
               <input
                 className="user-info-value"
                 placeholder="email@gmail.com"
@@ -28,7 +31,7 @@ export default function UserProfile() {
               />
             </div>
             <div className="user-info">
-              <span className="user-info-title">Phone</span>
+              <span className="user-info-title">{t("user.phone")}</span>
               <input
                 className="user-info-value"
                 placeholder="+20123456789"
@@ -36,7 +39,7 @@ export default function UserProfile() {
               />
             </div>
             <div className="user-info">
-              <span className="user-info-title">Address</span>
+              <span className="user-info-title">{t("user.address")}</span>
               <input
                 className="user-info-value"
                 placeholder="AJM - SNVNDKSKV"

@@ -2,6 +2,7 @@ import React from "react";
 import User from "./User";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const orders = [
   {
@@ -19,30 +20,32 @@ const orders = [
 ];
 
 export default function UserOrders() {
+  const { t, i18n } = useTranslation();
+
   return (
     <div className="UserOrders">
       <div className="user-container">
         <User />
         <div className="user-right">
           <div className="user-right-top">
-            <span className="title">My Orders</span>
+            <span className="title">{t("user.my_orders")}</span>
           </div>
           <div className="user-right-bottom">
             <div className="order-header">
               <div className="order-header-item id">
-                <span className="order-header-item-title">Order ID</span>
+                <span className="order-header-item-title">{t("user.order_id")}</span>
               </div>
               <div className="order-header-item">
-                <span className="order-header-item-title">Status</span>
+                <span className="order-header-item-title">{t("user.status")}</span>
               </div>
               <div className="order-header-item">
-                <span className="order-header-item-title">Date</span>
+                <span className="order-header-item-title">{t("user.date")}</span>
               </div>
               <div className="order-header-item">
-                <span className="order-header-item-title">Amount</span>
+                <span className="order-header-item-title">{t("user.amount")}</span>
               </div>
               <div className="order-header-item view">
-                <span className="order-header-item-title">View</span>
+                <span className="order-header-item-title">{t("user.view")}</span>
               </div>
             </div>
             {orders.map((order) => (
