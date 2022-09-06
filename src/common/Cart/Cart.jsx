@@ -155,11 +155,34 @@ const Cart = ({ CartItem, addToCart, decreaseQty, removeItem }) => {
             })}
           </div>
 
-          <div className="cart-total product">
-            <h2>{t("cart.cart_summary")}</h2>
-            <div className=" d_flex">
-              <h4>{t("cart.total_price")}</h4>
-              <h3>AED {totalPrice}.00</h3>
+          <div className="cart-summary">
+            <div className="payment-method">
+              <h3>{t("cart.payment_method")}</h3>
+              <tbody>
+                <tr>
+                  <td>
+                    <input type="radio" name="payment" id="cash" />
+                    <label htmlFor="cash">{t("cart.cash_on_delivery")}</label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="radio" name="payment" id="card" />
+                    <label htmlFor="card">{t("cart.card")}</label>
+                  </td>
+                </tr>
+              </tbody>
+            </div>
+            <div className="cart-total product">
+              <h2>{t("cart.cart_summary")}</h2>
+              <div className="d_flex">
+                <h4>{t("cart.total_price")}</h4>
+                <h3>AED {totalPrice}.00</h3>
+              </div>
+              <span>(5% VAT INCLUDED)</span>
+            </div>
+            <div className="cart-checkout">
+              <button className="checkout-btn">{t("cart.checkout")}</button>
             </div>
           </div>
         </div>

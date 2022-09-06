@@ -93,7 +93,11 @@
   "cart": {
     "no_items_in_cart": "لا يوجد عناصر في السلة",
     "cart_summary": "ملخص السلة",
-    "total_price": "السعر الكلي :"
+    "total_price": "السعر الكلي :",
+    "payment_method": "طريقة الدفع",
+    "cash_on_delivery": "الدفع عند الاستلام",
+    "card": "بطاقة الائتمان",
+    "checkout": "الدفع"
   },
 
   "product": {
