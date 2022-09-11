@@ -7,14 +7,14 @@ import Wrapper from "../components/wrapper/Wrapper";
 
 import "../i18n";
 
-const Pages = ({ productItems, addToCart, CartItem, shopItems }) => {
+const Pages = () => {
   return (
     <>
-        <Home CartItem={CartItem} />
-        <Discounts productItems={productItems} addToCart={addToCart} />
-        <NewArrivals />
-        <Shop shopItems={shopItems} addToCart={addToCart} />
-        <Wrapper />
+      <Home />
+      <Discounts />
+      <NewArrivals />
+      <Shop />
+      <Wrapper />
     </>
   );
 };

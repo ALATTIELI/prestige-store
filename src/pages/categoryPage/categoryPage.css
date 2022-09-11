@@ -1,0 +1,20 @@
+.CategoryPage {
+  width: 100%;
+  height: 100%;
+  background-color: #f2f2f2;
+}
+.CategoryPage .container {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+.categoryPageHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.categoryPageHeader h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}

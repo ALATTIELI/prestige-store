@@ -46,7 +46,15 @@
 
 import React, { useState } from "react"
 
-const ShopCart = ({ shopItems, addToCart }) => {
+const ShopCart = () => {
+  const shopItems = [
+    {
+      id: 1,
+      name: "Product 1",
+      price: 100,
+      quantity: 1,
+    },
+  ];
   const [count, setCount] = useState(0)
   const increment = () => {
     setCount(count + 1)
@@ -70,7 +78,9 @@ const ShopCart = ({ shopItems, addToCart }) => {
                 <h3>{shopItems.name}</h3>
                 <div className='price'>
                   <h4>AED {shopItems.price}.00 </h4>
-                  <button onClick={() => addToCart(shopItems)}>
+                  <button 
+                  // onClick={() => addToCart(shopItems)}
+                  >
                     <i className='fa fa-plus'></i>
                   </button>
                 </div>

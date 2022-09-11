@@ -1,11 +1,6 @@
 import React, { useState, Suspense } from "react";
 import "./App.css";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Header from "./common/header/Header";
 import Pages from "./pages/Pages";
 import Data from "./components/Data";
@@ -17,7 +12,6 @@ import Categories from "./pages/categories/Categories";
 import User from "./pages/user/User";
 import Brands from "./pages/brands/Brands";
 import ContactUs from "./pages/contactUs/ContactUs";
-import Login from "./pages/Login/Login";
 import AboutUs from "./pages/aboutus/AboutUs";
 import PrivacyPolicy from "./pages/privacyPolicy/PrivacyPolicy";
 import Returnsandrefunds from "./pages/returnsRefunds/ReturnsandRefunds";
@@ -27,147 +21,53 @@ import UserOrders from "./pages/user/UserOrders";
 import Order from "./pages/user/Order";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import ProductsPage from "./pages/productsPage/ProductsPage";
+import LoginPage from "./pages/loginPage/LoginPage";
+import CategoryPage from "./pages/categoryPage/CategoryPage";
 
 function App() {
-  /*
-  step1 :  const { productItems } = Data 
-  lai pass garne using props
-  
-  Step 2 : item lai cart ma halne using useState
-  ==> CartItem lai pass garre using props from  <Cart CartItem={CartItem} /> ani import garrxa in cartItem ma
- 
-  Step 3 :  chai flashCard ma xa button ma
-
-  Step 4 :  addToCart lai chai pass garne using props in pages and cart components
-  */
-
-  //Step 1 :
-  const { productItems } = Data;
-  const { shopItems } = Sdata;
-
-  //Step 2 :
-  const [CartItem, setCartItem] = useState([]);
-
-  //Step 4 :
-  const addToCart = (product) => {
-    // if hamro product alredy cart xa bhane  find garna help garxa
-    const productExit = CartItem.find((item) => item.id === product.id);
-    // if productExit chai alredy exit in cart then will run fun() => setCartItem
-    // ani inside => setCartItem will run => map() ani yo map() chai each cart ma
-    // gayara check garxa if item.id ra product.id chai match bhayo bhane
-    // productExit product chai display garxa
-    // ani increase  exits product QTY by 1
-    // if item and product doesnt match then will add new items
-    if (productExit) {
-      setCartItem(
-        CartItem.map((item) =>
-          item.id === product.id
-            ? { ...productExit, qty: productExit.qty + 1 }
-            : item
-        )
-      );
-    } else {
-      // but if the product doesnt exit in the cart that mean if card is empty
-      // then new product is added in cart  and its qty is initalize to 1
-      setCartItem([...CartItem, { ...product, qty: 1 }]);
-    }
-  };
-
-  // Stpe: 6
-  const decreaseQty = (product) => {
-    // if hamro product alredy cart xa bhane  find garna help garxa
-    const productExit = CartItem.find((item) => item.id === product.id);
-
-    // if product is exit and its qty is 1 then we will run a fun  setCartItem
-    // inside  setCartItem we will run filter to check if item.id is match to product.id
-    // if the item.id is doesnt match to product.id then that items are display in cart
-    // else
-    if (productExit.qty === 1) {
-      setCartItem(CartItem.filter((item) => item.id !== product.id));
-    } else {
-      // if product is exit and qty  of that produt is not equal to 1
-      // then will run function call setCartItem
-      // inside setCartItem we will run map method
-      // this map() will check if item.id match to produt.id  then we have to desc the qty of product by 1
-      setCartItem(
-        CartItem.map((item) =>
-          item.id === product.id
-            ? { ...productExit, qty: productExit.qty - 1 }
-            : item
-        )
-      );
-    }
-  };
-
-  const removeItem = (product) => {
-    setCartItem(CartItem.filter((item) => item.id !== product.id));
-  };
-
+  var user = false;
   return (
     <>
       <Suspense fallback={<div>Loading...</div>}>
-        <Router>
+        <BrowserRouter>
           <ScrollToTop />
-          <Header CartItem={CartItem} />
-          <Switch>
-            <Route path="/" exact>
-              <Pages
-                productItems={productItems}
-                addToCart={addToCart}
-                shopItems={shopItems}
-              />
-            </Route>
-            <Route path="/cart" exact>
-              <Cart
-                CartItem={CartItem}
-                addToCart={addToCart}
-                decreaseQty={decreaseQty}
-                removeItem={removeItem}
-              />
-            </Route>
-            <Route path="/product/:id">
-              <Product addToCart={addToCart} />
-            </Route>
-            <Route path="/categories">
-              <Categories addToCart={addToCart} />
-            </Route>
-            <Route path="/categorie/:id">
-              <ProductsPage shopItems={shopItems} addToCart={addToCart} />
-            </Route>
+          <Header />
+          <Routes>
+            <Route path="/" exact element={<Pages />} />
+            <Route path="/cart" exact element={<Cart />} />
+            <Route path="/product/:id" element={<Product />} />
+            <Route path="/categories" element={<Categories />} />
+            <Route path="/category/:id" element={<CategoryPage />} />
             {/* redirect /user to /user/profile */}
-            <Route path="/user" exact>
-              <Redirect to="/user/profile" />
+            <Route path="/user" element={<User />}>
+              <Route path="" element={<UserProfile />} />
+              <Route path="orders" element={<UserOrders />} />
+              <Route path="order/:id" element={<Order />} />
             </Route>
-            <Route path="/user/profile">
-              <UserProfile />
-            </Route>
-            <Route path="/user/orders">
-              <UserOrders />
-            </Route>
-            <Route path="/user/order/:id">
-              <Order />
-            </Route>
-            <Route path="/brands">
-              <Brands addToCart={addToCart} />
-            </Route>
-            <Route path="/contactus">
-              <ContactUs />
-            </Route>
-            <Route path="/aboutus">
-              <AboutUs />
-            </Route>
-            <Route path="/privacypolicy">
-              <PrivacyPolicy />
-            </Route>
-            <Route path="/returnsRefunds">
-              <Returnsandrefunds />
-            </Route>
-            <Route path="/termsandconditions">
-              <Termsandconditions />
-            </Route>
-          </Switch>
+            <Route path="/user/profile" element={<UserProfile />} />
+
+            <Route path="/user/orders" element={<UserOrders />} />
+            <Route path="/user/order/:id" element={<Order />} />
+            <Route path="/brands" element={<Brands />} />
+            <Route path="/contactus" element={<ContactUs />} />
+
+            <Route path="/aboutus" element={<AboutUs />} />
+
+            <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+            <Route path="/returnsRefunds" element={<Returnsandrefunds />} />
+
+            <Route
+              path="/termsandconditions"
+              element={<Termsandconditions />}
+            />
+
+            <Route
+              path="/login"
+              element={user ? <Navigate to="/" /> : <LoginPage />}
+            />
+          </Routes>
           <Footer />
-        </Router>
+        </BrowserRouter>
       </Suspense>
     </>
   );

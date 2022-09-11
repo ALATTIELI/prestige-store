@@ -2,9 +2,17 @@ import { Modal } from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import Login from "../../pages/Login/Login";
+import Login from "../../components/Login/Login";
 
-const Search = ({ CartItem }) => {
+const Search = () => {
+  const CartItem = [
+    {
+      id: 1,
+      name: "Product 1",
+      price: 100,
+      quantity: 1,
+    },
+  ];
   const { t, i18n } = useTranslation();
   // fixed Header
   window.addEventListener("scroll", function () {
@@ -26,22 +34,25 @@ const Search = ({ CartItem }) => {
             className="login-modal"
           >
             {/* <div> */}
-              {/* <div className="modalBackdrop" onClick={handleClose}></div> */}
-              <Login />
+            {/* <div className="modalBackdrop" onClick={handleClose}></div> */}
+            <Login />
             {/* </div> */}
           </Modal>
         </div>
         <div className="container c_flex">
           <div className="logo_width">
             <Link to="/">
-            <h1>Prestige Store</h1>
+              <h1>Prestige Store</h1>
             </Link>
           </div>
 
           <div className="search-box_container">
             <div className="search-box f_flex">
               <i className="fa fa-search"></i>
-              <input type="text" placeholder={t("navbar.search_and_hit_enter")} />
+              <input
+                type="text"
+                placeholder={t("navbar.search_and_hit_enter")}
+              />
               <Link to="/categories">
                 <span>{t("navbar.all_categories")}</span>
               </Link>

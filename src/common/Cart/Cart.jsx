@@ -2,8 +2,16 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import "./style.css";
 
-const Cart = ({ CartItem, addToCart, decreaseQty, removeItem }) => {
+const Cart = () => {
   const { t, i18n } = useTranslation();
+  const CartItem = [
+    {
+      id: 1,
+      name: "Product 1",
+      price: 100,
+      quantity: 1,
+    },
+  ]
 
   // check if website is open in mobile or not
   // const isMobile = window.innerWidth < 768;
@@ -49,13 +57,13 @@ const Cart = ({ CartItem, addToCart, decreaseQty, removeItem }) => {
                           <div className="cartControl d_flex">
                             <button
                               className="desCart"
-                              onClick={() => decreaseQty(item)}
+                              // onClick={() => decreaseQty(item)}
                             >
                               <i className="fa-solid fa-minus"></i>
                             </button>
                             <button
                               className="incCart"
-                              onClick={() => addToCart(item)}
+                              // onClick={() => addToCart(item)}
                             >
                               <i className="fa-solid fa-plus"></i>
                             </button>
@@ -78,7 +86,7 @@ const Cart = ({ CartItem, addToCart, decreaseQty, removeItem }) => {
                             <div className="removeCart">
                               <button
                                 className="removeCartBtn"
-                                onClick={() => removeItem(item)}
+                                // onClick={() => removeItem(item)}
                               >
                                 <i className="fa-solid fa-xmark"></i>
                               </button>
@@ -126,13 +134,13 @@ const Cart = ({ CartItem, addToCart, decreaseQty, removeItem }) => {
                           <div className="cartControl">
                             <button
                               className="desCart"
-                              onClick={() => decreaseQty(item)}
+                              // onClick={() => decreaseQty(item)}
                             >
                               <i className="fa-solid fa-minus"></i>
                             </button>
                             <button
                               className="incCart"
-                              onClick={() => addToCart(item)}
+                              // onClick={() => addToCart(item)}
                             >
                               <i className="fa-solid fa-plus"></i>
                             </button>
@@ -140,7 +148,7 @@ const Cart = ({ CartItem, addToCart, decreaseQty, removeItem }) => {
                           <div className="removeCart">
                             <button
                               className="removeCartBtn"
-                              onClick={() => removeItem(item)}
+                              // onClick={() => removeItem(item)}
                             >
                               <i className="fa-solid fa-xmark"></i>
                             </button>
