@@ -65,23 +65,36 @@ export const getCurrentUser = async (dispatch) => {
     dispatch(loginFailure());
   }
 };
+
+// get image
+export const getImageById = (id) => {
+  // console.log("getImageById");
+  try {
+    // const response = await publicRequest.get(`/images/${id}`);
+    const url = `${BASE_URL}/images/${id}`;
+    return url;
+  } catch (err) {
+    return err;
+  }
+};
+
 // ====== HOME PAGE ======
-// get latest users
-export const getLatestUsers = async () => {
-  console.log("getLatestUsers");
+// get latest 5 discounts
+export const getLatestDiscounts = async () => {
+  console.log("getLatestDiscounts");
   var st = await checkServer().then((res) => res.status);
   console.log(st);
   if (st === 200) {
     try {
-      const response = await privateRequest.get("/users/?new=true");
+      const response = await publicRequest.get("/products/discounts?new=true");
       if (response.status === 200) {
         console.log(response);
         return response.data;
       } else {
-        return new Error(response.data.message);
+        return null;
       }
     } catch (error) {
-      return new Error(error);
+      return null;
     }
   } else {
     console.log("Server is down");
