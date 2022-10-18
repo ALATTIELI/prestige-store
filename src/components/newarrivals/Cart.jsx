@@ -1,24 +1,62 @@
-import React from "react"
-import Ndata from "./Ndata"
+import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import { getImageById, getLatestProducts } from "../../redux/apiCalls";
+import Ndata from "./Ndata";
 
 const Cart = () => {
+  const { t, i18n } = useTranslation();
+  const [productItems, setProductItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await getLatestProducts();
+        console.log(res);
+        if (res !== null) {
+          setProductItems(res);
+          setLoading(false);
+        } else {
+          setLoading(true);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    fetchData();
+  }, []);
+
+  const handleClick = (id) => {
+    navigate(`/product/${id}`);
+  };
+
   return (
     <>
-      <div className='content NewArrivals-grid product'>
-        {Ndata.map((val, index) => {
+      <div className="NewArrivals-grid">
+        {productItems.map((productItem) => {
           return (
-            <div className='box' key={index}>
-              <div className='img'>
-                <img src={val.cover} alt='' />
+            <div
+              className="box"
+              key={productItem._id}
+              onClick={() => handleClick(productItem._id)}
+            >
+              <div className="img">
+                <img src={getImageById(productItem.images[0])} alt="" />
               </div>
-              <h4>{val.name}</h4>
-              <span>AED {val.price}</span>
+              <h4>
+                {i18n.language === "en"
+                  ? productItem.name_en
+                  : productItem.name_ar}
+              </h4>
+              <span>AED {productItem.TotalPrice}</span>
             </div>
-          )
+          );
         })}
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Cart
+export default Cart;

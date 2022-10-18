@@ -79,6 +79,26 @@ export const getImageById = (id) => {
 };
 
 // ====== HOME PAGE ======
+// get featured products
+export const getFeaturedProducts = async () => {
+  // console.log("getFeaturedProducts");
+  var st = await checkServer().then((res) => res.status);
+  // console.log(st);
+  if (st === 200) {
+    try {
+      const response = await publicRequest.get("/featuredProducts");
+      if (response.status === 200) {
+        // console.log(response);
+        return response.data;
+      } else {
+        return false;
+      }
+    } catch (error) {
+      return false;
+    }
+  }
+};
+
 // get latest 5 discounts
 export const getLatestDiscounts = async () => {
   console.log("getLatestDiscounts");
@@ -102,27 +122,51 @@ export const getLatestDiscounts = async () => {
   }
 };
 
-// get latest orders
-export const getLatestOrders = async () => {
-  console.log("getLatestOrders");
+// get latest 10 products
+export const getLatestProducts = async () => {
+  console.log("getLatestProducts");
   var st = await checkServer().then((res) => res.status);
   console.log(st);
   if (st === 200) {
     try {
-      const response = await privateRequest.get("/orders/?new=true");
+      const response = await privateRequest.get("/products/?new=true");
       if (response.status === 200) {
         console.log(response);
         return response.data;
       } else {
         // return error message
-        return new Error(response.data.message);
+        return null;
       }
     } catch (error) {
-      return new Error(error);
+      return null;
     }
   } else {
     console.log("Server is down");
-    return "Server is down";
+    return null;
+  }
+};
+
+// get mobile phones
+export const getMobilePhones = async () => {
+  console.log("getMobilePhones");
+  var st = await checkServer().then((res) => res.status);
+  console.log(st);
+  if (st === 200) {
+    try {
+      const response = await privateRequest.get("/products/category/62c4806f9c8e583abd1d1202");
+      if (response.status === 200) {
+        console.log(response);
+        return response.data;
+      } else {
+        // return error message
+        return null;
+      }
+    } catch (error) {
+      return null;
+    }
+  } else {
+    console.log("Server is down");
+    return null;
   }
 };
 
@@ -215,34 +259,7 @@ export const searchProducts = async (search) => {
   }
 };
 // ====== NEW PRODUCT ======
-// create new product
-export const createProduct = async (product) => {
-  console.log("createProduct");
-  var st = await checkServer().then((res) => res.status);
-  console.log(st);
-  if (st === 200) {
-    try {
-      const response = await privateRequest.post(
-        "/products/add",
-        product,
-        (Headers = {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        })
-      );
 
-      if (response.status === 200) {
-        console.log(response);
-        return response.data;
-      } else {
-        return false;
-      }
-    } catch (error) {
-      return false;
-    }
-  }
-};
 // get product by id
 export const getProductById = async (id) => {
   console.log("getProductById");
@@ -433,6 +450,25 @@ export const getBrands = async () => {
   if (st === 200) {
     try {
       const response = await publicRequest.get("/brands");
+      if (response.status === 200) {
+        console.log(response);
+        return response.data;
+      } else {
+        return false;
+      }
+    } catch (error) {
+      return false;
+    }
+  }
+};
+// get brands for home page
+export const getLimitedBrands = async () => {
+  console.log("getLimitedBrands");
+  var st = await checkServer().then((res) => res.status);
+  console.log(st);
+  if (st === 200) {
+    try {
+      const response = await publicRequest.get("/brands?limit=9");
       if (response.status === 200) {
         console.log(response);
         return response.data;

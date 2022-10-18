@@ -1,13 +1,17 @@
-import React from "react";
-import Sdata from "./Sdata";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { t } from "i18next";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import { getFeaturedProducts, getImageById } from "../../redux/apiCalls";
 
 const SlideCard = () => {
   const { t, i18n } = useTranslation();
+  const [productItems, setProductItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
   const settings = {
     // dots: true,
     infinite: true,
@@ -19,20 +23,47 @@ const SlideCard = () => {
     //   return <ul style={{ margin: "10px" }}>{dots}</ul>
     // },
   };
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await getFeaturedProducts();
+        console.log(res);
+        if (res !== null) {
+          setProductItems(res);
+          setLoading(false);
+        } else {
+          setLoading(true);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    fetchData();
+  }, []);
+
+  const handleClick = (id) => {
+    navigate(`/brand/${id}`);
+  };
+
   return (
     <>
       <Slider {...settings}>
-        {Sdata.map((value, index) => {
+        {productItems.map((productItem) => {
           return (
             <>
-              <div className="slider-box" key={index}>
+              <div className="slider-box" key={productItem._id}>
                 <div className="left">
-                  <h1>{value.title}</h1>
-                  <p>{value.desc}</p>
+                  <h1>{productItem.title}</h1>
+                  <p>
+                    {i18n.language === "en"
+                      ? productItem.description_en
+                      : productItem.description_ar}
+                  </p>
                   <button className="btn-primary">{t("slider.view")}</button>
                 </div>
                 <div className="right">
-                  <img src={value.cover} alt="" />
+                  <img src={getImageById(productItem.image)} alt="" />
                 </div>
               </div>
             </>
