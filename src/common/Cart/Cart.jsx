@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import "./style.css";
 
 const Cart = () => {
+  // eslint-disable-next-line no-unused-vars
   const { t, i18n } = useTranslation();
   const CartItem = [
     {
