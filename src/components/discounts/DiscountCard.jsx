@@ -7,13 +7,8 @@ import {
   getLatestDiscounts,
 } from "../../redux/apiCalls";
 
-// const BASE_URL = "http://localhost:3000/api/v1";
-async function getImageUrl(id) {
-  const url = getImageById(id);
-  return url;
-}
-
 const DiscountCard = () => {
+  // eslint-disable-next-line no-unused-vars
   const { t, i18n } = useTranslation();
   const [productItems, setProductItems] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -25,12 +20,6 @@ const DiscountCard = () => {
         const res = await getLatestDiscounts();
         console.log(res);
         if (res !== null) {
-          // res.map(async (item) => {
-          //   const discount = await getDiscountById(item.discountID);
-          //   const discount_percentage = discount.discount_percentage;
-          //   const newItem = { ...item, discount_percentage };
-          //   setProductItems((prev) => [...prev, newItem]);
-          // });
           setProductItems(res);
           setLoading(false);
         } else {

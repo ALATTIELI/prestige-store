@@ -1,12 +1,10 @@
-import React, { useState, Suspense } from "react";
+import React, { Suspense } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Header from "./common/header/Header";
 import Pages from "./pages/Pages";
-import Data from "./components/Data";
 import Cart from "./common/Cart/Cart";
 import Footer from "./common/footer/Footer";
-import Sdata from "./components/shops/Sdata";
 import Product from "./pages/product/Product";
 import Categories from "./pages/categories/Categories";
 import User from "./pages/user/User";

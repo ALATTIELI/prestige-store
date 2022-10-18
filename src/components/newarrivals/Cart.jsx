@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { getImageById, getLatestProducts } from "../../redux/apiCalls";
-import Ndata from "./Ndata";
 
 const Cart = () => {
+  // eslint-disable-next-line no-unused-vars
   const { t, i18n } = useTranslation();
   const [productItems, setProductItems] = useState([]);
+  // eslint-disable-next-line no-unused-vars
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 

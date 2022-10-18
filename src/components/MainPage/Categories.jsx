@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link, link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getCategories, getImageById } from "../../redux/apiCalls";
 
 const Categories = () => {
   const { t, i18n } = useTranslation();
   const [productItems, setProductItems] = useState([]);
+  // eslint-disable-next-line no-unused-vars
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
@@ -28,7 +29,7 @@ const Categories = () => {
   }, []);
 
   const handleClick = (id) => {
-    navigate(`/brand/${id}`);
+    navigate(`/category/${id}`);
   };
 
   return (
@@ -36,7 +37,11 @@ const Categories = () => {
       <div className="category">
         {productItems.map((productItem) => {
           return (
-            <div className="box f_flex" key={productItem._id}>
+            <div
+              className="box f_flex"
+              key={productItem._id}
+              onClick={() => handleClick(productItem._id)}
+            >
               <img src={getImageById(productItem.image)} alt="" />
               <span>
                 {i18n.language === "en"

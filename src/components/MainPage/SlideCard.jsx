@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+// eslint-disable-next-line no-unused-vars
 import { t } from "i18next";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
@@ -10,6 +11,7 @@ import { getFeaturedProducts, getImageById } from "../../redux/apiCalls";
 const SlideCard = () => {
   const { t, i18n } = useTranslation();
   const [productItems, setProductItems] = useState([]);
+  // eslint-disable-next-line no-unused-vars
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const settings = {
@@ -52,7 +54,11 @@ const SlideCard = () => {
         {productItems.map((productItem) => {
           return (
             <>
-              <div className="slider-box" key={productItem._id}>
+              <div
+                className="slider-box"
+                key={productItem._id}
+                onClick={() => handleClick(productItem._id)}
+              >
                 <div className="left">
                   <h1>{productItem.title}</h1>
                   <p>

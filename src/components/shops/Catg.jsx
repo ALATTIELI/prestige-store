@@ -1,16 +1,15 @@
+// eslint-disable-next-line no-unused-vars
 import { t } from "i18next";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
-import {
-  getBrands,
-  getImageById,
-  getLimitedBrands,
-} from "../../redux/apiCalls";
+import { getImageById, getLimitedBrands } from "../../redux/apiCalls";
 
 const Catg = () => {
+  // eslint-disable-next-line no-unused-vars
   const { t, i18n } = useTranslation();
   const [productItems, setProductItems] = useState([]);
+  // eslint-disable-next-line no-unused-vars
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
