@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 import {
   getDiscountById,
   getImageById,
@@ -12,10 +14,10 @@ async function getImageUrl(id) {
 }
 
 const DiscountCard = () => {
+  const { t, i18n } = useTranslation();
   const [productItems, setProductItems] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  const [discounts, setDiscounts] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchData() {
@@ -58,6 +60,10 @@ const DiscountCard = () => {
     }
   };
 
+  const handleClick = (id) => {
+    navigate(`/product/${id}`);
+  };
+
   return (
     <>
       <div className="discount_card">
@@ -76,10 +82,14 @@ const DiscountCard = () => {
           ) : (
             productItems.map((productItem) => {
               return (
-                <div className="discount_card_product">
+                <div
+                  className="discount_card_product"
+                  key={productItem._id}
+                  onClick={() => handleClick(productItem._id)}
+                >
                   <div className="discount_card_product_img">
                     <span className="top_left_popup">
-                      {async() => {
+                      {async () => {
                         return await getDiscount(productItem.discountID);
                       }}
                       % Off
@@ -87,7 +97,11 @@ const DiscountCard = () => {
                     <img src={getImageById(productItem.images[0])} alt="" />
                   </div>
                   <div className="discount_card_product_details">
-                    <h3>{productItem.name_en}</h3>
+                    <h3>
+                      {i18n.language === "en"
+                        ? productItem.name_en
+                        : productItem.name_ar}
+                    </h3>
                     <div className="discount_card_product_price">
                       <div className="DiscountPrice">
                         <span className="DiscountDPrice">
