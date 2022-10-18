@@ -13,6 +13,7 @@ const Cart = () => {
     },
   ]
 
+  document.title = "Cart";
   // check if website is open in mobile or not
   // const isMobile = window.innerWidth < 768;
   const [isMobile, setIsMobile] = useState(false);
