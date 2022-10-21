@@ -19,6 +19,10 @@
   background: transparent !important;
   color: transparent !important;
 }
+.homeSlide .container{
+  width: 90%;
+  height: 90%;
+}
 .homeSlide ul li button::before {
   font-size: 15px !important;
   color: var(--maincolor);
@@ -44,6 +48,9 @@
   display: flex;
   justify-content: space-between;
 }
+.slick-slider{
+  height: 100%;
+}
 .slick-slider .left{
   flex: 1;
 }
@@ -56,8 +63,8 @@
 }
 .slick-slider .right img{
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: fit-content;
+  object-fit: contain;
   border-radius: 5px;
 }
 
@@ -67,6 +74,7 @@
   }
   .home .container {
     max-width: 100%;
+    height: 200px;
   }
   .home .container .category{
     display: none;
@@ -108,9 +116,11 @@
     flex-direction: column;
     justify-content: space-between;
     /* align-items: center; */
+    height: 100%;
   }
   .slider-box{
     width: 100%;
+    height: 100%;
     margin: 0px;
     padding: 5px 10px;
     transition: 0.5s;

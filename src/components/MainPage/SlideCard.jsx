@@ -19,7 +19,7 @@ const SlideCard = () => {
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    // autoplay: true,
     arrows: false,
     // appendDots: (dots) => {
     //   return <ul style={{ margin: "10px" }}>{dots}</ul>
@@ -45,7 +45,7 @@ const SlideCard = () => {
   }, []);
 
   const handleClick = (id) => {
-    navigate(`/brand/${id}`);
+    navigate(`/product/${id}`);
   };
 
   return (
@@ -60,7 +60,11 @@ const SlideCard = () => {
                 onClick={() => handleClick(productItem._id)}
               >
                 <div className="left">
-                  <h1>{productItem.title}</h1>
+                  <h1>
+                    {i18n.language === "en"
+                      ? productItem.title_en
+                      : productItem.title_ar}
+                  </h1>
                   <p>
                     {i18n.language === "en"
                       ? productItem.description_en
