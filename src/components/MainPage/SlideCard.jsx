@@ -15,15 +15,15 @@ const SlideCard = () => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const settings = {
-    // dots: true,
+    dots: true,
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     // autoplay: true,
     arrows: false,
-    // appendDots: (dots) => {
-    //   return <ul style={{ margin: "10px" }}>{dots}</ul>
-    // },
+    appendDots: (dots) => {
+      return <ul style={{ margin: "10px" }}>{dots}</ul>
+    },
   };
 
   useEffect(() => {
@@ -54,12 +54,15 @@ const SlideCard = () => {
         {productItems.map((productItem) => {
           return (
             <>
-              <div
-                className="slider-box"
-                key={productItem._id}
-                onClick={() => handleClick(productItem._id)}
-              >
-                <div className="left">
+              <div className="slider-box" key={productItem._id}>
+                <div
+                  className="left"
+                  style={
+                    i18n.language === "en"
+                      ? { textAlign: "left" }
+                      : { textAlign: "right" }
+                  }
+                >
                   <h1>
                     {i18n.language === "en"
                       ? productItem.title_en
@@ -70,7 +73,12 @@ const SlideCard = () => {
                       ? productItem.description_en
                       : productItem.description_ar}
                   </p>
-                  <button className="btn-primary">{t("slider.view")}</button>
+                  <button
+                    className="btn-primary"
+                    onClick={() => handleClick(productItem._id)}
+                  >
+                    {t("slider.view")}
+                  </button>
                 </div>
                 <div className="right">
                   <img src={getImageById(productItem.image)} alt="" />
