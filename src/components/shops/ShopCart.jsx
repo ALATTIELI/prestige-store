@@ -48,7 +48,7 @@ const ShopCart = () => {
               <div className="product-details">
                 <h3>{productItem.name_en}</h3>
                 <div className="price">
-                  <h4>AED {productItem.TotalPrice}.00 </h4>
+                  <h4>AED {productItem.TotalPrice} </h4>
                   <button
                   // onClick={() => addToCart(shopItems)}
                   >
