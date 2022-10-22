@@ -22,7 +22,7 @@ const SlideCard = () => {
     // autoplay: true,
     arrows: false,
     appendDots: (dots) => {
-      return <ul style={{ margin: "10px" }}>{dots}</ul>
+      return <ul style={{ margin: "10px" }}>{dots}</ul>;
     },
   };
 
@@ -68,11 +68,13 @@ const SlideCard = () => {
                       ? productItem.title_en
                       : productItem.title_ar}
                   </h1>
-                  <p>
-                    {i18n.language === "en"
-                      ? productItem.description_en
-                      : productItem.description_ar}
-                  </p>
+                  <div className="slider-description">
+                    <p>
+                      {i18n.language === "en"
+                        ? productItem.description_en
+                        : productItem.description_ar}
+                    </p>
+                  </div>
                   <button
                     className="btn-primary"
                     onClick={() => handleClick(productItem._id)}

@@ -57,43 +57,19 @@ const Search = () => {
                 <span>{t("navbar.all_categories")}</span>
               </Link>
             </div>
-            <div className="suggestion">
+            <div className="search_results">
               <ul>
-                <li className="sugg_listItem">
+                <li className="search_results_item">
                   <span>Samsung</span>
                 </li>
-                <li className="sugg_listItem">
+                <li className="search_results_item">
                   <span>???</span>
                 </li>
-                <li className="sugg_listItem">
+                <li className="search_results_item">
                   <span>Iphone</span>
                 </li>{" "}
-                <li className="sugg_listItem">
+                <li className="search_results_item">
                   <span>Samsung</span>
-                </li>
-                <li className="sugg_listItem">
-                  <span>???</span>
-                </li>
-                <li className="sugg_listItem">
-                  <span>Iphone</span>
-                </li>{" "}
-                <li className="sugg_listItem">
-                  <span>Samsung</span>
-                </li>
-                <li className="sugg_listItem">
-                  <span>???</span>
-                </li>
-                <li className="sugg_listItem">
-                  <span>Iphone</span>
-                </li>{" "}
-                <li className="sugg_listItem">
-                  <span>Samsung</span>
-                </li>
-                <li className="sugg_listItem">
-                  <span>???</span>
-                </li>
-                <li className="sugg_listItem">
-                  <span>Iphone</span>
                 </li>
               </ul>
             </div>

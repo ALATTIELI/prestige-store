@@ -128,6 +128,9 @@
 }
 
 @media screen and (max-width: 768px) {
+  .discount_card{
+    padding: 0px 0px;
+  }
   .discount_card_product {
     width: auto;
   }
