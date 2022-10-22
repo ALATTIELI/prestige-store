@@ -86,11 +86,13 @@ const DiscountCard = () => {
                     <img src={getImageById(productItem.images[0])} alt="" />
                   </div>
                   <div className="discount_card_product_details">
-                    <h3>
-                      {i18n.language === "en"
-                        ? productItem.name_en
-                        : productItem.name_ar}
-                    </h3>
+                    <div className="discount_card_product_name">
+                      <h3>
+                        {i18n.language === "en"
+                          ? productItem.name_en
+                          : productItem.name_ar}
+                      </h3>
+                    </div>
                     <div className="discount_card_product_price">
                       <div className="DiscountPrice">
                         <span className="DiscountDPrice">
