@@ -1,8 +1,9 @@
 import { Modal } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import Login from "../../components/Login/Login";
+import { getImageById, searchProducts } from "../../redux/apiCalls";
 
 const Search = () => {
   const CartItem = [
@@ -13,6 +14,10 @@ const Search = () => {
       quantity: 1,
     },
   ];
+
+  const [search, setSearch] = React.useState("");
+  const [loadingSearch, setLoadingSearch] = React.useState(true);
+  const [search_results, setSearchResults] = React.useState([]);
   const { t, i18n } = useTranslation();
   // fixed Header
   window.addEventListener("scroll", function () {
@@ -22,6 +27,33 @@ const Search = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+  };
+
+  useEffect(() => {
+    async function handleSearch(value) {
+      // if value is empty, trigger the useEffect to get all products
+      const sr = document.querySelector(".search_results");
+      if (value === "") {
+        setSearchResults([]);
+        setLoadingSearch(false);
+        sr.classList.remove("active");
+      } else {
+        const res = await searchProducts(value);
+        if (res !== null) {
+          setSearchResults(res);
+          setLoadingSearch(false);
+          sr.classList.add("active");
+        } else {
+          setLoadingSearch(true);
+        }
+      }
+    }
+    handleSearch(search);
+  }, [search]);
+
   return (
     <>
       <section className="search">
@@ -52,6 +84,7 @@ const Search = () => {
               <input
                 type="text"
                 placeholder={t("navbar.search_and_hit_enter")}
+                onChange={(e) => handleChange(e)}
               />
               <Link to="/categories">
                 <span>{t("navbar.all_categories")}</span>
@@ -59,18 +92,19 @@ const Search = () => {
             </div>
             <div className="search_results">
               <ul>
-                <li className="search_results_item">
-                  <span>Samsung</span>
-                </li>
-                <li className="search_results_item">
-                  <span>???</span>
-                </li>
-                <li className="search_results_item">
-                  <span>Iphone</span>
-                </li>{" "}
-                <li className="search_results_item">
-                  <span>Samsung</span>
-                </li>
+                {loadingSearch ? (
+                  <li>Loading...</li>
+                ) : (
+                  search_results &&
+                  search_results.map((item) => (
+                    <Link to={`/product/${item._id}`}>
+                      <li key={item._id} className="search_results_item">
+                        <img src={getImageById(item.images[0])} alt="" />
+                        <span>{item.name_en}</span>
+                      </li>
+                    </Link>
+                  ))
+                )}
               </ul>
             </div>
           </div>
