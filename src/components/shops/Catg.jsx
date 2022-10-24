@@ -41,18 +41,25 @@ const Catg = () => {
         <div className="chead d_flex">
           <h1>{t("brands.brands")}</h1>
         </div>
-        {productItems.map((productItem) => {
-          return (
-            <div
-              className="box f_flex"
-              key={productItem._id}
-              onClick={() => handleClick(productItem._id)}
-            >
-              <img src={getImageById(productItem.image)} alt="" />
-              <span>{productItem.name}</span>
-            </div>
-          );
-        })}
+        {productItems ? (
+          productItems.map((productItem) => {
+            return (
+              <div
+                className="box f_flex"
+                key={productItem._id}
+                onClick={() => handleClick(productItem._id)}
+              >
+                <img src={getImageById(productItem.image)} alt="" />
+                <span>{productItem.name}</span>
+              </div>
+            );
+          })
+        ) : (
+          <div className="">
+            <span>ERROR GETTING DATA</span>
+          </div>
+        )}
+
         <div className="box box2">
           <Link to="/brands">
             <button>{t("brands.view_all_brands")}</button>

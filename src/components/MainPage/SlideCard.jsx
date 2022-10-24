@@ -51,44 +51,50 @@ const SlideCard = () => {
   return (
     <>
       <Slider {...settings}>
-        {productItems.map((productItem) => {
-          return (
-            <>
-              <div className="slider-box" key={productItem._id}>
-                <div
-                  className="left"
-                  style={
-                    i18n.language === "en"
-                      ? { textAlign: "left" }
-                      : { textAlign: "right" }
-                  }
-                >
-                  <h1>
-                    {i18n.language === "en"
-                      ? productItem.title_en
-                      : productItem.title_ar}
-                  </h1>
-                  <div className="slider-description">
-                    <p>
-                      {i18n.language === "en"
-                        ? productItem.description_en
-                        : productItem.description_ar}
-                    </p>
-                  </div>
-                  <button
-                    className="btn-primary"
-                    onClick={() => handleClick(productItem._id)}
+        {productItems ? (
+          productItems.map((productItem) => {
+            return (
+              <>
+                <div className="slider-box" key={productItem._id}>
+                  <div
+                    className="left"
+                    style={
+                      i18n.language === "en"
+                        ? { textAlign: "left" }
+                        : { textAlign: "right" }
+                    }
                   >
-                    {t("slider.view")}
-                  </button>
+                    <h1>
+                      {i18n.language === "en"
+                        ? productItem.title_en
+                        : productItem.title_ar}
+                    </h1>
+                    <div className="slider-description">
+                      <p>
+                        {i18n.language === "en"
+                          ? productItem.description_en
+                          : productItem.description_ar}
+                      </p>
+                    </div>
+                    <button
+                      className="btn-primary"
+                      onClick={() => handleClick(productItem._id)}
+                    >
+                      {t("slider.view")}
+                    </button>
+                  </div>
+                  <div className="right">
+                    <img src={getImageById(productItem.image)} alt="" />
+                  </div>
                 </div>
-                <div className="right">
-                  <img src={getImageById(productItem.image)} alt="" />
-                </div>
-              </div>
-            </>
-          );
-        })}
+              </>
+            );
+          })
+        ) : (
+          <div className="slider-box">
+            <span>ERROR GETTING DATA</span>
+          </div>
+        )}
       </Slider>
     </>
   );

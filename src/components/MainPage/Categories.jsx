@@ -35,22 +35,28 @@ const Categories = () => {
   return (
     <>
       <div className="category">
-        {productItems.map((productItem) => {
-          return (
-            <div
-              className="box f_flex"
-              key={productItem._id}
-              onClick={() => handleClick(productItem._id)}
-            >
-              <img src={getImageById(productItem.image)} alt="" />
-              <span>
-                {i18n.language === "en"
-                  ? productItem.name_en
-                  : productItem.name_ar}
-              </span>
-            </div>
-          );
-        })}
+        {productItems ? (
+          productItems.map((productItem) => {
+            return (
+              <div
+                className="box f_flex"
+                key={productItem._id}
+                onClick={() => handleClick(productItem._id)}
+              >
+                <img src={getImageById(productItem.image)} alt="" />
+                <span>
+                  {i18n.language === "en"
+                    ? productItem.name_en
+                    : productItem.name_ar}
+                </span>
+              </div>
+            );
+          })
+        ) : (
+          <div className="">
+            <span>ERROR GETTING DATA</span>
+          </div>
+        )}
         <div
           className="box mainpage_categories_viewAll"
           style={{ backgroundColor: "#f2f2f2" }}
