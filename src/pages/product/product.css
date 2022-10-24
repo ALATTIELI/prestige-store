@@ -41,6 +41,8 @@
   width: 300px;
   height: 300px;
   margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
 }
 .product-left-column .product-left-column-img img {
   /* width: 100%; */
@@ -78,6 +80,10 @@
   border-radius: 10px;
   /* padding: 5px; */
   margin: 5px;
+}
+.product-thumbnails div:hover {
+  scale: 1.1;
+  transition: all 0.3s ease;
 }
 .product-thumbnails img {
   width: 100px;

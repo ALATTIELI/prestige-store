@@ -1,245 +1,166 @@
 import { t } from "i18next";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import {
+  getBrandById,
+  getCategoryById,
+  getImageById,
+  getProductById,
+} from "../../redux/apiCalls";
 import "./product.css";
 
-export default function Product({ productItems, addToCart, CartItem }) {
+export default function Product() {
   const { t, i18n } = useTranslation();
-  var TITLE = window.location.pathname.split("/").pop();
+  const [product_data, setProduct_data] = useState([]);
+  const [brand, setBrand] = useState([]);
+  const [category, setCategory] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const product_id = window.location.pathname.split("/").pop();
   // Show img from the thumbnail to the main img
   function showImg(e) {
     const img = e.target;
     const mainImg = document.getElementById("main-img");
     mainImg.src = img.src;
   }
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await getProductById(product_id);
+        console.log(res);
+        if (res !== null) {
+          setProduct_data(res);
+          setLoading(false);
+        } else {
+          setLoading(true);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await getBrandById(product_data.brand);
+        console.log(res);
+        if (res !== null) {
+          setBrand(res);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    fetchData();
+  }, [product_data]);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await getCategoryById(product_data.category);
+        console.log(res);
+        if (res !== null) {
+          setCategory(res);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    fetchData();
+  }, [product_data]);
+
   return (
     <div className="Product-Page">
-      <main className="product-container">
-        <div className="product-top">
-          <div className="product-left-column">
-            <div className="product-left-column-img">
-              <img
-                id="main-img"
-                data-image="red"
-                className="active"
-                src="https://www.shopkees.com/cdn/images/1000/2328096834_1631972746.jpg"
-                alt=""
-              />
-            </div>
-            <div className="product-thumbnails">
-              <div>
-                <img
-                  onClick={(e) => showImg(e)}
-                  data-image="red"
-                  className="active"
-                  src="https://www.shopkees.com/cdn/images/1000/2328096834_1631972746.jpg"
-                  alt=""
-                />
-              </div>
-
-              <div>
-                <img
-                  onClick={(e) => showImg(e)}
-                  data-image="red"
-                  className="active"
-                  src="https://photos5.appleinsider.com/gallery/47523-92824-New-Alpine-Green-iPhone-13-Pro-xl.jpg"
-                  alt=""
-                />
-              </div>
-
-              <div>
-                <img
-                  onClick={(e) => showImg(e)}
-                  data-image="red"
-                  className="active"
-                  src="https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone13-Pro-alpine-green-hero-2up-220308_big_carousel.jpg.large.jpg"
-                  alt=""
-                />
-              </div>
-
-              <div>
-                <img
-                  onClick={(e) => showImg(e)}
-                  data-image="red"
-                  className="active"
-                  src="https://image.khaleejtimes.com/?uuid=e61de6df-6f9a-5095-8884-a7f519185dd4&function=fit&type=preview&source=false&q=75&maxsize=1200&scaleup=0"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  onClick={(e) => showImg(e)}
-                  data-image="red"
-                  className="active"
-                  src="https://image.khaleejtimes.com/?uuid=e61de6df-6f9a-5095-8884-a7f519185dd4&function=fit&type=preview&source=false&q=75&maxsize=1200&scaleup=0"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  onClick={(e) => showImg(e)}
-                  data-image="red"
-                  className="active"
-                  src="https://image.khaleejtimes.com/?uuid=e61de6df-6f9a-5095-8884-a7f519185dd4&function=fit&type=preview&source=false&q=75&maxsize=1200&scaleup=0"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  onClick={(e) => showImg(e)}
-                  data-image="red"
-                  className="active"
-                  src="https://image.khaleejtimes.com/?uuid=e61de6df-6f9a-5095-8884-a7f519185dd4&function=fit&type=preview&source=false&q=75&maxsize=1200&scaleup=0"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  onClick={(e) => showImg(e)}
-                  data-image="red"
-                  className="active"
-                  src="https://image.khaleejtimes.com/?uuid=e61de6df-6f9a-5095-8884-a7f519185dd4&function=fit&type=preview&source=false&q=75&maxsize=1200&scaleup=0"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  onClick={(e) => showImg(e)}
-                  data-image="red"
-                  className="active"
-                  src="https://image.khaleejtimes.com/?uuid=e61de6df-6f9a-5095-8884-a7f519185dd4&function=fit&type=preview&source=false&q=75&maxsize=1200&scaleup=0"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  onClick={(e) => showImg(e)}
-                  data-image="red"
-                  className="active"
-                  src="https://image.khaleejtimes.com/?uuid=e61de6df-6f9a-5095-8884-a7f519185dd4&function=fit&type=preview&source=false&q=75&maxsize=1200&scaleup=0"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  onClick={(e) => showImg(e)}
-                  data-image="red"
-                  className="active"
-                  src="https://image.khaleejtimes.com/?uuid=e61de6df-6f9a-5095-8884-a7f519185dd4&function=fit&type=preview&source=false&q=75&maxsize=1200&scaleup=0"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  onClick={(e) => showImg(e)}
-                  data-image="red"
-                  className="active"
-                  src="https://image.khaleejtimes.com/?uuid=e61de6df-6f9a-5095-8884-a7f519185dd4&function=fit&type=preview&source=false&q=75&maxsize=1200&scaleup=0"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  onClick={(e) => showImg(e)}
-                  data-image="red"
-                  className="active"
-                  src="https://image.khaleejtimes.com/?uuid=e61de6df-6f9a-5095-8884-a7f519185dd4&function=fit&type=preview&source=false&q=75&maxsize=1200&scaleup=0"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  onClick={(e) => showImg(e)}
-                  data-image="red"
-                  className="active"
-                  src="https://image.khaleejtimes.com/?uuid=e61de6df-6f9a-5095-8884-a7f519185dd4&function=fit&type=preview&source=false&q=75&maxsize=1200&scaleup=0"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  onClick={(e) => showImg(e)}
-                  data-image="red"
-                  className="active"
-                  src="https://image.khaleejtimes.com/?uuid=e61de6df-6f9a-5095-8884-a7f519185dd4&function=fit&type=preview&source=false&q=75&maxsize=1200&scaleup=0"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  onClick={(e) => showImg(e)}
-                  data-image="red"
-                  className="active"
-                  src="https://image.khaleejtimes.com/?uuid=e61de6df-6f9a-5095-8884-a7f519185dd4&function=fit&type=preview&source=false&q=75&maxsize=1200&scaleup=0"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  onClick={(e) => showImg(e)}
-                  data-image="red"
-                  className="active"
-                  src="https://image.khaleejtimes.com/?uuid=e61de6df-6f9a-5095-8884-a7f519185dd4&function=fit&type=preview&source=false&q=75&maxsize=1200&scaleup=0"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  onClick={(e) => showImg(e)}
-                  data-image="red"
-                  className="active"
-                  src="https://image.khaleejtimes.com/?uuid=e61de6df-6f9a-5095-8884-a7f519185dd4&function=fit&type=preview&source=false&q=75&maxsize=1200&scaleup=0"
-                  alt=""
-                />
-              </div>
-            </div>
-          </div>
-          <div className="product-right-column">
-            <div className="product-product-description">
-              <div className="product-product-description-top">
-                <span>Phones</span>
-                <h1>{TITLE}</h1>
-              </div>
-              <div className="product-product-description-bottom">
-                <span>{t("product.brand")}: Apple</span>
-                <span>{t("product.stock")}: 3</span>
-              </div>
-            </div>
-
-            <div className="product-product-configuration">
-              <div className="product-product-price">
-                <span>980 AED</span>
-                <a href="" className="cart-btn">
-                  {t("product.add_to_cart")}
-                </a>
-              </div>
-            </div>
-          </div>
+      {loading ? (
+        <div className="product-not-found">
+          <h1>LOADING...</h1>
         </div>
-        <div className="product-bottom">
-          <div className="product-description">
-            <h1>{t("product.description")}</h1>
-            <p>
-              Some words bla bla Some words bla bla Some words bla bla Some
-              words bla bla Some words bla bla Some words bla bla Some words bla
-              bla Some words bla bla Some words bla bla Some words bla bla Some
-              words bla bla Some words bla bla Some words bla bla Some words bla
-              bla Some words bla bla Some words bla bla Some words bla bla Some
-              words bla bla Some words bla bla Some words bla bla Some words bla
-              bla Some words bla bla Some words bla bla Some words bla bla Some
-              words bla bla Some words bla bla Some words bla bla Some words bla
-              bla Some words bla bla Some words bla bla Some words bla bla Some
-              words bla bla Some words bla bla Some words bla bla Some words bla
-              bla Some words bla bla Some words bla bla Some words bla bla Some
-              words bla bla Some words bla bla Some words bla bla Some words bla
-              bla Some words bla bla Some words bla bla Some words bla bla Some
-              words bla bla Some words bla bla Some words bla bla Some words bla
-              bla Some words bla bla Some words bla bla Some words bla bla Some
-              words bla bla Some words bla bla Some words bla bla Some words bla
-              bla Some words bla bla
-            </p>
+      ) : (
+        <main className="product-container">
+          <div className="product-top">
+            <div className="product-left-column">
+              <div className="product-left-column-img">
+                {product_data && (
+                  <img
+                    id="main-img"
+                    data-image="red"
+                    className="active"
+                    src={getImageById(product_data.images[0])}
+                    alt=""
+                  />
+                )}
+              </div>
+              <div className="product-thumbnails">
+                {product_data &&
+                  product_data.images.map((img) => {
+                    return (
+                      <div>
+                        <img
+                          onClick={(e) => showImg(e)}
+                          data-image="red"
+                          className="active"
+                          src={getImageById(img)}
+                          alt="product"
+                        />
+                      </div>
+                    );
+                  })}
+              </div>
+            </div>
+            <div className="product-right-column">
+              <div className="product-product-description">
+                <div className="product-product-description-top">
+                  <span>
+                    {i18n.language === "en"
+                      ? category.name_en
+                      : category.name_ar}
+                  </span>
+                  <h1>
+                    {i18n.language === "en"
+                      ? product_data.name_en
+                      : product_data.name_ar}
+                  </h1>
+                </div>
+                <div className="product-product-description-bottom">
+                  <span>
+                    {i18n.language === "en" ? (
+                      <>
+                        {t("product.brand")}: {brand.name}
+                      </>
+                    ) : (
+                      <>
+                        {brand.name} : {t("product.brand")}
+                      </>
+                    )}
+                  </span>
+                  <span>{t("product.stock")}: 3</span>
+                </div>
+              </div>
+
+              <div className="product-product-configuration">
+                <div className="product-product-price">
+                  <span>{product_data.TotalPrice} AED</span>
+                  <a href="" className="cart-btn">
+                    {t("product.add_to_cart")}
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </main>
+          <div className="product-bottom">
+            <div className="product-description">
+              <h1>{t("product.description")}</h1>
+              <p>
+                {i18n.language === "en"
+                  ? product_data.description_en
+                  : product_data.description_ar}
+              </p>
+            </div>
+          </div>
+        </main>
+      )}
     </div>
   );
 }
