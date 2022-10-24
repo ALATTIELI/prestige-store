@@ -46,11 +46,13 @@ const Cart = () => {
               <div className="img">
                 <img src={getImageById(productItem.images[0])} alt="" />
               </div>
-              <h4>
-                {i18n.language === "en"
-                  ? productItem.name_en
-                  : productItem.name_ar}
-              </h4>
+              <div className="new-arrivals-name">
+                <h4>
+                  {i18n.language === "en"
+                    ? productItem.name_en
+                    : productItem.name_ar}
+                </h4>
+              </div>
               <span>AED {productItem.TotalPrice}</span>
             </div>
           );

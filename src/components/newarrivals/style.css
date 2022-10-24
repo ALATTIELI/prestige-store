@@ -82,10 +82,23 @@
   max-width: 100%;
   border-radius: 10px;
 }
-
+.new-arrivals-name {
+  max-width: 100%;
+  /* position: absolute; */
+  width: 100%;
+}
 .NewArrivals h4 {
   font-weight: 600;
   font-size: 23px;
+}
+
+.new-arrivals-name h4 {
+  /* position: relative; */
+  max-width: 100%;
+  white-space: wrap;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 40px;
 }
 
 .NewArrivals span {

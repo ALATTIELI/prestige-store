@@ -46,7 +46,9 @@ const ShopCart = () => {
                 <img src={getImageById(productItem.images[0])} alt="" />
               </div>
               <div className="product-details">
-                <h3>{productItem.name_en}</h3>
+                <div className="product-name">
+                  <h3>{productItem.name_en}</h3>
+                </div>
                 <div className="price">
                   <h4>AED {productItem.TotalPrice} </h4>
                   <button
