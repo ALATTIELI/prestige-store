@@ -104,7 +104,9 @@
     "brand": "العلامة التجارية",
     "stock": "المخزون",
     "add_to_cart": "أضف إلى السلة",
-    "description": "الوصف"
+    "description": "الوصف",
+    "SKU": "SKU",
+    "code": "الكود"
   },
   "locations": {
     "prestige_one_mobile_Phones_mbz_city_branch": "برستيج ون للهواتف المتحركة - فرع مدينة محمد بن زايد",

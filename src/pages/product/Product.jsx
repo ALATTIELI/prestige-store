@@ -1,4 +1,3 @@
-import { t } from "i18next";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
@@ -39,6 +38,7 @@ export default function Product() {
       }
     }
     fetchData();
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
@@ -124,39 +124,73 @@ export default function Product() {
                   </h1>
                 </div>
                 <div className="product-product-description-bottom">
-                  <span>
-                    {i18n.language === "en" ? (
-                      <>
-                        {t("product.brand")}: {brand.name}
-                      </>
-                    ) : (
-                      <>
-                        {brand.name} : {t("product.brand")}
-                      </>
-                    )}
-                  </span>
-                  <span>{t("product.stock")}: 3</span>
+                  <div className="product-product-description-bottom-left">
+                    <span>
+                      {i18n.language === "en" ? (
+                        <>
+                          {t("product.brand")}: {brand.name}
+                        </>
+                      ) : (
+                        <>
+                          {brand.name} : {t("product.brand")}
+                        </>
+                      )}
+                    </span>
+                    <span>{t("product.stock")}: 3</span>
+                  </div>
+                  <div className="product-product-description-bottom-right">
+                    <span>
+                      {i18n.language === "en" ? (
+                        <>
+                          {t("product.SKU")}: {product_data.sku}
+                        </>
+                      ) : (
+                        <>
+                          {product_data.sku} : {t("product.SKU")}
+                        </>
+                      )}
+                    </span>
+                    <span>
+                      {i18n.language === "en" ? (
+                        <>
+                          {t("product.code")}: {product_data.code}
+                        </>
+                      ) : (
+                        <>
+                          {product_data.code} : {t("product.code")}
+                        </>
+                      )}
+                    </span>
+                  </div>
                 </div>
               </div>
 
               <div className="product-product-configuration">
                 <div className="product-product-price">
                   <span>{product_data.TotalPrice} AED</span>
-                  <a href="" className="cart-btn">
+                  <a href=" " className="cart-btn">
                     {t("product.add_to_cart")}
                   </a>
                 </div>
               </div>
             </div>
           </div>
-          <div className="product-bottom">
+          <div
+            className={
+              i18n.language === "en" ? "product-bottom en" : "product-bottom ar"
+            }
+          >
             <div className="product-description">
               <h1>{t("product.description")}</h1>
-              <p>
-                {i18n.language === "en"
-                  ? product_data.description_en
-                  : product_data.description_ar}
-              </p>
+              {i18n.language === "en" ? (
+                <p style={{ direction: "ltr" }}>
+                  {product_data.description_en}
+                </p>
+              ) : (
+                <p style={{ direction: "rtl" }}>
+                  {product_data.description_ar}
+                </p>
+              )}
             </div>
           </div>
         </main>

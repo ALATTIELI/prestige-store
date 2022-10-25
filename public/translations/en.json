@@ -105,7 +105,9 @@
     "brand": "Brand",
     "stock": "Stock",
     "add_to_cart": "Add to Cart",
-    "description": "Description"
+    "description": "Description",
+    "SKU": "SKU",
+    "code": "Code"
   },
   "locations":{
     "prestige_one_mobile_Phones_mbz_city_branch": "Prestige One Mobile Phones - MBZ City Branch",
