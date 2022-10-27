@@ -9,6 +9,11 @@
   font-weight: 600;
   margin-bottom: 20px;
 }
+.brand_card_title .brand_card_title_icon{
+  font-size: 2rem;
+  margin-right: 10px;
+  color: var(--maincolor);
+}
 .brand_card_title span{
   color: var(--maincolor);
 }

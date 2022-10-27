@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { getBrands, getImageById } from "../../redux/apiCalls";
 import "./brands.css";
+import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 
 const Brands = () => {
   const { t, i18n } = useTranslation();
@@ -42,6 +43,7 @@ const Brands = () => {
       ) : (
         <div className="brand_card">
           <div className="brand_card_title">
+            <WorkspacePremiumIcon className="brand_card_title_icon" />
             <span>BRANDS</span>
           </div>
           <div className="brand_card_items">
