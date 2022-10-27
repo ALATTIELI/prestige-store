@@ -1,25 +1,31 @@
 .cate_card {
   background: #fff;
   padding: 70px;
+  padding-top: 40px;
+  margin: 50px 0px 50px 0px;
+}
+
+.cate_card_title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.cate_card_title .cate_card_title_icon {
+  font-size: 2rem;
+  margin-right: 10px;
+  color: var(--maincolor);
+}
+.cate_card_title span {
+  color: var(--maincolor);
+}
+
+.cate_card_items {
   margin: 50px 0px 50px 0px;
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 5rem;
   justify-content: center;
-}
-
-.cate_body_card {
-  box-shadow: 10px 5px 17px 10px rgba(0, 0, 0, 0.1);
-  padding: 5px;
-  border-radius: 10px;
-  width: 100%;
-  cursor: pointer;
-  transition: transform 200ms;
-  justify-content: space-between;
-  flex-direction: column;
-  display: flex;
-  overflow: hidden;
 }
 .cate_card_item {
   box-shadow: 10px 5px 17px 10px rgba(0, 0, 0, 0.1);

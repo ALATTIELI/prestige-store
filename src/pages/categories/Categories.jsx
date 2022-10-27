@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { getCategories, getImageById } from "../../redux/apiCalls";
 import "./categories.css";
+import CategoryIcon from '@mui/icons-material/Category';
 
 const Categories = () => {
   const { t, i18n } = useTranslation();
@@ -41,27 +42,33 @@ const Categories = () => {
         </div>
       ) : (
         <div className="cate_card">
-          {productItems &&
-            productItems.map((productItem) => {
-              return (
-                <div
-                  className="cate_card_item"
-                  key={productItem._id}
-                  onClick={() => handleClick(productItem._id)}
-                >
-                  <div className="cate_card_item_img">
-                    <img src={getImageById(productItem.image)} alt="" />
+          <div className="cate_card_title">
+            <CategoryIcon className="cate_card_title_icon" />
+            <span>CATEGORIES</span>
+          </div>
+          <div className="cate_card_items">
+            {productItems &&
+              productItems.map((productItem) => {
+                return (
+                  <div
+                    className="cate_card_item"
+                    key={productItem._id}
+                    onClick={() => handleClick(productItem._id)}
+                  >
+                    <div className="cate_card_item_img">
+                      <img src={getImageById(productItem.image)} alt="" />
+                    </div>
+                    <div className="cate_card_item_name">
+                      <span>
+                        {i18n.language === "en"
+                          ? productItem.name_en
+                          : productItem.name_ar}
+                      </span>
+                    </div>
                   </div>
-                  <div className="cate_card_item_name">
-                    <span>
-                      {i18n.language === "en"
-                        ? productItem.name_en
-                        : productItem.name_ar}
-                    </span>
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })}
+          </div>
         </div>
       )}
     </>
