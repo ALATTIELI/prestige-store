@@ -241,6 +241,30 @@ export const getProducts = async () => {
   }
 };
 
+// get products by category
+export const getProductsByCategory = async (id) => {
+  console.log("getProductsByCategory");
+  var st = await checkServer().then((res) => res.status);
+  console.log(st);
+  if (st === 200) {
+    try {
+      const response = await privateRequest.get("/products/category/" + id);
+      if (response.status === 200) {
+        console.log(response);
+        return response.data;
+      } else {
+        // return error message
+        return null;
+      }
+    } catch (error) {
+      return null;
+    }
+  } else {
+    console.log("Server is down");
+    return null;
+  }
+};
+
 // search products
 export const searchProducts = async (search) => {
   console.log("searchProducts");

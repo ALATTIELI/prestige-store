@@ -1,20 +1,52 @@
 .CategoryPage {
-  width: 100%;
-  height: 100%;
-  background-color: #f2f2f2;
+  background: #fff;
+  margin: 50px 0px 50px 0px;
 }
 .CategoryPage .container {
   width: 100%;
   height: 100%;
   padding: 20px;
 }
-.categoryPageHeader{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+.categoryPageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 .categoryPageHeader h1 {
-    font-size: 1.5rem;
-    font-weight: 500;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.categoryPageBody {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.categoryPageProductImage {
+  width: 100%;
+  height: 100%;
+  max-height: 140px;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 200ms;
+}
+.categoryPageProductImage img {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  object-fit: scale-down;
+  transition: transform 200ms;
+}
+.categoryPageProductInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.categoryPageProductInfoName {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 10px;
 }
