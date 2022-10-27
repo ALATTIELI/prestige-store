@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
 import {
   getDiscountById,
@@ -14,7 +15,7 @@ const ShopCart = () => {
   const [discount, setDiscount] = useState({});
   // eslint-disable-next-line no-unused-vars
   const [loading, setLoading] = useState(true);
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchData() {
@@ -49,15 +50,19 @@ const ShopCart = () => {
     });
   }, [productItems]);
 
-  // const handleClick = (id) => {
-  //   navigate(`/brand/${id}`);
-  // };
+  const handleClick = (id) => {
+    navigate(`/product/${id}`);
+  };
 
   return (
     <>
       {productItems.map((productItem) => {
         return (
-          <div className="box">
+          <div
+            className="box"
+            key={productItem._id}
+            onClick={() => handleClick(productItem._id)}
+          >
             <div className="product mtop">
               <div className="img">
                 {discount[productItem._id] ? (
