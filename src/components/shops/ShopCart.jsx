@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 // import { useNavigate } from "react-router-dom";
-import { getImageById, getMobilePhones } from "../../redux/apiCalls";
+import {
+  getDiscountById,
+  getImageById,
+  getMobilePhones,
+} from "../../redux/apiCalls";
 
 const ShopCart = () => {
   // eslint-disable-next-line no-unused-vars
   const { t, i18n } = useTranslation();
   const [productItems, setProductItems] = useState([]);
+  const [discount, setDiscount] = useState({});
   // eslint-disable-next-line no-unused-vars
   const [loading, setLoading] = useState(true);
   // const navigate = useNavigate();
@@ -29,6 +34,21 @@ const ShopCart = () => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    productItems.map(async (item) => {
+      if (item.discountID) {
+        const discount = await getDiscountById(item.discountID);
+        const discount_percentage = discount.discount_percentage;
+        setDiscount((prev) => {
+          return {
+            ...prev,
+            [item._id]: discount_percentage,
+          };
+        });
+      }
+    });
+  }, [productItems]);
+
   // const handleClick = (id) => {
   //   navigate(`/brand/${id}`);
   // };
@@ -40,9 +60,11 @@ const ShopCart = () => {
           <div className="box">
             <div className="product mtop">
               <div className="img">
-                <span className="top_left_popup">
-                  {productItem.discountID}% Off
-                </span>
+                {discount[productItem._id] ? (
+                  <span className="top_left_popup">
+                    {discount[productItem._id]}%
+                  </span>
+                ) : null}
                 <img src={getImageById(productItem.images[0])} alt="" />
               </div>
               <div className="product-details">

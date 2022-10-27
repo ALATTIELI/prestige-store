@@ -11,6 +11,7 @@ const DiscountCard = () => {
   // eslint-disable-next-line no-unused-vars
   const { t, i18n } = useTranslation();
   const [productItems, setProductItems] = useState([]);
+  const [discount, setDiscount] = useState({});
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
@@ -32,12 +33,18 @@ const DiscountCard = () => {
     fetchData();
   }, []);
 
-  async function getDiscount(id) {
-    const discount = await getDiscountById(id);
-    const discount_percentage = discount.discount_percentage;
-    console.log(discount_percentage);
-    return discount_percentage;
-  }
+  useEffect(() => {
+    productItems.map(async (item) => {
+      const discount = await getDiscountById(item.discountID);
+      const discount_percentage = discount.discount_percentage;
+      setDiscount((prev) => {
+        return {
+          ...prev,
+          [item._id]: discount_percentage,
+        };
+      });
+    });
+  }, [productItems]);
 
   const scroll = (direction) => {
     const discount_card = document.getElementById("discount_card_container");
@@ -78,10 +85,7 @@ const DiscountCard = () => {
                 >
                   <div className="discount_card_product_img">
                     <span className="top_left_popup">
-                      {async () => {
-                        return await getDiscount(productItem.discountID);
-                      }}
-                      % Off
+                      {discount[productItem._id]}% Off
                     </span>
                     <img src={getImageById(productItem.images[0])} alt="" />
                   </div>
