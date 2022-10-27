@@ -27,7 +27,7 @@ export default function Product() {
       try {
         const res = await getProductById(product_id);
         console.log(res);
-        if (res !== null) {
+        if (res !== null && res !== false) {
           setProduct_data(res);
           setLoading(false);
         } else {

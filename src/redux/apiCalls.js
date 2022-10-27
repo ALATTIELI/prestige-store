@@ -153,7 +153,9 @@ export const getMobilePhones = async () => {
   console.log(st);
   if (st === 200) {
     try {
-      const response = await privateRequest.get("/products/category/62c4806f9c8e583abd1d1202");
+      const response = await privateRequest.get(
+        "/products/category/62c4806f9c8e583abd1d1202"
+      );
       if (response.status === 200) {
         console.log(response);
         return response.data;
@@ -277,6 +279,8 @@ export const getProductById = async (id) => {
     } catch (error) {
       return false;
     }
+  } else {
+    return false;
   }
 };
 // update product
@@ -378,6 +382,8 @@ export const getCategoryById = async (id) => {
     } catch (error) {
       return false;
     }
+  } else {
+    return false;
   }
 };
 // create new category
