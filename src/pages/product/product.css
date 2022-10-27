@@ -187,7 +187,22 @@
   display: flex;
   align-items: center;
 }
-
+.product-product-price .product-product-price-discount {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: var(--maincolor);
+  align-items: center;
+}
+.product-product-price .product-product-price-discount .DiscountOriginalPrice {
+  /* font-size: 14px; */
+  color: #999;
+  text-decoration: line-through;
+  margin-bottom: 5px;
+}
+.product-product-price .product-product-price-discount .DiscountPrice {
+  font-size: 24px;
+}
 .product-bottom {
   width: 100%;
   margin-top: 30px;
@@ -195,11 +210,11 @@
   display: flex;
   flex-direction: row;
 }
-.product-bottom.en{
+.product-bottom.en {
   text-align: left;
   justify-content: left;
 }
-.product-bottom.ar{
+.product-bottom.ar {
   text-align: right;
   justify-content: right;
 }

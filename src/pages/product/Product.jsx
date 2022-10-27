@@ -167,7 +167,24 @@ export default function Product() {
 
               <div className="product-product-configuration">
                 <div className="product-product-price">
-                  <span>{product_data.TotalPrice} AED</span>
+                  {product_data.discountID ? (
+                    <div className="product-product-price-discount">
+                      <div className="product-product-price-discount-row">
+                        <span
+                          className="DiscountOriginalPrice"
+                          style={{ textDecoration: "line-through" }}
+                        >
+                          AED {product_data.price}
+                        </span>
+                        <span className="DiscountPrice">
+                          AED {product_data.TotalPrice}
+                        </span>
+                      </div>
+                    </div>
+                  ) : (
+                    <span>{product_data.TotalPrice} AED</span>
+                  )}
+
                   <a href=" " className="cart-btn">
                     {t("product.add_to_cart")}
                   </a>
