@@ -78,7 +78,7 @@ const SlideCard = () => {
                     </div>
                     <button
                       className="btn-primary"
-                      onClick={() => handleClick(productItem._id)}
+                      onClick={() => handleClick(productItem.product_id)}
                     >
                       {t("slider.view")}
                     </button>
