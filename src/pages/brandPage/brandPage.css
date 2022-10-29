@@ -72,3 +72,19 @@
 .brandPageProductDetails .price {
   align-items: center;
 }
+
+@media screen and (max-width: 1200px) {
+  .brandPageBody {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .brandPageProduct {
+    padding: 5px;
+  }
+  .brandPageProductDetails .price {
+    align-items: flex-start;
+  }
+  .brandPageProductImage img {
+    max-height: 200px;
+    min-height: 200px;
+  }
+}

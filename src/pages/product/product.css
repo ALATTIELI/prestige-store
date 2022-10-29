@@ -186,6 +186,7 @@
 .product-product-price {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 .product-product-price .product-product-price-discount {
   display: flex;
@@ -193,6 +194,11 @@
   justify-content: space-between;
   color: var(--maincolor);
   align-items: center;
+}
+.product-product-price .product-product-price-discount-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .product-product-price .product-product-price-discount .DiscountOriginalPrice {
   /* font-size: 14px; */
@@ -278,5 +284,10 @@
   }
   .product-bottom {
     width: 100%;
+  }
+  .product-product-price .product-product-price-discount-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 }
