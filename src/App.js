@@ -21,6 +21,7 @@ import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import ProductsPage from "./pages/productsPage/ProductsPage";
 import LoginPage from "./pages/loginPage/LoginPage";
 import CategoryPage from "./pages/categoryPage/CategoryPage";
+import BrandPage from "./pages/brandPage/BrandPage";
 
 function App() {
   var user = false;
@@ -47,6 +48,7 @@ function App() {
             <Route path="/user/orders" element={<UserOrders />} />
             <Route path="/user/order/:id" element={<Order />} />
             <Route path="/brands" element={<Brands />} />
+            <Route path="/brand/:id" element={<BrandPage />} />
             <Route path="/contactus" element={<ContactUs />} />
 
             <Route path="/aboutus" element={<AboutUs />} />

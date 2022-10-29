@@ -265,6 +265,30 @@ export const getProductsByCategory = async (id) => {
   }
 };
 
+// get products by brand
+export const getProductsByBrand = async (id) => {
+  console.log("getProductsByBrand");
+  var st = await checkServer().then((res) => res.status);
+  console.log(st);
+  if (st === 200) {
+    try {
+      const response = await privateRequest.get("/products/brand/" + id);
+      if (response.status === 200) {
+        console.log(response);
+        return response.data;
+      } else {
+        // return error message
+        return null;
+      }
+    } catch (error) {
+      return null;
+    }
+  } else {
+    console.log("Server is down");
+    return null;
+  }
+};
+
 // search products
 export const searchProducts = async (search) => {
   console.log("searchProducts");
