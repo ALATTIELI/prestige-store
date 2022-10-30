@@ -120,6 +120,9 @@
   background-color: var(--maincolor);
   font-size: 12px;
   color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .search .f_flex {
   justify-content: end;
