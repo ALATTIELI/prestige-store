@@ -4,16 +4,10 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import Login from "../../components/Login/Login";
 import { getImageById, searchProducts } from "../../redux/apiCalls";
+import { useSelector } from "react-redux";
 
 const Search = () => {
-  const CartItem = [
-    {
-      id: 1,
-      name: "Product 1",
-      price: 100,
-      quantity: 1,
-    },
-  ];
+  const cartQuantity = useSelector((state) => state.cart.cartQuantity);
 
   const [search, setSearch] = React.useState("");
   const [loadingSearch, setLoadingSearch] = React.useState(true);
@@ -114,8 +108,8 @@ const Search = () => {
             <div className="cart">
               <Link to="/cart">
                 <i className="fa fa-shopping-bag icon-circle"></i>
-                {CartItem.length > 0 && (
-                  <span className="cart_count">{CartItem.length}</span>
+                {cartQuantity > 0 && (
+                  <span className="cart_count">{cartQuantity}</span>
                 )}
                 {/* <span>{CartItem.length === 0 ? "" : CartItem.length}</span> */}
               </Link>
