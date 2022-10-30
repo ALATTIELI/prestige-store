@@ -7,6 +7,8 @@ import {
   getImageById,
   getMobilePhones,
 } from "../../redux/apiCalls";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/cartRedux";
 
 const ShopCart = () => {
   // eslint-disable-next-line no-unused-vars
@@ -16,6 +18,7 @@ const ShopCart = () => {
   // eslint-disable-next-line no-unused-vars
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     async function fetchData() {
@@ -54,6 +57,14 @@ const ShopCart = () => {
     navigate(`/product/${id}`);
   };
 
+  const handleAddToCart = (product) => {
+    const data = {
+      ...product,
+      quantity: 1,
+    };
+    dispatch(addToCart(data));
+  };
+
   return (
     <>
       {productItems.map((productItem) => {
@@ -76,11 +87,9 @@ const ShopCart = () => {
                 <div className="product-name">
                   <h3>{productItem.name_en}</h3>
                 </div>
-                <div className="price">
+                <div className="price" onClick={(e) => e.stopPropagation()}>
                   <h4>AED {productItem.TotalPrice} </h4>
-                  <button
-                  // onClick={() => addToCart(shopItems)}
-                  >
+                  <button onClick={() => handleAddToCart(productItem)}>
                     <i className="fa fa-plus"></i>
                   </button>
                 </div>
