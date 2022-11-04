@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useDispatch, useSelector } from "react-redux";
+import { getImageById } from "../../redux/apiCalls";
+import {
+  decreaseProductQuantity,
+  increaseProductQuantity,
+  removeFromCart,
+} from "../../redux/cartRedux";
 import "./style.css";
 
 const Cart = () => {
   // eslint-disable-next-line no-unused-vars
   const { t, i18n } = useTranslation();
-  const CartItem = [
-    {
-      id: 1,
-      name: "Product 1",
-      price: 100,
-      quantity: 1,
-    },
-  ]
+  const dispatch = useDispatch();
+  const Cart = useSelector((state) => state.cart);
+  const CartItems = Cart.products;
 
   document.title = "Cart";
   // check if website is open in mobile or not
@@ -29,22 +31,37 @@ const Cart = () => {
     });
   });
 
-  const totalPrice = CartItem.reduce(
-    (price, item) => price + item.qty * item.price,
-    0
-  );
+  const totalPrice = Cart.total;
+  // CartItem.reduce(
+  //   (price, item) => price + item.qty * item.price,
+  //   0
+  // );
+
+  const handleRemove = (product) => {
+    dispatch(removeFromCart(product));
+  };
+
+  const handleIncrease = (product) => {
+    dispatch(increaseProductQuantity(product));
+  };
+
+  const handleDecrease = (product) => {
+    dispatch(decreaseProductQuantity(product));
+  };
+
+  console.log(CartItems);
 
   return (
     <>
       <section className="cart-items">
         <div className="container d_flex">
           <div className="cart-details">
-            {CartItem.length === 0 && (
+            {CartItems.length === 0 && (
               <h1 className="no-items product">{t("cart.no_items_in_cart")}</h1>
             )}
 
-            {CartItem.map((item) => {
-              const productQty = item.price * item.qty;
+            {CartItems.map((item) => {
+              const productQty = item.TotalPrice * item.quantity;
 
               // eslint-disable-next-line no-lone-blocks
               return (
@@ -54,18 +71,18 @@ const Cart = () => {
                       <div className="cart-list" key={item.id}>
                         <div className="cart-left">
                           <div className="img">
-                            <img src={item.cover} alt="" />
+                            <img src={getImageById(item.images[0])} alt="" />
                           </div>
                           <div className="cartControl d_flex">
                             <button
                               className="desCart"
-                              // onClick={() => decreaseQty(item)}
+                              onClick={() => handleDecrease(item)}
                             >
                               <i className="fa-solid fa-minus"></i>
                             </button>
                             <button
                               className="incCart"
-                              // onClick={() => addToCart(item)}
+                              onClick={() => handleIncrease(item)}
                             >
                               <i className="fa-solid fa-plus"></i>
                             </button>
@@ -73,14 +90,18 @@ const Cart = () => {
                         </div>
                         <div className="cart-right">
                           <div className="cart-details">
-                            <h3>{item.name}</h3>
+                            <h3>
+                              {i18n.language === "en"
+                                ? item.name_en
+                                : item.name_ar}
+                            </h3>
                             <h4>
                               <span className="price-qt">
                                 {" "}
-                                AED {item.price}.00 * {item.qty}{" "}
+                                AED {item.TotalPrice} * {item.quantity}{" "}
                               </span>
                               <span className="final-price">
-                                AED {productQty}.00
+                                AED {productQty}
                               </span>
                             </h4>
                           </div>
@@ -88,7 +109,7 @@ const Cart = () => {
                             <div className="removeCart">
                               <button
                                 className="removeCartBtn"
-                                // onClick={() => removeItem(item)}
+                                onClick={() => handleRemove(item._id)}
                               >
                                 <i className="fa-solid fa-xmark"></i>
                               </button>
@@ -102,7 +123,7 @@ const Cart = () => {
                     <div className="cart-list" key={item.id}>
                       <div className="cart-left">
                         <div className="img">
-                          <img src={item.cover} alt="" />
+                          <img src={getImageById(item.images[0])} alt="" />
                         </div>
                         {/* <div className="cartControl d_flex">
                           <button
@@ -121,14 +142,18 @@ const Cart = () => {
                       </div>
                       <div className="cart-right">
                         <div className="cart-details">
-                          <h3>{item.name}</h3>
+                          <h3>
+                            {i18n.language === "en"
+                              ? item.name_en
+                              : item.name_ar}
+                          </h3>
                           <h4>
                             <span className="price-qt">
                               {" "}
-                              AED {item.price}.00 * {item.qty}{" "}
+                              AED {item.TotalPrice} * {item.quantity}{" "}
                             </span>
                             <span className="final-price">
-                              AED {productQty}.00
+                              AED {productQty}
                             </span>
                           </h4>
                         </div>
@@ -136,13 +161,13 @@ const Cart = () => {
                           <div className="cartControl">
                             <button
                               className="desCart"
-                              // onClick={() => decreaseQty(item)}
+                              onClick={() => handleDecrease(item)}
                             >
                               <i className="fa-solid fa-minus"></i>
                             </button>
                             <button
                               className="incCart"
-                              // onClick={() => addToCart(item)}
+                              onClick={() => handleIncrease(item)}
                             >
                               <i className="fa-solid fa-plus"></i>
                             </button>
@@ -150,7 +175,7 @@ const Cart = () => {
                           <div className="removeCart">
                             <button
                               className="removeCartBtn"
-                              // onClick={() => removeItem(item)}
+                              onClick={() => handleRemove(item)}
                             >
                               <i className="fa-solid fa-xmark"></i>
                             </button>
@@ -170,24 +195,28 @@ const Cart = () => {
               <h3>{t("cart.payment_method")}</h3>
               <tbody>
                 <tr>
-                  <td>
-                    <input type="radio" name="payment" id="cash" />
-                    <label htmlFor="cash">{t("cart.cash_on_delivery")}</label>
-                  </td>
+                  <label htmlFor="cash">
+                    <td>
+                      <input type="radio" name="payment" id="cash" />
+                      <label htmlFor="cash">{t("cart.cash_on_delivery")}</label>
+                    </td>
+                  </label>
                 </tr>
                 <tr>
-                  <td>
-                    <input type="radio" name="payment" id="card" />
-                    <label htmlFor="card">{t("cart.card")}</label>
-                  </td>
+                  <label htmlFor="card">
+                    <td>
+                      <input type="radio" name="payment" id="card" />
+                      <label htmlFor="card">{t("cart.card")}</label>
+                    </td>
+                  </label>
                 </tr>
               </tbody>
             </div>
-            <div className="cart-total product">
+            <div className="cart-total">
               <h2>{t("cart.cart_summary")}</h2>
               <div className="d_flex">
                 <h4>{t("cart.total_price")}</h4>
-                <h3>AED {totalPrice}.00</h3>
+                <h3>AED {totalPrice}</h3>
               </div>
               <span>(5% VAT INCLUDED)</span>
             </div>
