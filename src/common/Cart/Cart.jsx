@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { getImageById } from "../../redux/apiCalls";
 import {
+  clearCart,
   decreaseProductQuantity,
   increaseProductQuantity,
   removeFromCart,
@@ -49,6 +50,10 @@ const Cart = () => {
     dispatch(decreaseProductQuantity(product));
   };
 
+  const handleClearCart = () => {
+    dispatch(clearCart());
+  };
+
   console.log(CartItems);
 
   return (
@@ -56,8 +61,22 @@ const Cart = () => {
       <section className="cart-items">
         <div className="container d_flex">
           <div className="cart-details">
+            {Cart.cartQuantity !== 0 && (
+              <div className="clear-cart">
+                <button
+                  className="clear-cart-btn"
+                  onClick={() => handleClearCart()}
+                >
+                  Clear Cart <i className="fas fa-trash"></i>
+                </button>
+              </div>
+            )}
             {CartItems.length === 0 && (
-              <h1 className="no-items product">{t("cart.no_items_in_cart")}</h1>
+              <>
+                <h1 className="no-items product">
+                  {t("cart.no_items_in_cart")}
+                </h1>
+              </>
             )}
 
             {CartItems.map((item) => {
@@ -109,7 +128,7 @@ const Cart = () => {
                             <div className="removeCart">
                               <button
                                 className="removeCartBtn"
-                                onClick={() => handleRemove(item._id)}
+                                onClick={() => handleRemove(item)}
                               >
                                 <i className="fa-solid fa-xmark"></i>
                               </button>
