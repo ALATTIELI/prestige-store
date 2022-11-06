@@ -39,16 +39,16 @@
     "safe_payment": "دفع آمن",
     "description": "لن يتم تسجيل بيانات البطاقة الائتمانية"
   },
-  
+
   "shop_with_confidence": {
     "shop_with_confidence": "تسوق بثقة",
     "description": "نحن ملتزمون بتزويدك بأفضل تجربة تسوق عبر الإنترنت ممكنة"
   },
-  
+
   "24_7_support": {
     "24_7_support": "دعم 24/7",
     "description": "متواجدون 24/7 لمساعدتك في أي وقت"
-  },    
+  },
 
   "about_us": {
     "about_us": "معلومات عنا",
@@ -72,6 +72,7 @@
     "my_account": "حسابي",
     "my_profile": "ملفي",
     "my_orders": "طلباتي",
+    "edit_user": "تعديل المستخدم",
     "name": "الاسم",
     "email": "البريد الإلكتروني",
     "phone": "رقم الهاتف",
