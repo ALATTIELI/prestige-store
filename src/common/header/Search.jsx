@@ -1,13 +1,16 @@
 import { Modal } from "@mui/material";
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Login from "../../components/Login/Login";
 import { getImageById, searchProducts } from "../../redux/apiCalls";
 import { useSelector } from "react-redux";
 
 const Search = () => {
   const cartQuantity = useSelector((state) => state.cart.cartQuantity);
+  const user = useSelector((state) => state.user.currentUser);
+
+  const navigate = useNavigate();
 
   const [search, setSearch] = React.useState("");
   const [loadingSearch, setLoadingSearch] = React.useState(true);
@@ -24,6 +27,14 @@ const Search = () => {
 
   const handleChange = (e) => {
     setSearch(e.target.value);
+  };
+
+  const handleUser = () => {
+    if (user) {
+      navigate("/user/");
+    } else {
+      handleOpen();
+    }
   };
 
   useEffect(() => {
@@ -104,7 +115,7 @@ const Search = () => {
           </div>
 
           <div className="header_icons">
-            <i className="fa fa-user icon-circle" onClick={handleOpen}></i>
+            <i className="fa fa-user icon-circle" onClick={handleUser}></i>
             <div className="cart">
               <Link to="/cart">
                 <i className="fa fa-shopping-bag icon-circle"></i>
