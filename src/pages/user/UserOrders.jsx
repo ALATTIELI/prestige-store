@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import User from "./User";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 
 const orders = [
   {
@@ -21,6 +22,18 @@ const orders = [
 
 export default function UserOrders() {
   const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
+  const user = useSelector((state) => state.user.currentUser);
+
+  useEffect(() => {
+    document.title = "User Orders";
+  }, []);
+
+  useEffect(() => {
+    if (!user || user === null) {
+      navigate("/");
+    }
+  }, [user]);
 
   return (
     <div className="UserOrders">
