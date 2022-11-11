@@ -71,6 +71,7 @@
   "user": {
     "my_account": "حسابي",
     "my_profile": "ملفي",
+    "logout": "تسجيل خروج",
     "my_orders": "طلباتي",
     "edit_user": "تعديل المستخدم",
     "name": "الاسم",

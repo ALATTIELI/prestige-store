@@ -3,14 +3,15 @@ import "./user.css";
 import { useTranslation } from "react-i18next";
 import PersonIcon from "@mui/icons-material/Person";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
-import UserProfile from "./UserProfile";
-import { Link, Route, Router, Switch, useNavigate } from "react-router-dom";
-import UserOrders from "./UserOrders";
-import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { userLogout } from "../../redux/apiCalls";
 
 const User = () => {
+  // eslint-disable-next-line no-unused-vars
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const user = useSelector((state) => state.user.currentUser);
 
   useEffect(() => {
@@ -21,12 +22,23 @@ const User = () => {
     if (!user || user === null) {
       navigate("/");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
-  
+
+  const handleLogout = (e) => {
+    e.preventDefault();
+    userLogout(dispatch);
+  };
+
   return (
     <div className="user-left">
       <div className="user-left-top">
         <span className="title">{t("user.my_account")}</span>
+        <div className="user-logout">
+          <button className="logout-btn" onClick={handleLogout}>
+            {t("user.logout")}
+          </button>
+        </div>
       </div>
       <ul className="list">
         <Link to="/user/profile" className="link">

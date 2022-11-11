@@ -86,6 +86,20 @@
 .user-left .list .list-item .icon {
   margin-right: 10px;
 }
+.user-logout .logout-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.user-logout .logout-btn:hover {
+  background-color: red;
+  color: white !important;
+}
 .user-profile-right {
   flex: 3;
   width: 100%;
@@ -339,6 +353,10 @@
   .user-left {
     margin-bottom: 20px;
     width: auto;
+  }
+  .user-logout .logout-btn {
+    background-color: red;
+    color: white !important;
   }
   .user-right {
     padding: 0px;

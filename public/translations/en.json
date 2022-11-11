@@ -72,6 +72,7 @@
   "user": {
     "my_account": "My Account",
     "my_profile": "My Profile",
+    "logout": "Logout",
     "my_orders": "My Orders",
     "edit_user": "Edit User",
     "name": "Name",
