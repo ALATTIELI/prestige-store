@@ -79,6 +79,8 @@
     "email": "Email",
     "phone": "Phone",
     "address": "Address",
+    "address_city": "City",
+    "address_street": "Street",
     "order_id": "Order ID",
     "status": "Status",
     "date": "Date",

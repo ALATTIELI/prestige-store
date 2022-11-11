@@ -78,6 +78,8 @@
     "email": "البريد الإلكتروني",
     "phone": "رقم الهاتف",
     "address": "العنوان",
+    "address_city": "المدينة",
+    "address_street": "الشارع",
     "order_id": "رقم الطلب",
     "status": "الحالة",
     "date": "التاريخ",

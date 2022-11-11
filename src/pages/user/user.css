@@ -295,7 +295,7 @@
   display: flex;
   flex-direction: column;
   /* align-items: center; */
-  justify-content: space-between;
+  /* justify-content: space-between; */
   padding: 10px;
   /* border-bottom: 1px solid #f2f2f2; */
 }
@@ -326,6 +326,24 @@
 .user-info-value:focus {
   border: 1px solid var(--maincolor);
   box-shadow: 0px 0px 5px var(--maincolor);
+}
+.user-save {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+.user-save-btn {
+  width: 50%;
+  padding: 5px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  outline: none;
+  background-color: var(--maincolor);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
@@ -407,6 +425,10 @@
     text-align: right;
   }
   .UserOrderDetailes .user-right .order-price-detailes {
+    width: 100%;
+  }
+
+  .user-save-btn {
     width: 100%;
   }
 }
