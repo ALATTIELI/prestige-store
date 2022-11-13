@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {
   getCategoryById,
@@ -7,9 +8,11 @@ import {
   getImageById,
   getProductsByCategory,
 } from "../../redux/apiCalls";
+import { addToCart } from "../../redux/cartRedux";
 import "./categoryPage.css";
 
 export default function CategoryPage() {
+  // eslint-disable-next-line no-unused-vars
   const { t, i18n } = useTranslation();
   // get the category name from the url
   const categoryId = window.location.pathname.split("/").pop();
@@ -17,6 +20,7 @@ export default function CategoryPage() {
   const [products, setProducts] = useState([]);
   const [discount, setDiscount] = useState({});
   const [loading, setLoading] = useState(true);
+  const dispatch = useDispatch();
 
   const navigate = useNavigate();
 
@@ -24,7 +28,6 @@ export default function CategoryPage() {
     async function fetchData() {
       try {
         const res = await getCategoryById(categoryId);
-        console.log(res);
         if (res !== null) {
           setCategory(res);
         } else {
@@ -53,7 +56,7 @@ export default function CategoryPage() {
       }
     }
     fetchData();
-  }, []);
+  }, [categoryId]);
 
   useEffect(() => {
     products.map(async (item) => {
@@ -72,6 +75,15 @@ export default function CategoryPage() {
 
   const handleClick = (id) => {
     navigate(`/product/${id}`);
+  };
+
+  const handleAddToCart = (e, product) => {
+    e.preventDefault();
+    const data = {
+      ...product,
+      quantity: 1,
+    };
+    dispatch(addToCart(data));
   };
 
   return (
@@ -112,11 +124,12 @@ export default function CategoryPage() {
                             : product.name_ar}
                         </h3>
                       </div>
-                      <div className="price">
+                      <div
+                        className="price"
+                        onClick={(e) => e.stopPropagation()}
+                      >
                         <h4>AED {product.TotalPrice} </h4>
-                        <button
-                        // onClick={() => addToCart(shopItems)}
-                        >
+                        <button onClick={(e) => handleAddToCart(e, product)}>
                           <i className="fa fa-plus"></i>
                         </button>
                       </div>

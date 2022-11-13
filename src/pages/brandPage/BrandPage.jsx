@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {
   getBrandById,
@@ -7,9 +8,11 @@ import {
   getImageById,
   getProductsByBrand,
 } from "../../redux/apiCalls";
+import { addToCart } from "../../redux/cartRedux";
 import "./brandPage.css";
 
 export default function BrandPage() {
+  // eslint-disable-next-line no-unused-vars
   const { t, i18n } = useTranslation();
   // get the brand id from the url
   const brandId = window.location.pathname.split("/").pop();
@@ -17,6 +20,7 @@ export default function BrandPage() {
   const [products, setProducts] = useState([]);
   const [discount, setDiscount] = useState({});
   const [loading, setLoading] = useState(true);
+  const dispatch = useDispatch();
 
   const navigate = useNavigate();
 
@@ -24,7 +28,6 @@ export default function BrandPage() {
     async function fetchData() {
       try {
         const res = await getBrandById(brandId);
-        console.log(res);
         if (res !== null) {
           setBrand(res);
         } else {
@@ -41,7 +44,6 @@ export default function BrandPage() {
     async function fetchData() {
       try {
         const res = await getProductsByBrand(brandId);
-        console.log(res);
         if (res !== null) {
           setProducts(res);
           setLoading(false);
@@ -53,7 +55,7 @@ export default function BrandPage() {
       }
     }
     fetchData();
-  }, []);
+  }, [brandId]);
 
   useEffect(() => {
     products.map(async (item) => {
@@ -72,6 +74,15 @@ export default function BrandPage() {
 
   const handleClick = (id) => {
     navigate(`/product/${id}`);
+  };
+
+  const handleAddToCart = (e, product) => {
+    e.preventDefault();
+    const data = {
+      ...product,
+      quantity: 1,
+    };
+    dispatch(addToCart(data));
   };
 
   return (
@@ -110,11 +121,12 @@ export default function BrandPage() {
                             : product.name_ar}
                         </h3>
                       </div>
-                      <div className="price">
+                      <div
+                        className="price"
+                        onClick={(e) => e.stopPropagation()}
+                      >
                         <h4>AED {product.TotalPrice} </h4>
-                        <button
-                        // onClick={() => addToCart(shopItems)}
-                        >
+                        <button onClick={(e) => handleAddToCart(e, product)}>
                           <i className="fa fa-plus"></i>
                         </button>
                       </div>

@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {
   getDiscountById,
   getImageById,
   getLatestDiscounts,
 } from "../../redux/apiCalls";
+import { addToCart } from "../../redux/cartRedux";
 
 const DiscountCard = () => {
   // eslint-disable-next-line no-unused-vars
@@ -14,6 +16,7 @@ const DiscountCard = () => {
   const [discount, setDiscount] = useState({});
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     async function fetchData() {
@@ -60,6 +63,14 @@ const DiscountCard = () => {
     navigate(`/product/${id}`);
   };
 
+  const handleAddToCart = (product) => {
+    const data = {
+      ...product,
+      quantity: 1,
+    };
+    dispatch(addToCart(data));
+  };
+
   return (
     <>
       <div className="discount_card">
@@ -97,7 +108,10 @@ const DiscountCard = () => {
                           : productItem.name_ar}
                       </h3>
                     </div>
-                    <div className="discount_card_product_price">
+                    <div
+                      className="discount_card_product_price"
+                      onClick={(e) => e.stopPropagation()}
+                    >
                       <div className="DiscountPrice">
                         <span className="DiscountDPrice">
                           AED {productItem.TotalPrice}
@@ -109,9 +123,7 @@ const DiscountCard = () => {
                           AED {productItem.price}
                         </span>
                       </div>
-                      <button
-                      // onClick={() => addToCart(productItems)}
-                      >
+                      <button onClick={() => handleAddToCart(productItem)}>
                         <i className="fa fa-plus"></i>
                       </button>
                     </div>

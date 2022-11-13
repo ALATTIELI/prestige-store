@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
 import {
   getBrandById,
   getCategoryById,
   getImageById,
   getProductById,
 } from "../../redux/apiCalls";
+import { addToCart } from "../../redux/cartRedux";
 import "./product.css";
 
 export default function Product() {
@@ -15,6 +17,7 @@ export default function Product() {
   const [category, setCategory] = useState([]);
   const [loading, setLoading] = useState(true);
   const product_id = window.location.pathname.split("/").pop();
+  const dispatch = useDispatch();
   // Show img from the thumbnail to the main img
   function showImg(e) {
     const img = e.target;
@@ -70,6 +73,15 @@ export default function Product() {
     }
     fetchData();
   }, [product_data]);
+
+  const handleAddToCart = (e, product) => {
+    e.preventDefault();
+    const data = {
+      ...product,
+      quantity: 1,
+    };
+    dispatch(addToCart(data));
+  };
 
   return (
     <div className="Product-Page">
@@ -185,7 +197,11 @@ export default function Product() {
                     <span>{product_data.TotalPrice} AED</span>
                   )}
 
-                  <a href=" " className="cart-btn">
+                  <a
+                    href=" "
+                    className="cart-btn"
+                    onClick={(e) => handleAddToCart(e, product_data)}
+                  >
                     {t("product.add_to_cart")}
                   </a>
                 </div>
