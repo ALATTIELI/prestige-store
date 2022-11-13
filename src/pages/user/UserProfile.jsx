@@ -23,7 +23,7 @@ export default function UserProfile() {
         const res = await getUserById(userid);
         if (res !== null && res !== false) {
           setUser(res);
-          console.log(res);
+          // console.log(res);
           setLoading(false);
         }
       } catch (err) {

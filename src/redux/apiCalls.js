@@ -49,7 +49,7 @@ export const getCurrentUser = async (dispatch) => {
   try {
     const response = await publicRequest.get("/auth/currentUser");
     if (response.status === 200) {
-      console.log(response);
+      // console.log(response);
       localStorage.setItem("accessToken", response.data.accessToken);
       // add a timer to localStorage 24 hours
       const expirationTime = new Date(
@@ -101,14 +101,14 @@ export const getFeaturedProducts = async () => {
 
 // get latest 5 discounts
 export const getLatestDiscounts = async () => {
-  console.log("getLatestDiscounts");
+  // console.log("getLatestDiscounts");
   var st = await checkServer().then((res) => res.status);
-  console.log(st);
+  // console.log(st);
   if (st === 200) {
     try {
       const response = await publicRequest.get("/products/discounts?new=true");
       if (response.status === 200) {
-        console.log(response);
+        // console.log(response);
         return response.data;
       } else {
         return null;
@@ -124,14 +124,14 @@ export const getLatestDiscounts = async () => {
 
 // get latest 10 products
 export const getLatestProducts = async () => {
-  console.log("getLatestProducts");
+  // console.log("getLatestProducts");
   var st = await checkServer().then((res) => res.status);
-  console.log(st);
+  // console.log(st);
   if (st === 200) {
     try {
       const response = await privateRequest.get("/products/?new=true");
       if (response.status === 200) {
-        console.log(response);
+        // console.log(response);
         return response.data;
       } else {
         // return error message
@@ -148,16 +148,16 @@ export const getLatestProducts = async () => {
 
 // get mobile phones
 export const getMobilePhones = async () => {
-  console.log("getMobilePhones");
+  // console.log("getMobilePhones");
   var st = await checkServer().then((res) => res.status);
-  console.log(st);
+  // console.log(st);
   if (st === 200) {
     try {
       const response = await privateRequest.get(
         "/products/category/62c4806f9c8e583abd1d1202"
       );
       if (response.status === 200) {
-        console.log(response);
+        // console.log(response);
         return response.data;
       } else {
         // return error message
@@ -174,14 +174,14 @@ export const getMobilePhones = async () => {
 
 // get orders made today
 export const getTodayOrders = async () => {
-  console.log("getTodayOrders");
+  // console.log("getTodayOrders");
   var st = await checkServer().then((res) => res.status);
-  console.log(st);
+  // console.log(st);
   if (st === 200) {
     try {
       const response = await privateRequest.get("/orders/today");
       if (response.status === 200) {
-        console.log(response);
+        // console.log(response);
         return response.data;
       } else {
         return new Error(response.data.message);
@@ -198,14 +198,14 @@ export const getTodayOrders = async () => {
 
 // get todays accepted orders
 export const getTodayAcceptedOrders = async () => {
-  console.log("getTodayAcceptedOrders");
+  // console.log("getTodayAcceptedOrders");
   var st = await checkServer().then((res) => res.status);
-  console.log(st);
+  // console.log(st);
   if (st === 200) {
     try {
       const response = await privateRequest.get("/orders/today/approved");
       if (response.status === 200) {
-        console.log(response);
+        // console.log(response);
         return response.data;
       } else {
         return new Error(response.data.message);
@@ -223,14 +223,14 @@ export const getTodayAcceptedOrders = async () => {
 // ====== PRODUCTS ======
 // get products
 export const getProducts = async () => {
-  console.log("getProducts");
+  // console.log("getProducts");
   var st = await checkServer().then((res) => res.status);
-  console.log(st);
+  // console.log(st);
   if (st === 200) {
     try {
       const response = await publicRequest.get("/products");
       if (response.status === 200) {
-        console.log(response);
+        // console.log(response);
         return response.data;
       } else {
         return false;
@@ -243,14 +243,14 @@ export const getProducts = async () => {
 
 // get products by category
 export const getProductsByCategory = async (id) => {
-  console.log("getProductsByCategory");
+  // console.log("getProductsByCategory");
   var st = await checkServer().then((res) => res.status);
-  console.log(st);
+  // console.log(st);
   if (st === 200) {
     try {
       const response = await privateRequest.get("/products/category/" + id);
       if (response.status === 200) {
-        console.log(response);
+        // console.log(response);
         return response.data;
       } else {
         // return error message
@@ -267,14 +267,14 @@ export const getProductsByCategory = async (id) => {
 
 // get products by brand
 export const getProductsByBrand = async (id) => {
-  console.log("getProductsByBrand");
+  // console.log("getProductsByBrand");
   var st = await checkServer().then((res) => res.status);
-  console.log(st);
+  // console.log(st);
   if (st === 200) {
     try {
       const response = await privateRequest.get("/products/brand/" + id);
       if (response.status === 200) {
-        console.log(response);
+        // console.log(response);
         return response.data;
       } else {
         // return error message
@@ -291,14 +291,14 @@ export const getProductsByBrand = async (id) => {
 
 // search products
 export const searchProducts = async (search) => {
-  console.log("searchProducts");
+  // console.log("searchProducts");
   var st = await checkServer().then((res) => res.status);
-  console.log(st);
+  // console.log(st);
   if (st === 200) {
     try {
       const response = await publicRequest.get(`/products/search/${search}`);
       if (response.status === 200) {
-        console.log(response);
+        // console.log(response);
         return response.data;
       } else {
         return false;
@@ -312,14 +312,14 @@ export const searchProducts = async (search) => {
 
 // get product by id
 export const getProductById = async (id) => {
-  console.log("getProductById");
+  // console.log("getProductById");
   var st = await checkServer().then((res) => res.status);
-  console.log(st);
+  // console.log(st);
   if (st === 200) {
     try {
       const response = await publicRequest.get(`/products/${id}`);
       if (response.status === 200) {
-        console.log(response);
+        // console.log(response);
         return response.data;
       } else {
         return false;
@@ -331,59 +331,18 @@ export const getProductById = async (id) => {
     return false;
   }
 };
-// update product
-export const updateProduct = async (id, product) => {
-  console.log("updateProduct");
-  var st = await checkServer().then((res) => res.status);
-  console.log(st);
-  if (st === 200) {
-    try {
-      const response = await privateRequest.post(`/products/update`, {
-        id,
-        ...product,
-      });
-      if (response.status === 200) {
-        console.log(response);
-        return response.data;
-      } else {
-        return false;
-      }
-    } catch (error) {
-      return false;
-    }
-  }
-};
-// delete product
-export const deleteProduct = async (id) => {
-  console.log("deleteProduct");
-  var st = await checkServer().then((res) => res.status);
-  console.log(st);
-  if (st === 200) {
-    try {
-      const response = await privateRequest.delete(`/products/${id}`);
-      if (response.status === 200) {
-        console.log(response);
-        return response.data;
-      } else {
-        return false;
-      }
-    } catch (error) {
-      return false;
-    }
-  }
-};
 
 // ====== CATEGORY ======
 // get categories
 export const getCategories = async () => {
-  console.log("getCategories");
+  // console.log("getCategories");
   var st = await checkServer().then((res) => res.status);
-  console.log(st);
+  // console.log(st);
   if (st === 200) {
     try {
       const response = await publicRequest.get("/categories");
       if (response.status === 200) {
-        console.log(response);
+        // console.log(response);
         return response.data;
       } else {
         return false;
@@ -396,14 +355,14 @@ export const getCategories = async () => {
 
 // search categories
 export const searchCategories = async (search) => {
-  console.log("searchCategories");
+  // console.log("searchCategories");
   var st = await checkServer().then((res) => res.status);
-  console.log(st);
+  // console.log(st);
   if (st === 200) {
     try {
       const response = await publicRequest.get(`/categories/search/${search}`);
       if (response.status === 200) {
-        console.log(response);
+        // console.log(response);
         return response.data;
       } else {
         return false;
@@ -415,14 +374,14 @@ export const searchCategories = async (search) => {
 };
 // get category by id
 export const getCategoryById = async (id) => {
-  console.log("getCategoryById");
+  // console.log("getCategoryById");
   var st = await checkServer().then((res) => res.status);
-  console.log(st);
+  // console.log(st);
   if (st === 200) {
     try {
       const response = await publicRequest.get(`/categories/${id}`);
       if (response.status === 200) {
-        console.log(response);
+        // console.log(response);
         return response.data;
       } else {
         return false;
@@ -434,78 +393,18 @@ export const getCategoryById = async (id) => {
     return false;
   }
 };
-// create new category
-export const createCategory = async (category) => {
-  console.log("createCategory");
-  var st = await checkServer().then((res) => res.status);
-  console.log(st);
-  if (st === 200) {
-    try {
-      const response = await privateRequest.post("/categories/add", category);
-      if (response.status === 200) {
-        console.log(response);
-        return response.data;
-      } else {
-        return false;
-      }
-    } catch (error) {
-      return false;
-    }
-  }
-};
-// update category
-export const updateCategory = async (id, category) => {
-  console.log("updateCategory");
-  var st = await checkServer().then((res) => res.status);
-  console.log(st);
-  if (st === 200) {
-    try {
-      const response = await privateRequest.post(`/categories/update`, {
-        id,
-        ...category,
-      });
-      if (response.status === 200) {
-        console.log(response);
-        return response.data;
-      } else {
-        return false;
-      }
-    } catch (error) {
-      return false;
-    }
-  }
-};
-// delete category
-export const deleteCategory = async (id) => {
-  console.log("deleteCategory");
-  var st = await checkServer().then((res) => res.status);
-  console.log(st);
-  if (st === 200) {
-    try {
-      const response = await privateRequest.delete(`/categories/${id}`);
-      if (response.status === 200) {
-        console.log(response);
-        return response.data;
-      } else {
-        return false;
-      }
-    } catch (error) {
-      return false;
-    }
-  }
-};
 
 // ====== BRANDS ======
 // get brands
 export const getBrands = async () => {
-  console.log("getBrands");
+  // console.log("getBrands");
   var st = await checkServer().then((res) => res.status);
-  console.log(st);
+  // console.log(st);
   if (st === 200) {
     try {
       const response = await publicRequest.get("/brands");
       if (response.status === 200) {
-        console.log(response);
+        // console.log(response);
         return response.data;
       } else {
         return false;
@@ -517,14 +416,14 @@ export const getBrands = async () => {
 };
 // get brands for home page
 export const getLimitedBrands = async () => {
-  console.log("getLimitedBrands");
+  // console.log("getLimitedBrands");
   var st = await checkServer().then((res) => res.status);
-  console.log(st);
+  // console.log(st);
   if (st === 200) {
     try {
       const response = await publicRequest.get("/brands?limit=9");
       if (response.status === 200) {
-        console.log(response);
+        // console.log(response);
         return response.data;
       } else {
         return false;
@@ -536,14 +435,14 @@ export const getLimitedBrands = async () => {
 };
 // get brand by id
 export const getBrandById = async (id) => {
-  console.log("getBrandById");
+  // console.log("getBrandById");
   var st = await checkServer().then((res) => res.status);
-  console.log(st);
+  // console.log(st);
   if (st === 200) {
     try {
       const response = await publicRequest.get(`/brands/${id}`);
       if (response.status === 200) {
-        console.log(response);
+        // console.log(response);
         return response.data;
       } else {
         return false;
@@ -555,74 +454,14 @@ export const getBrandById = async (id) => {
 };
 // search brands by name
 export const searchBrands = async (search) => {
-  console.log("searchBrands");
+  // console.log("searchBrands");
   var st = await checkServer().then((res) => res.status);
-  console.log(st);
+  // console.log(st);
   if (st === 200) {
     try {
       const response = await publicRequest.get(`/brands/search/${search}`);
       if (response.status === 200) {
-        console.log(response);
-        return response.data;
-      } else {
-        return false;
-      }
-    } catch (error) {
-      return false;
-    }
-  }
-};
-// create new brand
-export const createBrand = async (brand) => {
-  console.log("createBrand");
-  var st = await checkServer().then((res) => res.status);
-  console.log(st);
-  if (st === 200) {
-    try {
-      const response = await privateRequest.post("/brands/add", brand);
-      if (response.status === 200) {
-        console.log(response);
-        return response.data;
-      } else {
-        return false;
-      }
-    } catch (error) {
-      return false;
-    }
-  }
-};
-// update brand
-export const updateBrand = async (id, brand) => {
-  console.log("updateBrand");
-  var st = await checkServer().then((res) => res.status);
-  console.log(st);
-  if (st === 200) {
-    try {
-      const response = await privateRequest.post(`/brands/update`, {
-        id,
-        ...brand,
-      });
-      if (response.status === 200) {
-        console.log(response);
-        return response.data;
-      } else {
-        return false;
-      }
-    } catch (error) {
-      return false;
-    }
-  }
-};
-// delete brand
-export const deleteBrand = async (id) => {
-  console.log("deleteBrand");
-  var st = await checkServer().then((res) => res.status);
-  console.log(st);
-  if (st === 200) {
-    try {
-      const response = await privateRequest.delete(`/brands/${id}`);
-      if (response.status === 200) {
-        console.log(response);
+        // console.log(response);
         return response.data;
       } else {
         return false;
@@ -715,40 +554,18 @@ export const getOrdersByStatus = async (status) => {
     }
   }
 };
-// update order status
-export const updateOrderStatus = async (id, status) => {
-  console.log("updateOrderStatus");
-  var st = await checkServer().then((res) => res.status);
-  console.log(st);
-  if (st === 200) {
-    try {
-      const response = await privateRequest.post(`/orders/update`, {
-        id,
-        status,
-      });
-      if (response.status === 200) {
-        console.log(response);
-        return response.data;
-      } else {
-        return false;
-      }
-    } catch (error) {
-      return false;
-    }
-  }
-};
 
 // ====== DISCOUNTS ======
 // get discounts
 export const getDiscounts = async () => {
-  console.log("getDiscounts");
+  // console.log("getDiscounts");
   var st = await checkServer().then((res) => res.status);
-  console.log(st);
+  // console.log(st);
   if (st === 200) {
     try {
       const response = await privateRequest.get("/discounts");
       if (response.status === 200) {
-        console.log(response);
+        // console.log(response);
         return response.data;
       } else {
         return false;
@@ -761,14 +578,14 @@ export const getDiscounts = async () => {
 
 // search discounts
 export const searchDiscounts = async (search) => {
-  console.log("searchDiscounts");
+  // console.log("searchDiscounts");
   var st = await checkServer().then((res) => res.status);
-  console.log(st);
+  // console.log(st);
   if (st === 200) {
     try {
       const response = await privateRequest.get(`/discounts/search/${search}`);
       if (response.status === 200) {
-        console.log(response);
+        // console.log(response);
         return response.data;
       } else {
         return false;
@@ -780,74 +597,14 @@ export const searchDiscounts = async (search) => {
 };
 // get discount by id
 export const getDiscountById = async (id) => {
-  console.log("getDiscountById");
+  // console.log("getDiscountById");
   var st = await checkServer().then((res) => res.status);
-  console.log(st);
+  // console.log(st);
   if (st === 200) {
     try {
       const response = await privateRequest.get(`/discounts/${id}`);
       if (response.status === 200) {
-        console.log(response);
-        return response.data;
-      } else {
-        return false;
-      }
-    } catch (error) {
-      return false;
-    }
-  }
-};
-// create discount
-export const createDiscount = async (discount) => {
-  console.log("createDiscount");
-  var st = await checkServer().then((res) => res.status);
-  console.log(st);
-  if (st === 200) {
-    try {
-      const response = await privateRequest.post("/discounts/add", ...discount);
-      if (response.status === 200) {
-        console.log(response);
-        return response.data;
-      } else {
-        return false;
-      }
-    } catch (error) {
-      return false;
-    }
-  }
-};
-// update discount
-export const updateDiscount = async (id, discount) => {
-  console.log("updateDiscount");
-  var st = await checkServer().then((res) => res.status);
-  console.log(st);
-  if (st === 200) {
-    try {
-      const response = await privateRequest.post("/discounts/update", {
-        id,
-        ...discount,
-      });
-      if (response.status === 200) {
-        console.log(response);
-        return response.data;
-      } else {
-        return false;
-      }
-    } catch (error) {
-      return false;
-    }
-  }
-};
-// delete discount
-export const deleteDiscount = async (id) => {
-  console.log("deleteDiscount");
-  var st = await checkServer().then((res) => res.status);
-  console.log(st);
-  if (st === 200) {
-    try {
-      const response = await privateRequest.delete(`/discounts/${id}`);
-      if (response.status === 200) {
-        console.log(response);
+        // console.log(response);
         return response.data;
       } else {
         return false;
@@ -859,35 +616,16 @@ export const deleteDiscount = async (id) => {
 };
 
 // ====== USERS ======
-// get users
-export const getUsers = async () => {
-  console.log("getUsers");
-  var st = await checkServer().then((res) => res.status);
-  console.log(st);
-  if (st === 200) {
-    try {
-      const response = await privateRequest.get("/users");
-      if (response.status === 200) {
-        console.log(response);
-        return response.data;
-      } else {
-        return false;
-      }
-    } catch (error) {
-      return false;
-    }
-  }
-};
 // get user by id
 export const getUserById = async (id) => {
-  console.log("getUserById");
+  // console.log("getUserById");
   var st = await checkServer().then((res) => res.status);
-  console.log(st);
+  // console.log(st);
   if (st === 200) {
     try {
       const response = await privateRequest.get(`/users/${id}`);
       if (response.status === 200) {
-        console.log(response);
+        // console.log(response);
         return response.data;
       } else {
         return false;
@@ -898,30 +636,11 @@ export const getUserById = async (id) => {
   }
 };
 
-// search users by email
-export const searchUsersByEmail = async (email) => {
-  console.log("searchUsersByEmail");
-  var st = await checkServer().then((res) => res.status);
-  console.log(st);
-  if (st === 200) {
-    try {
-      const response = await privateRequest.get(`/users/search/${email}`);
-      if (response.status === 200) {
-        console.log(response);
-        return response.data;
-      } else {
-        return false;
-      }
-    } catch (error) {
-      return false;
-    }
-  }
-};
 // update user
 export const updateUser = async (id, user) => {
-  console.log("updateUser");
+  // console.log("updateUser");
   var st = await checkServer().then((res) => res.status);
-  console.log(st);
+  // console.log(st);
   if (st === 200) {
     try {
       const response = await privateRequest.post("/users/update", {
@@ -930,105 +649,7 @@ export const updateUser = async (id, user) => {
       });
 
       if (response.status === 200) {
-        console.log(response);
-        return response.data;
-      } else {
-        return false;
-      }
-    } catch (error) {
-      return false;
-    }
-  }
-};
-
-// get admins
-export const getAdmins = async () => {
-  console.log("getAdmin");
-  var st = await checkServer().then((res) => res.status);
-  console.log(st);
-  if (st === 200) {
-    try {
-      const response = await privateRequest.get("/admins");
-      if (response.status === 200) {
-        console.log(response);
-        return response.data;
-      } else {
-        return false;
-      }
-    } catch (error) {
-      return false;
-    }
-  }
-};
-
-// search admins by email
-export const searchAdminsByEmail = async (email) => {
-  console.log("searchAdminsByEmail");
-  var st = await checkServer().then((res) => res.status);
-  console.log(st);
-  if (st === 200) {
-    try {
-      const response = await privateRequest.get(`/admins/search/${email}`);
-      if (response.status === 200) {
-        console.log(response);
-        return response.data;
-      } else {
-        return false;
-      }
-    } catch (error) {
-      return false;
-    }
-  }
-};
-
-// get blocked users
-export const getBlockedUsers = async () => {
-  console.log("getBlockedUsers");
-  var st = await checkServer().then((res) => res.status);
-  console.log(st);
-  if (st === 200) {
-    try {
-      const response = await privateRequest.get("/users/blocked");
-      if (response.status === 200) {
-        console.log(response);
-        return response.data;
-      } else {
-        return false;
-      }
-    } catch (error) {
-      return false;
-    }
-  }
-};
-// block user
-export const blockUser = async (id) => {
-  console.log("blockUser");
-  var st = await checkServer().then((res) => res.status);
-  console.log(st);
-  if (st === 200) {
-    try {
-      const response = await privateRequest.post("/users/block", { id });
-      if (response.status === 200) {
-        console.log(response);
-        return response.data;
-      } else {
-        return false;
-      }
-    } catch (error) {
-      return false;
-    }
-  }
-};
-// unblock user
-export const unblockUser = async (id) => {
-  console.log("unblockUser");
-  var st = await checkServer().then((res) => res.status);
-  console.log(st);
-  if (st === 200) {
-    try {
-      const response = await privateRequest.post("/users/unblock", { id });
-      if (response.status === 200) {
-        console.log(response);
+        // console.log(response);
         return response.data;
       } else {
         return false;
@@ -1058,77 +679,18 @@ export const deleteUser = async (id) => {
     }
   }
 };
-// make user admin
-export const makeUserAdmin = async (email) => {
-  console.log("makeUserAdmin");
-  var st = await checkServer().then((res) => res.status);
-  console.log(st);
-  if (st === 200) {
-    try {
-      const response = await privateRequest.post("/admins/add", { email });
-      if (response.status === 200) {
-        console.log(response);
-        return response.data;
-      } else {
-        return false;
-      }
-    } catch (error) {
-      return false;
-    }
-  }
-};
-// remove admin
-export const removeAdmin = async (email) => {
-  console.log("removeAdmin");
-  var st = await checkServer().then((res) => res.status);
-  console.log(st);
-  if (st === 200) {
-    try {
-      const response = await privateRequest.post("/admins/remove", { email });
-      if (response.status === 200) {
-        console.log(response);
-        return response.data;
-      } else {
-        return false;
-      }
-    } catch (error) {
-      return false;
-    }
-  }
-};
-// search blocked users by email
-export const searchBlockedUsersByEmail = async (email) => {
-  console.log("searchBlockedUsersByEmail");
-  var st = await checkServer().then((res) => res.status);
-  console.log(st);
-  if (st === 200) {
-    try {
-      const response = await privateRequest.get(
-        `/users/blocked/search/${email}`
-      );
-      if (response.status === 200) {
-        console.log(response);
-        return response.data;
-      } else {
-        return false;
-      }
-    } catch (error) {
-      return false;
-    }
-  }
-};
 
 // ====== Others ======
 // get terms and conditions
 export const getTnS = async () => {
-  console.log("getTnS");
+  // console.log("getTnS");
   var st = await checkServer().then((res) => res.status);
-  console.log(st);
+  // console.log(st);
   if (st === 200) {
     try {
       const response = await publicRequest.get("/tns/name/terms");
       if (response.status === 200) {
-        console.log(response);
+        // console.log(response);
         return response.data;
       } else {
         return false;
@@ -1136,37 +698,19 @@ export const getTnS = async () => {
     } catch (error) {
       return false;
     }
-  }
-};
-
-// update terms and conditions
-export const updateTnS = async (data) => {
-  try {
-    const response = await privateRequest.post("/tns/update", {
-      name: "terms",
-      ...data,
-    });
-    if (response.status === 200) {
-      console.log(response);
-      return response.data;
-    } else {
-      return false;
-    }
-  } catch (error) {
-    return false;
   }
 };
 
 // get privacy policy
 export const getPrivacyPolicy = async () => {
-  console.log("getPrivacyPolicy");
+  // console.log("getPrivacyPolicy");
   var st = await checkServer().then((res) => res.status);
-  console.log(st);
+  // console.log(st);
   if (st === 200) {
     try {
       const response = await publicRequest.get("/tns/name/privacy");
       if (response.status === 200) {
-        console.log(response);
+        // console.log(response);
         return response.data;
       } else {
         return false;
@@ -1174,37 +718,19 @@ export const getPrivacyPolicy = async () => {
     } catch (error) {
       return false;
     }
-  }
-};
-
-// update privacy policy
-export const updatePrivacyPolicy = async (data) => {
-  try {
-    const response = await privateRequest.post("/tns/update", {
-      name: "privacy",
-      ...data,
-    });
-    if (response.status === 200) {
-      console.log(response);
-      return response.data;
-    } else {
-      return false;
-    }
-  } catch (error) {
-    return false;
   }
 };
 
 // get about us
 export const getAboutUs = async () => {
-  console.log("getAboutUs");
+  // console.log("getAboutUs");
   var st = await checkServer().then((res) => res.status);
-  console.log(st);
+  // console.log(st);
   if (st === 200) {
     try {
       const response = await publicRequest.get("/tns/name/about");
       if (response.status === 200) {
-        console.log(response);
+        // console.log(response);
         return response.data;
       } else {
         return false;
@@ -1212,37 +738,19 @@ export const getAboutUs = async () => {
     } catch (error) {
       return false;
     }
-  }
-};
-
-// update about us
-export const updateAboutUs = async (data) => {
-  try {
-    const response = await privateRequest.post("/tns/update", {
-      name: "about",
-      ...data,
-    });
-    if (response.status === 200) {
-      console.log(response);
-      return response.data;
-    } else {
-      return false;
-    }
-  } catch (error) {
-    return false;
   }
 };
 
 // get Return and Refund Policy
 export const getReturnRefund = async () => {
-  console.log("getReturnRefund");
+  // console.log("getReturnRefund");
   var st = await checkServer().then((res) => res.status);
-  console.log(st);
+  // console.log(st);
   if (st === 200) {
     try {
       const response = await publicRequest.get("/tns/name/return");
       if (response.status === 200) {
-        console.log(response);
+        // console.log(response);
         return response.data;
       } else {
         return false;
@@ -1250,23 +758,5 @@ export const getReturnRefund = async () => {
     } catch (error) {
       return false;
     }
-  }
-};
-
-// update Return and Refund Policy
-export const updateReturnRefund = async (data) => {
-  try {
-    const response = await privateRequest.post("/tns/update", {
-      name: "return",
-      ...data,
-    });
-    if (response.status === 200) {
-      console.log(response);
-      return response.data;
-    } else {
-      return false;
-    }
-  } catch (error) {
-    return false;
   }
 };

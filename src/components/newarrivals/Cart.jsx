@@ -15,7 +15,7 @@ const Cart = () => {
     async function fetchData() {
       try {
         const res = await getLatestProducts();
-        console.log(res);
+        // console.log(res);
         if (res !== null) {
           setProductItems(res);
           setLoading(false);

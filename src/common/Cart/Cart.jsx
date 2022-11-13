@@ -54,7 +54,7 @@ const Cart = () => {
     dispatch(clearCart());
   };
 
-  console.log(CartItems);
+  // console.log(CartItems);
 
   return (
     <>

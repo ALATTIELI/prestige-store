@@ -14,7 +14,7 @@ const Categories = () => {
     async function fetchData() {
       try {
         const res = await getCategories();
-        console.log(res);
+        // console.log(res);
         if (res !== null) {
           setProductItems(res);
           setLoading(false);

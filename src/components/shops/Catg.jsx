@@ -17,7 +17,7 @@ const Catg = () => {
     async function fetchData() {
       try {
         const res = await getLimitedBrands();
-        console.log(res);
+        // console.log(res);
         if (res !== null) {
           setProductItems(res);
           setLoading(false);

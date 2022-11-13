@@ -29,7 +29,7 @@ export default function Product() {
     async function fetchData() {
       try {
         const res = await getProductById(product_id);
-        console.log(res);
+        // console.log(res);
         if (res !== null && res !== false) {
           setProduct_data(res);
           setLoading(false);
@@ -48,7 +48,7 @@ export default function Product() {
     async function fetchData() {
       try {
         const res = await getBrandById(product_data.brand);
-        console.log(res);
+        // console.log(res);
         if (res !== null) {
           setBrand(res);
         }
@@ -63,7 +63,7 @@ export default function Product() {
     async function fetchData() {
       try {
         const res = await getCategoryById(product_data.category);
-        console.log(res);
+        // console.log(res);
         if (res !== null) {
           setCategory(res);
         }

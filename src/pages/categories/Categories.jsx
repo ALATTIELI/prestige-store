@@ -3,9 +3,10 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { getCategories, getImageById } from "../../redux/apiCalls";
 import "./categories.css";
-import CategoryIcon from '@mui/icons-material/Category';
+import CategoryIcon from "@mui/icons-material/Category";
 
 const Categories = () => {
+  // eslint-disable-next-line no-unused-vars
   const { t, i18n } = useTranslation();
   const [productItems, setProductItems] = useState([]);
   // eslint-disable-next-line no-unused-vars
@@ -16,7 +17,7 @@ const Categories = () => {
     async function fetchData() {
       try {
         const res = await getCategories();
-        console.log(res);
+        // console.log(res);
         if (res !== null) {
           setProductItems(res);
           setLoading(false);

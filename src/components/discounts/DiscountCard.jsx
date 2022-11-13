@@ -22,7 +22,7 @@ const DiscountCard = () => {
     async function fetchData() {
       try {
         const res = await getLatestDiscounts();
-        console.log(res);
+        // console.log(res);
         if (res !== null) {
           setProductItems(res);
           setLoading(false);

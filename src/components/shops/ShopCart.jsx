@@ -24,7 +24,7 @@ const ShopCart = () => {
     async function fetchData() {
       try {
         const res = await getMobilePhones();
-        console.log(res);
+        // console.log(res);
         if (res !== null) {
           setProductItems(res);
           setLoading(false);

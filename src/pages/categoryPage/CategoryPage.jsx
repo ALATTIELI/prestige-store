@@ -44,7 +44,7 @@ export default function CategoryPage() {
     async function fetchData() {
       try {
         const res = await getProductsByCategory(categoryId);
-        console.log(res);
+        // console.log(res);
         if (res !== null) {
           setProducts(res);
           setLoading(false);
