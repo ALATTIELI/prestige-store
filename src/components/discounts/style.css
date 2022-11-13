@@ -53,6 +53,8 @@
 .discount_card_product_img {
   width: auto;
   max-width: 100%;
+  display: flex;
+  justify-content: center;
 }
 .top_left_popup {
   position: absolute;
@@ -72,7 +74,7 @@
   border-radius: 10px;
 }
 .discount_card_product_name {
-  max-width: 100%;
+  max-width: 160px;
   /* position: absolute; */
   width: 100%;
 }
