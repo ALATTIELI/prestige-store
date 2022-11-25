@@ -26,6 +26,7 @@ import LoginSuccess from "./components/Login/LoginSuccess";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "./redux/userRedux";
 import LoginFailure from "./components/Login/LoginFailure";
+import Checkout from "./components/checkout/Checkout";
 
 function App() {
   const dispatch = useDispatch();
@@ -66,6 +67,7 @@ function App() {
           <Routes>
             <Route path="/" exact element={<Pages />} />
             <Route path="/cart" exact element={<Cart />} />
+            <Route path="/checkout" exact element={<Checkout />} />
             <Route path="/product/:id" element={<Product />} />
             <Route path="/categories" element={<Categories />} />
             <Route path="/category/:id" element={<CategoryPage />} />

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { getImageById } from "../../redux/apiCalls";
 import {
   clearCart,
@@ -9,14 +10,6 @@ import {
   removeFromCart,
 } from "../../redux/cartRedux";
 import "./style.css";
-import { loadStripe } from "@stripe/stripe-js";
-import { Elements } from "@stripe/react-stripe-js";
-
-import CheckoutForm from "./CheckoutForm";
-import { publicRequest } from "../../requestMethods";
-import "./stripe.css";
-
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 
 const Cart = () => {
   // eslint-disable-next-line no-unused-vars
@@ -60,34 +53,6 @@ const Cart = () => {
 
   const handleClearCart = () => {
     dispatch(clearCart());
-  };
-
-  const [clientSecret, setClientSecret] = useState("");
-
-  useEffect(() => {
-    // Create PaymentIntent as soon as the page loads
-    publicRequest
-      .post("/checkout/create-payment-intent", {
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ items: [{ id: "xl-tshirt" }] }),
-      })
-      .then((data) => setClientSecret(data.data.clientSecret));
-
-    // fetch("/create-payment-intent", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify({ items: [{ id: "xl-tshirt" }] }),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => setClientSecret(data.clientSecret));
-  }, []);
-
-  const appearance = {
-    theme: "stripe",
-  };
-  const options = {
-    clientSecret,
-    appearance,
   };
 
   return (
@@ -274,12 +239,9 @@ const Cart = () => {
               <span>(5% VAT INCLUDED)</span>
             </div>
             <div className="cart-checkout">
-              {clientSecret && (
-                <Elements options={options} stripe={stripePromise}>
-                  <CheckoutForm />
-                </Elements>
-              )}
-              {/* <button className="checkout-btn">{t("cart.checkout")}</button> */}
+              <Link to="/checkout">
+                <button className="checkout-btn">{t("cart.checkout")}</button>
+              </Link>
             </div>
           </div>
         </div>
