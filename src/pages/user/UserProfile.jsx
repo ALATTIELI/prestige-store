@@ -9,12 +9,22 @@ export default function UserProfile() {
   // eslint-disable-next-line no-unused-vars
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
-  const userid = useSelector((state) => state.user.currentUser.id);
+  const [userid, setUserid] = useState("");
+  // const userid = useSelector((state) => state.user.currentUser.id);
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     document.title = "User Profile";
+  }, []);
+
+  let tempUser = useSelector((state) => state.user.currentUser);
+  useEffect(() => {
+    if (!tempUser || tempUser === null) {
+      navigate("/");
+    } else {
+      setUserid(tempUser.id);
+    }
   }, []);
 
   useEffect(() => {

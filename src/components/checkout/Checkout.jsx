@@ -38,7 +38,7 @@ export default function Checkout() {
 
   return (
     <div className="Checkout">
-      {clientSecret && (
+      {stripePromise && clientSecret && (
         <Elements options={options} stripe={stripePromise}>
           <AddressForm />
           <CheckoutForm />

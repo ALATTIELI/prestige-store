@@ -28,6 +28,7 @@ const User = () => {
   const handleLogout = (e) => {
     e.preventDefault();
     userLogout(dispatch);
+    navigate("/");
   };
 
   return (

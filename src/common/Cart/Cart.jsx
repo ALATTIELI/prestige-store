@@ -18,6 +18,8 @@ const Cart = () => {
   const Cart = useSelector((state) => state.cart);
   const CartItems = Cart.products;
 
+  const user = useSelector((state) => state.user.currentUser);
+
   document.title = "Cart";
   // check if website is open in mobile or not
   // const isMobile = window.innerWidth < 768;
@@ -239,9 +241,15 @@ const Cart = () => {
               <span>(5% VAT INCLUDED)</span>
             </div>
             <div className="cart-checkout">
-              <Link to="/checkout">
-                <button className="checkout-btn">{t("cart.checkout")}</button>
-              </Link>
+              {user !== null ? (
+                <Link to="/checkout">
+                  <button className="checkout-btn">{t("cart.checkout")}</button>
+                </Link>
+              ) : (
+                <Link to="/login">
+                  <button className="checkout-btn">{t("cart.checkout")}</button>
+                </Link>
+              )}
             </div>
           </div>
         </div>
