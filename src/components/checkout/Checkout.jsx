@@ -28,6 +28,7 @@ export default function Checkout() {
     } else if (CartItems.length === 0) {
       navigate("/cart");
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [CartItems, user]);
 
   useEffect(() => {
