@@ -94,7 +94,6 @@ export default function CheckoutForm() {
         return_url: `${window.location}`,
         receipt_email: email,
       },
-      redirect: "if_required",
     });
 
     // This point will only be reached if there is an immediate error when
