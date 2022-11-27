@@ -67,11 +67,7 @@ function App() {
           <Routes>
             <Route path="/" exact element={<Pages />} />
             <Route path="/cart" exact element={<Cart />} />
-            <Route
-              path="/checkout"
-              exact
-              element={user ? <Checkout /> : <Navigate to="/login" />}
-            />
+            <Route path="/checkout" exact element={<Checkout />} />
             <Route path="/product/:id" element={<Product />} />
             <Route path="/categories" element={<Categories />} />
             <Route path="/category/:id" element={<CategoryPage />} />
