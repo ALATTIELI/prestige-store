@@ -255,9 +255,19 @@ const Cart = () => {
             </div>
             <div className="cart-checkout">
               {user !== null ? (
-                <Link to="/checkout">
-                  <button className="checkout-btn">{t("cart.checkout")}</button>
-                </Link>
+                <>
+                  {CartItems.length > 0 ? (
+                    <Link to="/checkout">
+                      <button className="checkout-btn">
+                        {t("cart.checkout")}
+                      </button>
+                    </Link>
+                  ) : (
+                    <button className="checkout-btn" disabled>
+                      {t("cart.empty")}
+                    </button>
+                  )}
+                </>
               ) : (
                 <Link to="/login">
                   <button className="checkout-btn">{t("cart.checkout")}</button>
