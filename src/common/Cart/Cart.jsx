@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getImageById } from "../../redux/apiCalls";
+import { getImageById, getProductById } from "../../redux/apiCalls";
 import {
   clearCart,
   decreaseProductQuantity,
   increaseProductQuantity,
   removeFromCart,
+  updateCart,
 } from "../../redux/cartRedux";
 import "./style.css";
 
@@ -35,11 +36,23 @@ const Cart = () => {
     });
   });
 
+  useEffect(() => {
+    let productIds = CartItems.map((item) => item._id);
+    const fetchProducts = async () => {
+      productIds.map(async (id) => {
+        const product = await getProductById(id);
+        if (product) {
+          dispatch(updateCart(product));
+        } else {
+          dispatch(removeFromCart(id));
+        }
+      });
+    };
+    fetchProducts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [CartItems]);
+
   const totalPrice = Cart.total;
-  // CartItem.reduce(
-  //   (price, item) => price + item.qty * item.price,
-  //   0
-  // );
 
   const handleRemove = (product) => {
     dispatch(removeFromCart(product));

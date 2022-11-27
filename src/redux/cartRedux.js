@@ -65,6 +65,21 @@ const cartSlice = createSlice({
       state.cartQuantity = 0;
       state.total = 0;
     },
+    updateCart: (state, action) => {
+      const product = state.products.find(
+        (product) => product._id === action.payload._id
+      );
+      if (product) {
+        product.price = action.payload.price;
+        product.TotalPrice = action.payload.TotalPrice;
+      }
+      let totalPrices = state.products.map((product) => {
+        return product.TotalPrice * product.quantity;
+      });
+
+      state.total = totalPrices.reduce((a, b) => a + b, 0);
+      state.total = Math.round(state.total * 100) / 100;
+    },
   },
 });
 
@@ -74,5 +89,6 @@ export const {
   increaseProductQuantity,
   decreaseProductQuantity,
   clearCart,
+  updateCart,
 } = cartSlice.actions;
 export default cartSlice.reducer;
