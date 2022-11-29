@@ -6,12 +6,14 @@ import {
   useElements,
 } from "@stripe/react-stripe-js";
 import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 export default function CheckoutForm() {
   const stripe = useStripe();
   const elements = useElements();
   const Cart = useSelector((state) => state.cart);
   const amount = Cart.total;
+  const { i18n } = useTranslation();
 
   const user = useSelector((state) => state.user.currentUser);
 
@@ -133,7 +135,13 @@ export default function CheckoutForm() {
           {isLoading ? (
             <div className="spinner" id="spinner"></div>
           ) : (
-            `Pay now AED ${amount}`
+            <>
+              {i18n.language === "en" ? (
+                <>Pay now {amount} AED</>
+              ) : (
+                <>ادفع الآن {amount} درهم</>
+              )}
+            </>
           )}
         </span>
       </button>

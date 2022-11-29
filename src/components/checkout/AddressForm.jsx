@@ -1,10 +1,12 @@
 import React from "react";
 import { AddressElement } from "@stripe/react-stripe-js";
+import { useTranslation } from "react-i18next";
 
 const AddressForm = () => {
+  const { t } = useTranslation();
   return (
     <form>
-      <h3>Shipping</h3>
+      <h3>{t("checkout.shipping")}</h3>
       <AddressElement
         options={{
           mode: "shipping",

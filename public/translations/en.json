@@ -126,5 +126,8 @@
     "prestige_one_mobile_phones_yas_branch": "Prestige One Mobile Phones - Yas Branch",
     "prestige_yas_phones_L.T.D": "Prestige Yas Phones L.T.D",
     "view_in_google_maps": "View in Google Maps"
+  },
+  "checkout":{
+    "shipping": "Shipping"
   }
 }
