@@ -102,7 +102,9 @@
     "payment_method": "Payment Method",
     "cash_on_delivery": "Cash on Delivery",
     "card": "Debit/Credit Card",
-    "checkout": "Checkout"
+    "checkout": "Checkout",
+    "empty": "The cart is empty",
+    "login": "Login to checkout"
   },
 
   "product": {
@@ -113,7 +115,7 @@
     "SKU": "SKU",
     "code": "Code"
   },
-  "locations":{
+  "locations": {
     "prestige_one_mobile_Phones_mbz_city_branch": "Prestige One Mobile Phones - MBZ City Branch",
     "prestige_one_mobile_phones_west_yas_plaza_branch": "Prestige One Mobile Phones - West Yas Plaza Branch",
     "prestige_one_mobile_phones_defence_road": "Prestige One Mobile Phones - Defence Road",

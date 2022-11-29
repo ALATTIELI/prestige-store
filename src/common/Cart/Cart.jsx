@@ -270,7 +270,7 @@ const Cart = () => {
                 </>
               ) : (
                 <Link to="/login">
-                  <button className="checkout-btn">{t("cart.checkout")}</button>
+                  <button className="checkout-btn">{t("cart.login")}</button>
                 </Link>
               )}
             </div>
