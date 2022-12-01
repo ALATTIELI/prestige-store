@@ -18,6 +18,7 @@ const Cart = () => {
   const dispatch = useDispatch();
   const Cart = useSelector((state) => state.cart);
   const CartItems = Cart.products;
+  const [paymentMethod, setPaymentMethod] = useState("card");
 
   const user = useSelector((state) => state.user.currentUser);
 
@@ -230,7 +231,12 @@ const Cart = () => {
                 <tr>
                   <label htmlFor="cash">
                     <td>
-                      <input type="radio" name="payment" id="cash" />
+                      <input
+                        type="radio"
+                        name="payment"
+                        id="cash"
+                        onClick={() => setPaymentMethod("cash")}
+                      />
                       <label htmlFor="cash">{t("cart.cash_on_delivery")}</label>
                     </td>
                   </label>
@@ -238,7 +244,12 @@ const Cart = () => {
                 <tr>
                   <label htmlFor="card">
                     <td>
-                      <input type="radio" name="payment" id="card" />
+                      <input
+                        type="radio"
+                        name="payment"
+                        id="card"
+                        onClick={() => setPaymentMethod("card")}
+                      />
                       <label htmlFor="card">{t("cart.card")}</label>
                     </td>
                   </label>
@@ -257,11 +268,21 @@ const Cart = () => {
               {user !== null ? (
                 <>
                   {CartItems.length > 0 ? (
-                    <Link to="/checkout">
-                      <button className="checkout-btn">
-                        {t("cart.checkout")}
-                      </button>
-                    </Link>
+                    <>
+                      {paymentMethod === "card" ? (
+                        <Link to="/checkout">
+                          <button className="checkout-btn">
+                            {t("cart.checkout")}
+                          </button>
+                        </Link>
+                      ) : (
+                        <Link to="/cod-checkout">
+                          <button className="checkout-btn">
+                            {t("cart.checkout")}
+                          </button>
+                        </Link>
+                      )}
+                    </>
                   ) : (
                     <button className="checkout-btn" disabled>
                       {t("cart.empty")}
