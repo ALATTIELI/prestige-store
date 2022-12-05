@@ -473,6 +473,26 @@ export const searchBrands = async (search) => {
 };
 
 // ====== ORDERS ======
+// Create order
+export const createOrder = async (order) => {
+  console.log("createOrder");
+  var st = await checkServer().then((res) => res.status);
+  console.log(st);
+  if (st === 200) {
+    try {
+      const response = await privateRequest.post("/orders/add", order);
+      if (response.status === 200) {
+        console.log(response);
+        return response.data;
+      } else {
+        return false;
+      }
+    } catch (error) {
+      return false;
+    }
+  }
+};
+
 // get orders
 export const getOrders = async () => {
   console.log("getOrders");
