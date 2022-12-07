@@ -49,6 +49,7 @@ export default function CashCheckout() {
     }
 
     if (!addressElement.complete) {
+      alert("Please fill out the address form.");
       return;
     }
 
