@@ -28,6 +28,7 @@ import { logout } from "./redux/userRedux";
 import LoginFailure from "./components/Login/LoginFailure";
 import Checkout from "./components/checkout/Checkout";
 import CashCheckout from "./components/CashCheckout/CashCheckout";
+import PaymentResult from "./components/checkout/PaymentResult";
 
 function App() {
   const dispatch = useDispatch();
@@ -69,6 +70,7 @@ function App() {
             <Route path="/" exact element={<Pages />} />
             <Route path="/cart" exact element={<Cart />} />
             <Route path="/checkout" exact element={<Checkout />} />
+            <Route path="/payment-result" element={<PaymentResult />} />
             <Route path="/cod-checkout" element={<CashCheckout />} />
             <Route path="/product/:id" element={<Product />} />
             <Route path="/categories" element={<Categories />} />
