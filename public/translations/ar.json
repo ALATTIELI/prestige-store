@@ -87,7 +87,12 @@
     "view": "عرض",
     "quantity": "الكمية",
     "total_amount_paid": "المبلغ الإجمالي المدفوع",
-    "paid_by": "تم الدفع بواسطة"
+    "paid_by": "تم الدفع بواسطة",
+    "order_status": {
+      "pending": "قيد الانتظار",
+      "approved": "موافق عليه",
+      "declined": "مرفوض"
+    }
   },
 
   "login": {

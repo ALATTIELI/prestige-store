@@ -88,7 +88,12 @@
     "view": "View",
     "quantity": "Quantity",
     "total_amount_paid": "Total Amount Paid",
-    "paid_by": "Paid By"
+    "paid_by": "Paid By",
+    "order_status": {
+      "pending": "Pending",
+      "approved": "Approved",
+      "declined": "Declined"
+    }
   },
 
   "login": {
@@ -127,7 +132,7 @@
     "prestige_yas_phones_L.T.D": "Prestige Yas Phones L.T.D",
     "view_in_google_maps": "View in Google Maps"
   },
-  "checkout":{
+  "checkout": {
     "shipping": "Shipping"
   }
 }

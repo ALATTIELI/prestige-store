@@ -107,7 +107,9 @@ export default function UserOrders() {
                     <span className="order-item-id">{order._id}</span>
                   </div>
                   <div className="order-item">
-                    <span className="order-item-status">{order.status}</span>
+                    <span className="order-item-status">
+                      {t(`user.order_status.${order.status}`)}
+                    </span>
                   </div>
                   <div className="order-item">
                     <span className="order-item-date">
