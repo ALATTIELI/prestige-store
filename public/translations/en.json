@@ -134,5 +134,8 @@
   },
   "checkout": {
     "shipping": "Shipping"
+  },
+  "discountsPage": {
+    "title": "Discounts"
   }
 }

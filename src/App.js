@@ -29,6 +29,7 @@ import LoginFailure from "./components/Login/LoginFailure";
 import Checkout from "./components/checkout/Checkout";
 import CashCheckout from "./components/CashCheckout/CashCheckout";
 import PaymentResult from "./components/checkout/PaymentResult";
+import DiscountsPage from "./pages/discountsPage/DiscountsPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -87,10 +88,10 @@ function App() {
             <Route path="/user/order/:id" element={<Order />} />
             <Route path="/brands" element={<Brands />} />
             <Route path="/brand/:id" element={<BrandPage />} />
+            <Route path="/discounts" element={<DiscountsPage />} />
+
             <Route path="/contactus" element={<ContactUs />} />
-
             <Route path="/aboutus" element={<AboutUs />} />
-
             <Route path="/privacypolicy" element={<PrivacyPolicy />} />
             <Route path="/returnsRefunds" element={<Returnsandrefunds />} />
 

@@ -308,7 +308,6 @@ export const searchProducts = async (search) => {
     }
   }
 };
-// ====== NEW PRODUCT ======
 
 // get product by id
 export const getProductById = async (id) => {
@@ -329,6 +328,26 @@ export const getProductById = async (id) => {
     }
   } else {
     return false;
+  }
+};
+
+// get products with discounts
+export const getDiscountedProducts = async () => {
+  // console.log("getDiscountedProducts");
+  var st = await checkServer().then((res) => res.status);
+  // console.log(st);
+  if (st === 200) {
+    try {
+      const response = await publicRequest.get("/products/discounts");
+      if (response.status === 200) {
+        // console.log(response);
+        return response.data;
+      } else {
+        return false;
+      }
+    } catch (error) {
+      return false;
+    }
   }
 };
 
