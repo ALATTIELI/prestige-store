@@ -4,6 +4,7 @@ import Cart from "./Cart";
 import "./style.css";
 
 const NewArrivals = () => {
+  // eslint-disable-next-line no-unused-vars
   const { t, i18n } = useTranslation();
   return (
     <>

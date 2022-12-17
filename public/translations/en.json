@@ -68,15 +68,22 @@
     "email": "Email",
     "phone": "Phone"
   },
+  "socials": {
+    "socials": "Social Media"
+  },
 
   "user": {
     "my_account": "My Account",
     "my_profile": "My Profile",
+    "logout": "Logout",
     "my_orders": "My Orders",
+    "edit_user": "Edit User",
     "name": "Name",
     "email": "Email",
     "phone": "Phone",
     "address": "Address",
+    "address_city": "City",
+    "address_street": "Street",
     "order_id": "Order ID",
     "status": "Status",
     "date": "Date",
@@ -84,7 +91,12 @@
     "view": "View",
     "quantity": "Quantity",
     "total_amount_paid": "Total Amount Paid",
-    "paid_by": "Paid By"
+    "paid_by": "Paid By",
+    "order_status": {
+      "pending": "Pending",
+      "approved": "Approved",
+      "declined": "Declined"
+    }
   },
 
   "login": {
@@ -98,16 +110,20 @@
     "payment_method": "Payment Method",
     "cash_on_delivery": "Cash on Delivery",
     "card": "Debit/Credit Card",
-    "checkout": "Checkout"
+    "checkout": "Checkout",
+    "empty": "The cart is empty",
+    "login": "Login to checkout"
   },
 
   "product": {
     "brand": "Brand",
     "stock": "Stock",
     "add_to_cart": "Add to Cart",
-    "description": "Description"
+    "description": "Description",
+    "SKU": "SKU",
+    "code": "Code"
   },
-  "locations":{
+  "locations": {
     "prestige_one_mobile_Phones_mbz_city_branch": "Prestige One Mobile Phones - MBZ City Branch",
     "prestige_one_mobile_phones_west_yas_plaza_branch": "Prestige One Mobile Phones - West Yas Plaza Branch",
     "prestige_one_mobile_phones_defence_road": "Prestige One Mobile Phones - Defence Road",
@@ -118,5 +134,11 @@
     "prestige_one_mobile_phones_yas_branch": "Prestige One Mobile Phones - Yas Branch",
     "prestige_yas_phones_L.T.D": "Prestige Yas Phones L.T.D",
     "view_in_google_maps": "View in Google Maps"
+  },
+  "checkout": {
+    "shipping": "Shipping"
+  },
+  "discountsPage": {
+    "title": "Discounts"
   }
 }

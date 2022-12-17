@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://stripe.com/docs/stripe-js/elements/payment-request-button
+HostUrl=https://stripe.com/files/apple-pay/apple-developer-merchantid-domain-association

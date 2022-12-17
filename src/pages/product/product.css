@@ -41,6 +41,8 @@
   width: 300px;
   height: 300px;
   margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
 }
 .product-left-column .product-left-column-img img {
   /* width: 100%; */
@@ -78,6 +80,10 @@
   border-radius: 10px;
   /* padding: 5px; */
   margin: 5px;
+}
+.product-thumbnails div:hover {
+  scale: 1.1;
+  transition: all 0.3s ease;
 }
 .product-thumbnails img {
   width: 100px;
@@ -141,7 +147,22 @@
 }
 .product-product-description-bottom {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.product-product-description-bottom-left {
+  display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+.product-product-description-bottom-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  text-align: right;
 }
 .product-product-description-bottom span {
   font-size: 18px !important;
@@ -165,12 +186,46 @@
 .product-product-price {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
-
+.product-product-price .product-product-price-discount {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: var(--maincolor);
+  align-items: center;
+}
+.product-product-price .product-product-price-discount-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.product-product-price .product-product-price-discount .DiscountOriginalPrice {
+  /* font-size: 14px; */
+  color: #999;
+  text-decoration: line-through;
+  margin-bottom: 5px;
+}
+.product-product-price .product-product-price-discount .DiscountPrice {
+  font-size: 24px;
+}
 .product-bottom {
-  width: 50%;
+  width: 100%;
   margin-top: 30px;
   margin-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+}
+.product-bottom.en {
+  text-align: left;
+  justify-content: left;
+}
+.product-bottom.ar {
+  text-align: right;
+  justify-content: right;
+}
+.product-bottom .product-description {
+  width: 100%;
 }
 .product-bottom .product-description h1 {
   border-bottom: 1px solid #e1e8ee;
@@ -183,6 +238,7 @@
   letter-spacing: 1px;
   /* text-transform: uppercase; */
   /* text-decoration: none; */
+  white-space: pre-wrap;
 }
 
 .product-product-price span {
@@ -228,5 +284,10 @@
   }
   .product-bottom {
     width: 100%;
+  }
+  .product-product-price .product-product-price-discount-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 }

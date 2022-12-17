@@ -14,16 +14,16 @@ const Footer = () => {
               <h2>{t("about_us.about_us")}</h2>
               <ul>
                 <Link to="/aboutus">
-                <li>{t("about_us.about_us")}</li>
+                  <li>{t("about_us.about_us")}</li>
                 </Link>
                 <Link to="/termsandConditions">
-                <li>{t("about_us.terms_and_conditions")}</li>
+                  <li>{t("about_us.terms_and_conditions")}</li>
                 </Link>
                 <Link to="/privacyPolicy">
-                <li>{t("about_us.privacy_policy")}</li>
+                  <li>{t("about_us.privacy_policy")}</li>
                 </Link>
                 <Link to="/returnsRefunds">
-                <li>{t("about_us.returns_and_refunds")} </li>
+                  <li>{t("about_us.returns_and_refunds")} </li>
                 </Link>
               </ul>
             </div>
@@ -38,6 +38,28 @@ const Footer = () => {
                 </li>
                 <li>{t("contact_us.email")}: info@prestigestore.ae</li>
                 <li>{t("contact_us.phone")}: +971529744450</li>
+              </ul>
+              <ul className="socials">
+                <li>
+                  <a
+                    href="https://www.facebook.com/prestigestore.ae/"
+                    className="socials"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    <i className="fab fa-facebook-f"></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/prestigegroup_uae/"
+                    className="socials"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    <i className="fab fa-instagram"></i>
+                  </a>
+                </li>
               </ul>
             </div>
           </div>

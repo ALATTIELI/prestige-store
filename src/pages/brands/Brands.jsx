@@ -1,34 +1,77 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import { getBrands, getImageById } from "../../redux/apiCalls";
 import "./brands.css";
+import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 
 const Brands = () => {
+  const { t, i18n } = useTranslation();
+  const [productItems, setProductItems] = useState([]);
+  // eslint-disable-next-line no-unused-vars
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await getBrands();
+        console.log(res);
+        if (res !== null) {
+          setProductItems(res);
+          setLoading(false);
+        } else {
+          setLoading(true);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    fetchData();
+  }, []);
+
+  const handleClick = (id) => {
+    navigate(`/brand/${id}`);
+  };
+
   return (
-    <div className="brnd_card">
-      <div className="brnd_body_card">
-        <img className="brnd_img_card" src="https://img.icons8.com/ios-filled/100/1A1A1A/mac-os.png"/>
-        <h2 className="brnd_title_card">Apple</h2>
-      </div>
-      <div className="brnd_body_card">
-        <img className="brnd_img_card" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/2560px-Samsung_Logo.svg.png"/>
-        <h2 className="brnd_title_card">Samsung</h2>
-      </div>
-      <div className="brnd_body_card">
-        <img className="brnd_img_card" src="https://www.pngall.com/wp-content/uploads/5/Samsung-TV-PNG-Image-HD.png"/>
-        <h2 className="brnd_title_card">LG</h2>
-      </div>
-      <div className="brnd_body_card">
-        <img className="brnd_img_card" src="https://mm.jbl.com/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw40cc9388/450BT_black_angle_01-1606x1606px.png"/>
-        <h2 className="brnd_title_card">Oppo</h2>
-      </div>
-      <div className="brnd_body_card">
-        <img className="brnd_img_card" src="https://gmedia.playstation.com/is/image/SIEPDC/ps5-more-features-ps5-ps4-pro-image-block-01-en-22oct20?$native--t$"/>
-        <h2 className="brnd_title_card">Sony</h2>
-      </div>
-      <div className="brnd_body_card">
-        <img className="brnd_img_card" src="https://i.pinimg.com/originals/7f/dd/3b/7fdd3bda2076f7bdb2ed96e7ec01810a.png"/>
-        <h2 className="brnd_title_card">Lenovo</h2>
-      </div>
-    </div>
+    <>
+      {loading ? (
+        <div className="loading">
+          <span>Loading...</span>
+        </div>
+      ) : (
+        <div className="brand_card">
+          <div className="brand_card_title">
+            <WorkspacePremiumIcon className="brand_card_title_icon" />
+            <span>BRANDS</span>
+          </div>
+          <div className="brand_card_items">
+            {productItems &&
+              productItems.map((productItem) => {
+                return (
+                  <div
+                    className="brand_card_item"
+                    key={productItem._id}
+                    onClick={() => handleClick(productItem._id)}
+                  >
+                    <div className="brand_card_item_img">
+                      <img src={getImageById(productItem.image)} alt="" />
+                    </div>
+                    <div className="brand_card_item_name">
+                      <span>
+                        {i18n.language === "en"
+                          ? productItem.name
+                          : productItem.name}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

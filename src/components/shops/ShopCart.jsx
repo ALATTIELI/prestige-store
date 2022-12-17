@@ -1,86 +1,105 @@
-//import React, { useState } from "react"
+import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+import {
+  getDiscountById,
+  getImageById,
+  getMobilePhones,
+} from "../../redux/apiCalls";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/cartRedux";
 
-//const ShopCart = ({ addToCart, shopItems }) => {
-//  const [count, setCount] = useState(0)
-//  const increment = () => {
-//    setCount(count + 1)
-//  }
+const ShopCart = () => {
+  // eslint-disable-next-line no-unused-vars
+  const { t, i18n } = useTranslation();
+  const [productItems, setProductItems] = useState([]);
+  const [discount, setDiscount] = useState({});
+  // eslint-disable-next-line no-unused-vars
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-//  return (
-//    <>
-//      {shopItems.map((shopItems) => {
-//        return (
-//          <div className='product mtop'>
-//            <div className='img'>
-//              <span className='discount'>{shopItems.discount}% Off</span>
-//              <img src={shopItems.cover} alt='' />
-//              <div className='product-like'>
-//                <label>{count}</label> <br />
-//                <i className='fa-regular fa-heart' onClick={increment}></i>
-//              </div>
-//            </div>
-//            <div className='product-details'>
-//              <h3>{shopItems.name}</h3>
-//              <div className='rate'>
-//                <i className='fa fa-star'></i>
-//                <i className='fa fa-star'></i>
-//                <i className='fa fa-star'></i>
-//                <i className='fa fa-star'></i>
-//                <i className='fa fa-star'></i>
-//              </div>
-//              <div className='price'>
-//                <h4>AED {shopItems.price}.00 </h4>
-//                <button onClick={() => addToCart(shopItems)}>
-//                  <i className='fa fa-plus'></i>
-//                </button>
-//              </div>
-//            </div>
-//          </div>
-//        )
-//      })}
-//    </>
-//  )
-//}
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await getMobilePhones();
+        // console.log(res);
+        if (res !== null) {
+          setProductItems(res);
+          setLoading(false);
+        } else {
+          setLoading(true);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    fetchData();
+  }, []);
 
-//export default ShopCart
+  useEffect(() => {
+    productItems.map(async (item) => {
+      if (item.discountID) {
+        const discount = await getDiscountById(item.discountID);
+        const discount_percentage = discount.discount_percentage;
+        setDiscount((prev) => {
+          return {
+            ...prev,
+            [item._id]: discount_percentage,
+          };
+        });
+      }
+    });
+  }, [productItems]);
 
-import React, { useState } from "react"
+  const handleClick = (id) => {
+    navigate(`/product/${id}`);
+  };
 
-const ShopCart = ({ shopItems, addToCart }) => {
-  const [count, setCount] = useState(0)
-  const increment = () => {
-    setCount(count + 1)
-  }
+  const handleAddToCart = (product) => {
+    const data = {
+      ...product,
+      quantity: 1,
+    };
+    dispatch(addToCart(data));
+  };
 
   return (
     <>
-      {shopItems.map((shopItems, index) => {
+      {productItems.map((productItem) => {
         return (
-          <div className='box'>
-            <div className='product mtop'>
-              <div className='img'>
-                <span className='top_left_popup'>{shopItems.discount}% Off</span>
-                <img src={shopItems.cover} alt='' />
-                <div className='product-like'>
-                  <label>{count}</label> <br />
-                  <i className='fa-regular fa-heart' onClick={increment}></i>
-                </div>
+          <div
+            className="box"
+            key={productItem._id}
+            onClick={() => handleClick(productItem._id)}
+          >
+            <div className="product mtop">
+              <div className="img">
+                {discount[productItem._id] ? (
+                  <span className="top_left_popup">
+                    {discount[productItem._id]}%
+                  </span>
+                ) : null}
+                <img src={getImageById(productItem.images[0])} alt="" />
               </div>
-              <div className='product-details'>
-                <h3>{shopItems.name}</h3>
-                <div className='price'>
-                  <h4>AED {shopItems.price}.00 </h4>
-                  <button onClick={() => addToCart(shopItems)}>
-                    <i className='fa fa-plus'></i>
+              <div className="product-details">
+                <div className="product-name">
+                  <h3>{productItem.name_en}</h3>
+                </div>
+                <div className="price" onClick={(e) => e.stopPropagation()}>
+                  <h4>AED {productItem.TotalPrice} </h4>
+                  <button onClick={() => handleAddToCart(productItem)}>
+                    <i className="fa fa-plus"></i>
                   </button>
                 </div>
               </div>
             </div>
           </div>
-        )
+        );
       })}
     </>
-  )
-}
+  );
+};
 
-export default ShopCart
+export default ShopCart;

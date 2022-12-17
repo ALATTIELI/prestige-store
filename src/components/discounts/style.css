@@ -6,7 +6,13 @@
   width: 100%;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: left;
+}
+.discount_section_heading .heading-right {
+  text-align: right;
+  color: grey;
+  cursor: pointer;
 }
 .discount_card {
   width: 100%;
@@ -36,7 +42,7 @@
   display: flex;
   flex-direction: column;
   align-items: left;
-  justify-content: center;
+  justify-content: space-between;
   background-color: #fff;
   margin: 10px;
   padding: 10px;
@@ -52,6 +58,9 @@
 }
 .discount_card_product_img {
   width: auto;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
 }
 .top_left_popup {
   position: absolute;
@@ -66,7 +75,22 @@
 }
 .discount_card_product_img img {
   width: auto;
-  object-fit: cover;
+  object-fit: contain;
+  height: 200px;
+  border-radius: 10px;
+}
+.discount_card_product_name {
+  max-width: 160px;
+  /* position: absolute; */
+  width: 100%;
+}
+.discount_card_product_name h3 {
+  /* position: relative; */
+  max-width: 100%;
+  white-space: wrap;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 50px;
 }
 .discount_card_product_details .discount_card_product_price {
   display: flex;
@@ -125,11 +149,15 @@
 }
 
 @media screen and (max-width: 768px) {
+  .discount_card {
+    padding: 0px 0px;
+  }
   .discount_card_product {
     width: auto;
   }
   .discount_card_product_img img {
-    width: 20vh;
+    /* width: 20vh; */
+    object-fit: cover;
   }
   .discount_card_product_details {
     font-size: 1rem;

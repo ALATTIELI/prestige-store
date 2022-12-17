@@ -1,32 +1,40 @@
-.returnspage{
-    padding: 30px;
+.returnspage {
+  padding: 30px;
 }
 
-.returnsandrefunds{ 
-    padding: 40px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+.returnsandrefunds {
+  padding: 40px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
-.returnsandrefunds h1{
-    font-size: 30px;
-    font-weight: 600;
-    color: var(--maincolor);
-    margin-bottom: 20px;
+.returnsandrefunds h1 {
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--maincolor);
+  margin-bottom: 20px;
 }
 
-@media screen and (max-width: 768px){
-   .returnspage{
-         padding: 10px;
-   }
-    .returnsandrefunds{
-        padding: 20px;
-        width: 100%;
-        overflow-wrap: break-word;
-    }
-    .returnsandrefunds h1{
-        font-size: 20px;
-    }
+.returns_and_refunds_description {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 300;
+  color: #000;
+  line-height: 1.5;
+  white-space: pre-line;
+}
 
+@media screen and (max-width: 768px) {
+  .returnspage {
+    padding: 10px;
+  }
+  .returnsandrefunds {
+    padding: 20px;
+    width: 100%;
+    overflow-wrap: break-word;
+  }
+  .returnsandrefunds h1 {
+    font-size: 20px;
+  }
 }

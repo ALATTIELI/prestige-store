@@ -1,6 +1,12 @@
-# Getting Started with Create React App
+# prestigestore
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A Client front-end for Prestige Store, a web-based e-commerce solution. <br />
+
+# ENV file
+
+`PORT` - Which port the DEV will run on <br/>
+`REACT_APP_API_URL` - What is the URL of the backend API <br/>
+`REACT_APP_STRIPE_KEY` - Stripe public key <br/>
 
 ## Available Scripts
 
@@ -68,4 +74,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-

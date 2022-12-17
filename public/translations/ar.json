@@ -39,16 +39,16 @@
     "safe_payment": "دفع آمن",
     "description": "لن يتم تسجيل بيانات البطاقة الائتمانية"
   },
-  
+
   "shop_with_confidence": {
     "shop_with_confidence": "تسوق بثقة",
     "description": "نحن ملتزمون بتزويدك بأفضل تجربة تسوق عبر الإنترنت ممكنة"
   },
-  
+
   "24_7_support": {
     "24_7_support": "دعم 24/7",
     "description": "متواجدون 24/7 لمساعدتك في أي وقت"
-  },    
+  },
 
   "about_us": {
     "about_us": "معلومات عنا",
@@ -64,6 +64,10 @@
     "phone": "هاتف"
   },
 
+  "socials": {
+    "socials": "مواقع التواصل الاجتماعي"
+  },
+
   "slider": {
     "view": "عرض"
   },
@@ -71,11 +75,15 @@
   "user": {
     "my_account": "حسابي",
     "my_profile": "ملفي",
+    "logout": "تسجيل خروج",
     "my_orders": "طلباتي",
+    "edit_user": "تعديل المستخدم",
     "name": "الاسم",
     "email": "البريد الإلكتروني",
     "phone": "رقم الهاتف",
     "address": "العنوان",
+    "address_city": "المدينة",
+    "address_street": "الشارع",
     "order_id": "رقم الطلب",
     "status": "الحالة",
     "date": "التاريخ",
@@ -83,7 +91,12 @@
     "view": "عرض",
     "quantity": "الكمية",
     "total_amount_paid": "المبلغ الإجمالي المدفوع",
-    "paid_by": "تم الدفع بواسطة"
+    "paid_by": "تم الدفع بواسطة",
+    "order_status": {
+      "pending": "قيد الانتظار",
+      "approved": "موافق عليه",
+      "declined": "مرفوض"
+    }
   },
 
   "login": {
@@ -97,14 +110,18 @@
     "payment_method": "طريقة الدفع",
     "cash_on_delivery": "الدفع عند الاستلام",
     "card": "بطاقة الائتمان",
-    "checkout": "الدفع"
+    "checkout": "الدفع",
+    "empty": "السلة فارغة",
+    "login": "سجل الدخول لتتمكن من الشراء"
   },
 
   "product": {
     "brand": "العلامة التجارية",
     "stock": "المخزون",
     "add_to_cart": "أضف إلى السلة",
-    "description": "الوصف"
+    "description": "الوصف",
+    "SKU": "SKU",
+    "code": "الكود"
   },
   "locations": {
     "prestige_one_mobile_Phones_mbz_city_branch": "برستيج ون للهواتف المتحركة - فرع مدينة محمد بن زايد",
@@ -117,5 +134,11 @@
     "prestige_one_mobile_phones_yas_branch": "برستيج ون للهواتف المتحركة - فرع ياس",
     "prestige_yas_phones_L.T.D": "برستيج ياس فون المحدودة",
     "view_in_google_maps": "عرض في خرائط جوجل"
+  },
+  "checkout": {
+    "shipping": "الشحن"
+  },
+  "discountsPage": {
+    "title": "الخصومات"
   }
 }

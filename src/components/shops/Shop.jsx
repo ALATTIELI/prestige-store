@@ -5,6 +5,7 @@ import ShopCart from "./ShopCart";
 import "./style.css";
 
 const Shop = ({ addToCart, shopItems }) => {
+  // eslint-disable-next-line no-unused-vars
   const { t, i18n } = useTranslation();
   return (
     <>

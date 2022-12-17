@@ -1,63 +1,62 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link, link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { getCategories, getImageById } from "../../redux/apiCalls";
 
 const Categories = () => {
   const { t, i18n } = useTranslation();
-  const data = [
-    {
-      cateImg: "/images/category/cat1.png",
-      cateName: "Fashion",
-    },
-    {
-      cateImg: "/images/category/cat2.png",
-      cateName: "Electronic",
-    },
-    {
-      cateImg: "/images/category/cat3.png",
-      cateName: "Cars",
-    },
-    {
-      cateImg: "/images/category/cat4.png",
-      cateName: "Home & Garden",
-    },
-    {
-      cateImg: "/images/category/cat5.png",
-      cateName: "Gifts",
-    },
-    {
-      cateImg: "/images/category/cat6.png",
-      cateName: "Music",
-    },
-    {
-      cateImg: "/images/category/cat7.png",
-      cateName: "Health & Beauty",
-    },
-    {
-      cateImg: "/images/category/cat8.png",
-      cateName: "Pets",
-    },
-    {
-      cateImg: "/images/category/cat9.png",
-      cateName: "Baby Toys",
-    },
-    {
-      cateImg: "/images/category/cat10.png",
-      cateName: "Groceries",
-    },
-  ];
+  const [productItems, setProductItems] = useState([]);
+  // eslint-disable-next-line no-unused-vars
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await getCategories();
+        // console.log(res);
+        if (res !== null) {
+          setProductItems(res);
+          setLoading(false);
+        } else {
+          setLoading(true);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    fetchData();
+  }, []);
+
+  const handleClick = (id) => {
+    navigate(`/category/${id}`);
+  };
 
   return (
     <>
       <div className="category">
-        {data.map((value, index) => {
-          return (
-            <div className="box f_flex" key={index}>
-              <img src={value.cateImg} alt="" />
-              <span>{value.cateName}</span>
-            </div>
-          );
-        })}
+        {productItems ? (
+          productItems.map((productItem) => {
+            return (
+              <div
+                className="box f_flex"
+                key={productItem._id}
+                onClick={() => handleClick(productItem._id)}
+              >
+                <img src={getImageById(productItem.image)} alt="" />
+                <span>
+                  {i18n.language === "en"
+                    ? productItem.name_en
+                    : productItem.name_ar}
+                </span>
+              </div>
+            );
+          })
+        ) : (
+          <div className="">
+            <span>ERROR GETTING DATA</span>
+          </div>
+        )}
         <div
           className="box mainpage_categories_viewAll"
           style={{ backgroundColor: "#f2f2f2" }}

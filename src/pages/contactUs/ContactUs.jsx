@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./contactus.css";
 import PhoneIcon from "@mui/icons-material/Phone";
 import { useTranslation } from "react-i18next";
 
 export default function ContactUs() {
   const { t, i18n } = useTranslation();
+
+  // change the title of the page
+  useEffect(() => {
+    document.title = `${t("contact_us.contact_us")}`;
+  }, [i18n.language, t]);
 
   return (
     <div className="ContactUs">
