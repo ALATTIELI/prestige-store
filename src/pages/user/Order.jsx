@@ -56,8 +56,10 @@ export default function Order() {
   }, [order_id]);
 
   useEffect(() => {
-    document.title = "Order Details";
-  }, []);
+    document.title = `${
+      i18n.language === "en" ? "Order Details" : "تفاصيل الطلب"
+    }`;
+  }, [i18n.language]);
 
   useEffect(() => {
     if (orderDetails && orderDetails !== null) {

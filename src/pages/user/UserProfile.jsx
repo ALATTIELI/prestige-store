@@ -15,8 +15,8 @@ export default function UserProfile() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    document.title = "User Profile";
-  }, []);
+    document.title = i18n.language === "en" ? "Profile" : "الملف الشخصي";
+  }, [i18n.language]);
 
   let tempUser = useSelector((state) => state.user.currentUser);
   useEffect(() => {

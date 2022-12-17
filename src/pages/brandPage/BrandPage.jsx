@@ -24,6 +24,11 @@ export default function BrandPage() {
 
   const navigate = useNavigate();
 
+  // change the title of the page to the brand name
+  useEffect(() => {
+    document.title = `${i18n.language === "en" ? brand.name : brand.name}`;
+  }, [brand, i18n.language]);
+
   useEffect(() => {
     async function fetchData() {
       try {

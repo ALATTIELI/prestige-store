@@ -25,6 +25,13 @@ export default function Product() {
     mainImg.src = img.src;
   }
 
+  // change the title of the page to the product name
+  useEffect(() => {
+    document.title = `${
+      i18n.language === "en" ? product_data.name_en : product_data.name_ar
+    }`;
+  }, [product_data, i18n.language]);
+
   useEffect(() => {
     async function fetchData() {
       try {

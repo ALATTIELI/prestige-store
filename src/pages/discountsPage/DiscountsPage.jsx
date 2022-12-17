@@ -23,6 +23,11 @@ export default function DiscountsPage() {
 
   const navigate = useNavigate();
 
+  // change the title of the page
+  useEffect(() => {
+    document.title = `${t("discountsPage.title")}`;
+  }, [i18n.language, t]);
+
   useEffect(() => {
     async function fetchData() {
       try {

@@ -24,6 +24,14 @@ export default function CategoryPage() {
 
   const navigate = useNavigate();
 
+  // change the title of the page to the category name
+
+  useEffect(() => {
+    document.title = `${
+      i18n.language === "en" ? category.name_en : category.name_ar
+    }`;
+  }, [category, i18n.language]);
+
   useEffect(() => {
     async function fetchData() {
       try {

@@ -15,10 +15,6 @@ const User = () => {
   const user = useSelector((state) => state.user.currentUser);
 
   useEffect(() => {
-    document.title = "User";
-  }, []);
-
-  useEffect(() => {
     if (!user || user === null) {
       navigate("/");
     }

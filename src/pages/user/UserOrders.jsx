@@ -22,15 +22,16 @@ import { getOrders } from "../../redux/apiCalls";
 // ];
 
 export default function UserOrders() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const user = useSelector((state) => state.user.currentUser);
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // change the title of the page
   useEffect(() => {
-    document.title = "User Orders";
-  }, []);
+    document.title = i18n.language === "en" ? "Orders" : "الطلبات";
+  }, [i18n.language]);
 
   useEffect(() => {
     const getUser = async () => {

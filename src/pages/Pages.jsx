@@ -6,8 +6,17 @@ import Shop from "../components/shops/Shop";
 import Wrapper from "../components/wrapper/Wrapper";
 
 import "../i18n";
+import { useTranslation } from "react-i18next";
 
 const Pages = () => {
+  const { i18n } = useTranslation();
+
+  // change the title of the page
+  document.title = `${
+    i18n.language === "en"
+      ? "Home | Prestige Store"
+      : "الصفحة الرئيسية | Prestige Store"
+  }`;
   return (
     <>
       <Home />

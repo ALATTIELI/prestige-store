@@ -7,7 +7,6 @@ import Cart from "./common/Cart/Cart";
 import Footer from "./common/footer/Footer";
 import Product from "./pages/product/Product";
 import Categories from "./pages/categories/Categories";
-import User from "./pages/user/User";
 import Brands from "./pages/brands/Brands";
 import ContactUs from "./pages/contactUs/ContactUs";
 import AboutUs from "./pages/aboutus/AboutUs";
