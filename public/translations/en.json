@@ -68,6 +68,9 @@
     "email": "Email",
     "phone": "Phone"
   },
+  "socials": {
+    "socials": "Social Media"
+  },
 
   "user": {
     "my_account": "My Account",

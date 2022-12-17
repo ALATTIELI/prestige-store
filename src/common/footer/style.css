@@ -47,15 +47,15 @@ footer li {
   scale: 100%;
   object-fit: scale-down;
 }
-.footer-box{
+.footer-box {
   margin-top: 1rem;
   margin-left: 1rem;
 }
-.footer-box a{
+.footer-box a {
   color: #fff;
 }
 
-.footer-container{
+.footer-container {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -76,6 +76,10 @@ footer li {
   text-align: center;
 }
 
+.footer-box .socials span {
+  margin-left: 5px;
+}
+
 @media (max-width: 600px) {
   footer {
     background-color: var(--maincolor);
@@ -84,7 +88,7 @@ footer li {
     position: absolute;
     width: 100%;
   }
-  .footer-container{
+  .footer-container {
     display: flex;
     flex-direction: column;
     align-items: center;
