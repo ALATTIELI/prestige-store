@@ -49,12 +49,17 @@
   padding: 10px;
 }
 
+.heading .heading-right {
+  text-align: right;
+  color: grey;
+  cursor: pointer;
+}
 .grid1 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
 }
-.shop .product .img{
+.shop .product .img {
   margin-bottom: 10px;
 }
 .shop .product .img img {
