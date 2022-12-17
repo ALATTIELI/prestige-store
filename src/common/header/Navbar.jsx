@@ -7,11 +7,12 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
 const Navbar = () => {
   // Toogle Menu
+  // eslint-disable-next-line no-unused-vars
   const [MobileMenu, setMobileMenu] = useState(false);
   const [Dropdown, setDropdown] = useState(false);
   const { t, i18n } = useTranslation();
 
-  console.log(i18n.resolvedLanguage);
+  // console.log(i18n.resolvedLanguage);
   if (i18n.resolvedLanguage === "ar") {
     const body = document.getElementsByTagName("body")[0];
     body.style = "font-family: 'tajawal-regular';";
@@ -38,14 +39,14 @@ const Navbar = () => {
             <div className="categories_nav">
               {Dropdown ? (
                 <h4 onClick={() => setDropdown(!Dropdown)}>
-                  <span class="header_catgrories_icon fa-solid fa-border-all"></span>
+                  <span className="header_catgrories_icon fa-solid fa-border-all"></span>
 
                   <span>{t("navbar.categories")}</span>
                   <KeyboardArrowUpIcon className="arrow-icon" />
                 </h4>
               ) : (
                 <h4 onClick={() => setDropdown(!Dropdown)}>
-                  <span class="header_catgrories_icon fa-solid fa-border-all"></span>
+                  <span className="header_catgrories_icon fa-solid fa-border-all"></span>
 
                   <span>{t("navbar.categories")}</span>
                   <KeyboardArrowDownIcon className="arrow-icon" />
@@ -81,8 +82,7 @@ const Navbar = () => {
             // }
           >
             <ul
-              className={ "link f_flex capitalize"
-              }
+              className={"link f_flex capitalize"}
               onClick={() => setMobileMenu(false)}
             >
               {/*<ul className='link f_flex uppercase {MobileMenu ? "nav-links-MobileMenu" : "nav-links"} onClick={() => setMobileMenu(false)}'>*/}
