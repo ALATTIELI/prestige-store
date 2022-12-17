@@ -154,7 +154,7 @@ export const getMobilePhones = async () => {
   if (st === 200) {
     try {
       const response = await privateRequest.get(
-        "/products/category/62c4806f9c8e583abd1d1202"
+        "/products/category/name/Phones"
       );
       if (response.status === 200) {
         // console.log(response);
