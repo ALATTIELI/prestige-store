@@ -39,10 +39,7 @@ const Footer = () => {
                 <li>{t("contact_us.email")}: info@prestigestore.ae</li>
                 <li>{t("contact_us.phone")}: +971529744450</li>
               </ul>
-            </div>
-            <div className="footer-box">
-              <h2>{t("socials.socials")}</h2>
-              <ul>
+              <ul className="socials">
                 <li>
                   <a
                     href="https://www.facebook.com/prestigestore.ae/"
@@ -51,9 +48,6 @@ const Footer = () => {
                     target="_blank"
                   >
                     <i className="fab fa-facebook-f"></i>
-                    <span>
-                      <b>Prestige Mobiles</b>
-                    </span>
                   </a>
                 </li>
                 <li>
@@ -64,9 +58,6 @@ const Footer = () => {
                     target="_blank"
                   >
                     <i className="fab fa-instagram"></i>
-                    <span>
-                      <b>prestigegroup_uae</b>
-                    </span>
                   </a>
                 </li>
               </ul>
