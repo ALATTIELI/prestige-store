@@ -155,7 +155,7 @@ export default function Product() {
                         </>
                       )}
                     </span>
-                    <span>{t("product.stock")}: 3</span>
+                    <span>{t("product.stock")}: {product_data.quantity}</span>
                   </div>
                   <div className="product-product-description-bottom-right">
                     <span>
