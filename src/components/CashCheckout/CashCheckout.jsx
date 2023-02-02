@@ -21,17 +21,24 @@ export default function CashCheckout() {
 
   document.title = "Cash Checkout";
 
+  // check if user is logged in
   const user = useSelector((state) => state.user.currentUser);
-  const email = user.email;
+
+  const [email, setEmail] = useState("");
 
   useEffect(() => {
-    if (!user) {
-      navigate("/login");
-    } else if (CartItems.length === 0) {
+    if (CartItems.length === 0) {
       navigate("/cart");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [CartItems, user]);
+  }, [CartItems]);
+
+  useEffect(() => {
+    if (user) {
+      setEmail(user.email);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user]);
 
   const appearance = {
     theme: "stripe",
@@ -92,6 +99,11 @@ export default function CashCheckout() {
     setAddressElement(address);
   };
 
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+    console.log(email);
+  };
+
   return (
     <div className="cashCheckout">
       <Elements options={options} stripe={stripePromise}>
@@ -102,7 +114,7 @@ export default function CashCheckout() {
             id="email"
             type="text"
             value={email}
-            onChange={(e) => e.preventDefault()}
+            onChange={(e) => handleEmailChange(e)}
             placeholder="Enter email address"
           />
           <AddressElement

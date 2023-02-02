@@ -20,11 +20,16 @@ export default function CheckoutForm() {
   //  wallet payment
   // const [paymentRequest, setPaymentRequest] = useState(null);
 
-  // const [email, setEmail] = useState("");
-  const email = user.email;
+  const [email, setEmail] = useState("");
+
   const [message, setMessage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
+  useEffect(() => {
+    if (user) {
+      setEmail(user.email);
+    }
+  }, [user]);
   // wallet payment
   // useEffect(() => {
   //   if (stripe) {
@@ -116,13 +121,17 @@ export default function CheckoutForm() {
     layout: "tabs",
   };
 
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
   return (
     <form id="payment-form" onSubmit={handleSubmit}>
       <input
         id="email"
         type="text"
         value={email}
-        onChange={(e) => e.preventDefault()}
+        onChange={(e) => handleEmailChange(e)}
         placeholder="Enter email address"
       />
       <PaymentElement id="payment-element" options={paymentElementOptions} />

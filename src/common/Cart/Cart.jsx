@@ -265,7 +265,6 @@ const Cart = () => {
               <span>(5% VAT INCLUDED)</span>
             </div>
             <div className="cart-checkout">
-              {user !== null ? (
                 <>
                   {CartItems.length > 0 ? (
                     <>
@@ -289,11 +288,6 @@ const Cart = () => {
                     </button>
                   )}
                 </>
-              ) : (
-                <Link to="/login">
-                  <button className="checkout-btn">{t("cart.login")}</button>
-                </Link>
-              )}
             </div>
           </div>
         </div>
