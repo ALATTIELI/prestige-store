@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <>
       <footer>
-        <div className=" footer-container">
+        <div className="footer-container">
           <div className="container footer-left">
             <div className="footer-box">
               <h2>{t("about_us.about_us")}</h2>
@@ -40,6 +40,9 @@ const Footer = () => {
                 <li>{t("contact_us.email")}: info@prestigestore.ae</li>
                 <li>{t("contact_us.phone")}: +971529744450</li>
               </ul>
+            </div>
+            <div className="footer-box">
+              <h2>{t("contact_us.follow_us")}</h2>
               <ul className="socials">
                 <li>
                   <a
