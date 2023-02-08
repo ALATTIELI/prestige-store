@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "./style.css";
 
 const Footer = () => {
+  // eslint-disable-next-line no-unused-vars
   const { t, i18n } = useTranslation();
   return (
     <>
@@ -40,16 +41,6 @@ const Footer = () => {
                 <li>{t("contact_us.phone")}: +971529744450</li>
               </ul>
               <ul className="socials">
-                <li>
-                  <a
-                    href="https://www.facebook.com/prestigestore.ae/"
-                    className="socials"
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    <i className="fab fa-facebook-f"></i>
-                  </a>
-                </li>
                 <li>
                   <a
                     href="https://www.instagram.com/prestigegroup_uae/"
