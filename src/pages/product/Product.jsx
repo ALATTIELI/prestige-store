@@ -88,6 +88,21 @@ export default function Product() {
       quantity: 1,
     };
     dispatch(addToCart(data));
+
+    // start an animation to show the product is added to the cart
+    const button = e.currentTarget;
+
+    // replace the text with a rotating icon
+    button.innerHTML = `<i class="fas fa-spinner fa-spin"></i>`;
+
+    // after 1 second, replace the icon with a checkmark
+    setTimeout(() => {
+      button.innerHTML = `<i class="fas fa-check"></i>`;
+      // after 2 seconds, replace the checkmark with the original text
+      setTimeout(() => {
+        button.innerHTML = t("product.add_to_cart");
+      }, 2000);
+    }, 1000);
   };
 
   return (
@@ -155,7 +170,9 @@ export default function Product() {
                         </>
                       )}
                     </span>
-                    <span>{t("product.stock")}: {product_data.quantity}</span>
+                    <span>
+                      {t("product.stock")}: {product_data.quantity}
+                    </span>
                   </div>
                   <div className="product-product-description-bottom-right">
                     <span>
