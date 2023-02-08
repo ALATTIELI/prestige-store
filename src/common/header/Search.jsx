@@ -15,6 +15,7 @@ const Search = () => {
   const [search, setSearch] = React.useState("");
   const [loadingSearch, setLoadingSearch] = React.useState(true);
   const [search_results, setSearchResults] = React.useState([]);
+  // eslint-disable-next-line no-unused-vars
   const { t, i18n } = useTranslation();
   // fixed Header
   window.addEventListener("scroll", function () {
@@ -126,7 +127,11 @@ const Search = () => {
               </Link>
             </div>
             <i className="icon-circle">
-              <a href="https://wa.me/971529744450">
+              <a
+                href="https://wa.me/971529744450"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <img
                   src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"
                   alt="whatsapp-logo"
