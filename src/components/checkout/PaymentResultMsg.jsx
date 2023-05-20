@@ -1,15 +1,19 @@
 import { useStripe } from "@stripe/react-stripe-js";
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { clearCart } from "../../redux/cartRedux";
 
 export default function PaymentResultMsg() {
   const stripe = useStripe();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [message, setMessage] = useState(null);
 
   useEffect(() => {
     if (message === "Payment succeeded!") {
+      dispatch(clearCart());
       setTimeout(() => {
         navigate("/");
       }, 1000);
