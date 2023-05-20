@@ -16,10 +16,10 @@ const Shop = ({ addToCart, shopItems }) => {
           <div className="contentWidth">
             <div className="heading d_flex">
               <div className="heading-left f_flex">
-                <h2>{t("mobile_phones.mobile_phones")}</h2>
+                <h2>{t("suggested_for_you.suggested_for_you")}</h2>
               </div>
               <div className="heading-right">
-                <span>{t("mobile_phones.view_all")}</span>
+                <span>{t("suggested_for_you.view_all")}</span>
                 <i className="fa-solid fa-caret-right"></i>
               </div>
             </div>
