@@ -1,10 +1,20 @@
 import { useStripe } from "@stripe/react-stripe-js";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function PaymentResultMsg() {
   const stripe = useStripe();
+  const navigate = useNavigate();
 
   const [message, setMessage] = useState(null);
+
+  useEffect(() => {
+    if (message === "Payment succeeded!") {
+      setTimeout(() => {
+        navigate("/");
+      }, 1000);
+    }
+  }, [message]);
 
   useEffect(() => {
     if (!stripe) {

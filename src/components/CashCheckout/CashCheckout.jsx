@@ -87,7 +87,9 @@ export default function CashCheckout() {
       console.log(res);
       if (res) {
         alert(res.message);
-        // navigate("/orders");
+        setTimeout(() => {
+          navigate("/");
+        }, 1000);
       }
     } catch (error) {
       console.log(error);
