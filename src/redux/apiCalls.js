@@ -146,16 +146,14 @@ export const getLatestProducts = async () => {
   }
 };
 
-// get mobile phones
-export const getMobilePhones = async () => {
-  // console.log("getMobilePhones");
+// get random products
+export const getRandomProducts = async () => {
+  // console.log("getRandomProducts");
   var st = await checkServer().then((res) => res.status);
   // console.log(st);
   if (st === 200) {
     try {
-      const response = await privateRequest.get(
-        "/products/category/name/Phones"
-      );
+      const response = await privateRequest.get("/products/random");
       if (response.status === 200) {
         // console.log(response);
         return response.data;

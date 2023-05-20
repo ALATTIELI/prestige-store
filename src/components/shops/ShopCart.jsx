@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import {
   getDiscountById,
   getImageById,
-  getMobilePhones,
+  getRandomProducts,
 } from "../../redux/apiCalls";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartRedux";
@@ -23,7 +23,7 @@ const ShopCart = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await getMobilePhones();
+        const res = await getRandomProducts();
         // console.log(res);
         if (res !== null) {
           setProductItems(res);
