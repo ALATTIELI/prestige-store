@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
-import { getCategories, getImageById } from "../../redux/apiCalls";
+import { getImageById, getTopCategories } from "../../redux/apiCalls";
 
 const Categories = () => {
   const { t, i18n } = useTranslation();
@@ -13,7 +13,7 @@ const Categories = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await getCategories();
+        const res = await getTopCategories();
         // console.log(res);
         if (res !== null) {
           setProductItems(res);

@@ -372,6 +372,26 @@ export const getCategories = async () => {
   }
 };
 
+// get top categories
+export const getTopCategories = async () => {
+  // console.log("getCategories");
+  var st = await checkServer().then((res) => res.status);
+  // console.log(st);
+  if (st === 200) {
+    try {
+      const response = await publicRequest.get("/categories/top");
+      if (response.status === 200) {
+        // console.log(response);
+        return response.data;
+      } else {
+        return false;
+      }
+    } catch (error) {
+      return false;
+    }
+  }
+};
+
 // search categories
 export const searchCategories = async (search) => {
   // console.log("searchCategories");
