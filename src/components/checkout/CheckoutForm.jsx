@@ -7,12 +7,16 @@ import {
 } from "@stripe/react-stripe-js";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
+import { getDeliveryCharges } from "../../redux/apiCalls";
 
 export default function CheckoutForm() {
   const stripe = useStripe();
   const elements = useElements();
   const Cart = useSelector((state) => state.cart);
-  const amount = Cart.total;
+  const subtotal = Cart.total;
+  const [deliveryCharges, setDeliveryCharges] = useState(0);
+
+  const amount = deliveryCharges ? subtotal + deliveryCharges : subtotal;
   const { i18n } = useTranslation();
 
   const user = useSelector((state) => state.user.currentUser);
@@ -30,6 +34,16 @@ export default function CheckoutForm() {
       setEmail(user.email);
     }
   }, [user]);
+
+  useEffect(() => {
+    const fetchDeliveryCharges = async () => {
+      const deliveryCharges = await getDeliveryCharges();
+      // convert value to number
+      const value = Number(deliveryCharges.value);
+      setDeliveryCharges(value);
+    };
+    fetchDeliveryCharges();
+  }, []);
   // wallet payment
   // useEffect(() => {
   //   if (stripe) {

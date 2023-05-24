@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loadStripe } from "@stripe/stripe-js";
 import "./cashCheckout.css";
-import { createOrder } from "../../redux/apiCalls";
+import { createOrder, getDeliveryCharges } from "../../redux/apiCalls";
 import { clearCart } from "../../redux/cartRedux";
 
 // I might use Stripe Elements for the address form, but I'm not sure yet. It would eliminate the need for a custom address form.
@@ -15,7 +15,9 @@ const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 export default function CashCheckout() {
   const Cart = useSelector((state) => state.cart);
   const CartItems = Cart.products;
-  const amount = Cart.total;
+  const [deliveryCharges, setDeliveryCharges] = useState(null);
+  const sub_amount = Cart.total;
+  const amount = deliveryCharges ? sub_amount + deliveryCharges : sub_amount;
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   const [addressElement, setAddressElement] = useState({});
@@ -41,6 +43,16 @@ export default function CashCheckout() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
+
+  useEffect(() => {
+    const fetchDeliveryCharges = async () => {
+      const deliveryCharges = await getDeliveryCharges();
+      // convert value to number
+      const value = Number(deliveryCharges.value);
+      setDeliveryCharges(value);
+    };
+    fetchDeliveryCharges();
+  }, []);
 
   const appearance = {
     theme: "stripe",

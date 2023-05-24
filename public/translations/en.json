@@ -107,6 +107,8 @@
   "cart": {
     "no_items_in_cart": "No items in cart",
     "cart_summary": "Cart Summary",
+    "sub_total_price": "Sub Total Price :",
+    "delivery_fee": "Delivery Fee :",
     "total_price": "Total Price :",
     "payment_method": "Payment Method",
     "cash_on_delivery": "Cash on Delivery",

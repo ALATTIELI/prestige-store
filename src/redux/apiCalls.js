@@ -78,6 +78,26 @@ export const getImageById = (id) => {
   }
 };
 
+// get Delivery Charges
+export const getDeliveryCharges = async () => {
+  // console.log("getDeliveryCharges");
+  var st = await checkServer().then((res) => res.status);
+  // console.log(st);
+  if (st === 200) {
+    try {
+      const response = await publicRequest.get("/configs/delivery_charges");
+      if (response.status === 200) {
+        // console.log(response);
+        return response.data;
+      } else {
+        return false;
+      }
+    } catch (error) {
+      return false;
+    }
+  }
+};
+
 // ====== HOME PAGE ======
 // get featured products
 export const getFeaturedProducts = async () => {
