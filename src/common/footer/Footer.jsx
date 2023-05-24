@@ -63,6 +63,19 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <div className="footer-bottom">
+          <p>&copy; 2023 Prestige Store. All rights reserved.</p>
+          <p>
+            Built by&nbsp;
+            <a href="https://akkil.tech" target="_blank" rel="noreferrer">
+              BILAL AKKIL
+            </a>
+            &nbsp;&&nbsp;
+            <a href="/" target="_blank" rel="noreferrer">
+              ADEL AL-ATTIELI
+            </a>
+          </p>
+        </div>
       </footer>
     </>
   );

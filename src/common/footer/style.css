@@ -1,6 +1,5 @@
 footer {
   background-color: var(--maincolor);
-  padding: 5rem 0 5rem 0;
   color: #fff;
   position: absolute;
   width: 100%;
@@ -57,9 +56,23 @@ footer li {
 
 .footer-container {
   display: flex;
+  padding: 5rem 0 2rem 0;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+.footer-bottom {
+  padding-bottom: 1rem;
+  text-align: center;
+}
+.footer-bottom a {
+  color: #fff;
+  font-weight: 600;
+}
+.footer-bottom p {
+  margin: 5px;
+  font-size: 0.8rem;
+  opacity: 0.8;
 }
 .footer-left {
   flex: 3;
@@ -123,6 +136,6 @@ footer li {
   }
   .footer-box .socials {
     width: 100%;
-    justify-content: center;  
+    justify-content: center;
   }
 }
