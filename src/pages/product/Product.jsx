@@ -145,7 +145,7 @@ export default function Product() {
             </div>
             <div className="product-right-column">
               <div className="product-product-description">
-                <div className="product-product-description-top">
+                <div className="product-product-description-top" dir="auto">
                   <span>
                     {i18n.language === "en"
                       ? category.name_en
@@ -156,6 +156,11 @@ export default function Product() {
                       ? product_data.name_en
                       : product_data.name_ar}
                   </h1>
+                  <h2>
+                    {i18n.language === "en"
+                      ? product_data.short_description_en
+                      : product_data.short_description_ar}
+                  </h2>
                 </div>
                 <div className="product-product-description-bottom">
                   <div className="product-product-description-bottom-left">
@@ -239,15 +244,11 @@ export default function Product() {
           >
             <div className="product-description">
               <h1>{t("product.description")}</h1>
-              {i18n.language === "en" ? (
-                <p style={{ direction: "ltr" }}>
-                  {product_data.description_en}
-                </p>
-              ) : (
-                <p style={{ direction: "rtl" }}>
-                  {product_data.description_ar}
-                </p>
-              )}
+              <p dir="auto">
+                {i18n.language === "en"
+                  ? product_data.description_en
+                  : product_data.description_ar}
+              </p>
             </div>
           </div>
         </main>
