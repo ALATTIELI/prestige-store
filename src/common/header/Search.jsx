@@ -49,9 +49,11 @@ const Search = () => {
       } else {
         const res = await searchProducts(value);
         if (res !== null) {
-          setSearchResults(res);
-          setLoadingSearch(false);
-          sr.classList.add("active");
+          if (res.length > 0) {
+            setSearchResults(res);
+            setLoadingSearch(false);
+            sr.classList.add("active");
+          }
         } else {
           setLoadingSearch(true);
         }
@@ -104,7 +106,11 @@ const Search = () => {
                   search_results &&
                   search_results.map((item) => (
                     <Link to={`/product/${item._id}`}>
-                      <li key={item._id} className="search_results_item">
+                      <li
+                        key={item._id}
+                        className="search_results_item"
+                        onClick={() => setSearch("")}
+                      >
                         <img src={getImageById(item.images[0])} alt="" />
                         <span>{item.name_en}</span>
                       </li>
