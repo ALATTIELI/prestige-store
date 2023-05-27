@@ -9,6 +9,7 @@ import {
 } from "../../redux/apiCalls";
 import { addToCart } from "../../redux/cartRedux";
 import "./product.css";
+import { useParams } from "react-router-dom";
 
 export default function Product() {
   const { t, i18n } = useTranslation();
@@ -16,7 +17,7 @@ export default function Product() {
   const [brand, setBrand] = useState([]);
   const [category, setCategory] = useState([]);
   const [loading, setLoading] = useState(true);
-  const product_id = window.location.pathname.split("/").pop();
+  const product_id = useParams().id;
   const dispatch = useDispatch();
   // Show img from the thumbnail to the main img
   function showImg(e) {
@@ -49,7 +50,7 @@ export default function Product() {
     }
     fetchData();
     // eslint-disable-next-line
-  }, []);
+  }, [product_id]);
 
   useEffect(() => {
     async function fetchData() {
