@@ -29,6 +29,7 @@ import Checkout from "./components/checkout/Checkout";
 import CashCheckout from "./components/CashCheckout/CashCheckout";
 import PaymentResult from "./components/checkout/PaymentResult";
 import DiscountsPage from "./pages/discountsPage/DiscountsPage";
+import { Helmet } from "react-helmet";
 
 function App() {
   const dispatch = useDispatch();
@@ -64,6 +65,18 @@ function App() {
     <>
       <Suspense fallback={<div>Loading...</div>}>
         <BrowserRouter>
+          <Helmet>
+            <title>Prestige Store</title>
+            <meta
+              name="description"
+              content="Prestige Store is an online store that sells high quality products"
+            />
+            <meta
+              name="keywords"
+              content="Prestige Store, Prestige, Store, PrestigeStore, Prestige Store Online, Prestige Store Online Shopping, Prestige Store Online Shopping in UAE, Prestige Store Online Shopping in Dubai, Prestige Store Online Shopping in Abu Dhabi, Prestige Store Online Shopping in Sharjah, Prestige Store Online Shopping in Ajman, Prestige Store Online Shopping in Al Ain, Prestige Store Online Shopping in Fujairah, Prestige Store Online Shopping in Ras Al Khaimah, Prestige Store Online Shopping in Umm Al Quwain, Prestige Store Online Shopping in UAE, Prestige Store Online Shopping in Dubai, Prestige Store Online Shopping in Abu Dhabi, Prestige Store Online Shopping in Sharjah, Prestige Store Online Shopping in Ajman, Prestige Store Online Shopping in Al Ain, Prestige Store Online Shopping in Fujairah, Prestige Store Online Shopping in Ras Al Khaimah, Prestige Store Online Shopping in Umm Al Quwain"
+            />
+            <meta name="author" content="Prestige Store" />
+          </Helmet>
           <ScrollToTop />
           <Header />
           <Routes>

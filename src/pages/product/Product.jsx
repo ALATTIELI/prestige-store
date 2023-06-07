@@ -10,6 +10,7 @@ import {
 import { addToCart } from "../../redux/cartRedux";
 import "./product.css";
 import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 export default function Product() {
   const { t, i18n } = useTranslation();
@@ -114,6 +115,77 @@ export default function Product() {
         </div>
       ) : (
         <main className="product-container">
+          <Helmet>
+            <title>
+              {i18n.language === "en"
+                ? product_data.name_en
+                : product_data.name_ar}
+            </title>
+            <meta
+              name="description"
+              content={
+                i18n.language === "en"
+                  ? product_data.short_description_en
+                  : product_data.short_description_ar
+              }
+            />
+            <meta name="keywords" content={product_data.name_en} />
+            <meta name="author" content="Prestige Store" />
+            <meta
+              property="og:title"
+              content={
+                i18n.language === "en"
+                  ? product_data.name_en
+                  : product_data.name_ar
+              }
+            />
+            <meta
+              property="og:description"
+              content={
+                i18n.language === "en"
+                  ? product_data.short_description_en
+                  : product_data.short_description_ar
+              }
+            />
+            <meta
+              property="og:image"
+              // content={getImageById(product_data.images[0])}
+              content={
+                "https://istyle.ae/media/catalog/product/a/1/a1231032.jpg"
+              }
+            />
+            <meta
+              property="og:url"
+              content={`${window.location.origin}/product/${product_id}`}
+            />
+            <meta property="og:site_name" content="Prestige Store" />
+
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta
+              name="twitter:title"
+              content={
+                i18n.language === "en"
+                  ? product_data.name_en
+                  : product_data.name_ar
+              }
+            />
+            <meta
+              name="twitter:description"
+              content={
+                i18n.language === "en"
+                  ? product_data.short_description_en
+                  : product_data.short_description_ar
+              }
+            />
+            <meta
+              name="twitter:image"
+              content={
+                "https://istyle.ae/media/catalog/product/a/1/a1231032.jpg"
+              }
+            />
+            <meta name="twitter:site" content="@prestige_store" />
+            <meta name="twitter:creator" content="@prestige_store" />
+          </Helmet>
           <div className="product-top">
             <div className="product-left-column">
               <div className="product-left-column-img">
