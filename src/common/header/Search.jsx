@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
 import Login from "../../components/Login/Login";
-import { getImageById, searchProducts } from "../../redux/apiCalls";
+import { searchProducts } from "../../redux/apiCalls";
 import { useSelector } from "react-redux";
 
 const Search = () => {
@@ -111,7 +111,7 @@ const Search = () => {
                         className="search_results_item"
                         onClick={() => setSearch("")}
                       >
-                        <img src={getImageById(item.images[0])} alt="" />
+                        <img src={item.images[0].url} alt="" />
                         <span>{item.name_en}</span>
                       </li>
                     </Link>

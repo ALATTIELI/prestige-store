@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
 import {
   getDiscountById,
-  getImageById,
   getRandomProducts,
 } from "../../redux/apiCalls";
 import { useDispatch } from "react-redux";
@@ -98,7 +97,7 @@ const ShopCart = () => {
                     {discount[productItem._id]}%
                   </span>
                 ) : null}
-                <img src={getImageById(productItem.images[0])} alt="" />
+                <img src={productItem.images[0].url} alt="" />
               </div>
               <div className="product-details">
                 <div className="product-name">

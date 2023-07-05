@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import { getImageById, getLatestProducts } from "../../redux/apiCalls";
+import { getLatestProducts } from "../../redux/apiCalls";
 
 const Cart = () => {
   // eslint-disable-next-line no-unused-vars
@@ -44,7 +44,7 @@ const Cart = () => {
               onClick={() => handleClick(productItem._id)}
             >
               <div className="img">
-                <img src={getImageById(productItem.images[0])} alt="" />
+                <img src={productItem.images[0].url} alt="" />
               </div>
               <div className="new-arrivals-name">
                 <h4>

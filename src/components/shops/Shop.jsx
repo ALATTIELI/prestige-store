@@ -1,8 +1,8 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import Catg from "./Catg";
 import ShopCart from "./ShopCart";
 import "./style.css";
+import BrandsList from "./BrandsList";
 
 const Shop = ({ addToCart, shopItems }) => {
   // eslint-disable-next-line no-unused-vars
@@ -11,7 +11,7 @@ const Shop = ({ addToCart, shopItems }) => {
     <>
       <section className="shop background">
         <div className="container d_flex">
-          <Catg />
+          <BrandsList />
 
           <div className="contentWidth">
             <div className="heading d_flex">

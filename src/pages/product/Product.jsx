@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux";
 import {
   getBrandById,
   getCategoryById,
-  getImageById,
   getProductById,
 } from "../../redux/apiCalls";
 import { addToCart } from "../../redux/cartRedux";
@@ -149,7 +148,7 @@ export default function Product() {
             />
             <meta
               property="og:image"
-              // content={getImageById(product_data.images[0])}
+              // content={product_data.images[0].url}
               content={
                 "https://istyle.ae/media/catalog/product/a/1/a1231032.jpg"
               }
@@ -194,7 +193,7 @@ export default function Product() {
                     id="main-img"
                     data-image="red"
                     className="active"
-                    src={getImageById(product_data.images[0])}
+                    src={product_data.images[0].url}
                     alt=""
                   />
                 )}
@@ -208,7 +207,7 @@ export default function Product() {
                           onClick={(e) => showImg(e)}
                           data-image="red"
                           className="active"
-                          src={getImageById(img)}
+                          src={img.url}
                           alt="product"
                         />
                       </div>

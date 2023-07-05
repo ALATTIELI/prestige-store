@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import {
   getCategoryById,
   getDiscountById,
-  getImageById,
   getProductsByCategory,
 } from "../../redux/apiCalls";
 import { addToCart } from "../../redux/cartRedux";
@@ -139,7 +138,7 @@ export default function CategoryPage() {
                           {discount[product._id]}%
                         </span>
                       ) : null}
-                      <img src={getImageById(product.images[0])} alt="" />
+                      <img src={product.images[0].url} alt="" />
                     </div>
                     <div className="categoryPageProductDetails">
                       <div className="product-name">

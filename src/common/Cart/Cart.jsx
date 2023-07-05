@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import {
   getDeliveryCharges,
-  getImageById,
   getProductById,
 } from "../../redux/apiCalls";
 import {
@@ -123,7 +122,7 @@ const Cart = () => {
                       <div className="cart-list" key={item.id}>
                         <div className="cart-left">
                           <div className="img">
-                            <img src={getImageById(item.images[0])} alt="" />
+                            <img src={item.images[0].url} alt="" />
                           </div>
                           <div className="cartControl d_flex">
                             <button
@@ -175,7 +174,7 @@ const Cart = () => {
                     <div className="cart-list" key={item.id}>
                       <div className="cart-left">
                         <div className="img">
-                          <img src={getImageById(item.images[0])} alt="" />
+                          <img src={item.images[0].url} alt="" />
                         </div>
                         {/* <div className="cartControl d_flex">
                           <button

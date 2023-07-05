@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import {
   getBrandById,
   getDiscountById,
-  getImageById,
   getProductsByBrand,
 } from "../../redux/apiCalls";
 import { addToCart } from "../../redux/cartRedux";
@@ -133,7 +132,7 @@ export default function BrandPage() {
                           {discount[product._id]}%
                         </span>
                       ) : null}
-                      <img src={getImageById(product.images[0])} alt="" />
+                      <img src={product.images[0].url} alt="" />
                     </div>
                     <div className="brandPageProductDetails">
                       <div className="product-name">

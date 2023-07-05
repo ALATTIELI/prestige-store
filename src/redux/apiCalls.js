@@ -67,16 +67,16 @@ export const getCurrentUser = async (dispatch) => {
 };
 
 // get image
-export const getImageById = (id) => {
-  // console.log("getImageById");
-  try {
-    // const response = await publicRequest.get(`/images/${id}`);
-    const url = `${BASE_URL}/images/${id}`;
-    return url;
-  } catch (err) {
-    return err;
-  }
-};
+// export const getImageById = (id) => {
+//   // console.log("getImageById");
+//   try {
+//     // const response = await publicRequest.get(`/images/${id}`);
+//     const url = `${BASE_URL}/images/${id}`;
+//     return url;
+//   } catch (err) {
+//     return err;
+//   }
+// };
 
 // get Delivery Charges
 export const getDeliveryCharges = async () => {

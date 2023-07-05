@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {
   getDiscountById,
-  getImageById,
   getLatestDiscounts,
 } from "../../redux/apiCalls";
 import { addToCart } from "../../redux/cartRedux";
@@ -98,7 +97,7 @@ const DiscountCard = () => {
                     <span className="top_left_popup">
                       {discount[productItem._id]}% Off
                     </span>
-                    <img src={getImageById(productItem.images[0])} alt="" />
+                    <img src={productItem.images[0].url} alt="" />
                   </div>
                   <div className="discount_card_product_details">
                     <div className="discount_card_product_name">
