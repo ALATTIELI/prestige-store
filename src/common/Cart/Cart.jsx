@@ -11,7 +11,6 @@ import {
   updateCart,
 } from "../../redux/cartRedux";
 import "./style.css";
-import { use } from "i18next";
 
 const Cart = () => {
   // eslint-disable-next-line no-unused-vars
