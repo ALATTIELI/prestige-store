@@ -122,6 +122,7 @@
     "brand": "Brand",
     "stock": "Stock",
     "add_to_cart": "Add to Cart",
+    "out_of_stock": "Out of Stock",
     "description": "Description",
     "SKU": "SKU",
     "code": "Code"
