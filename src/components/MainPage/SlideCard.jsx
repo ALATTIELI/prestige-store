@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { t } from "i18next";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import { getFeaturedProducts, getImageById } from "../../redux/apiCalls";
+import { getFeaturedProducts } from "../../redux/apiCalls";
 
 const SlideCard = () => {
   const { t, i18n } = useTranslation();
@@ -84,7 +84,7 @@ const SlideCard = () => {
                     </button>
                   </div>
                   <div className="right">
-                    <img src={getImageById(productItem.image)} alt="" />
+                    <img src={productItem.image.url} alt="" />
                   </div>
                 </div>
               </>
