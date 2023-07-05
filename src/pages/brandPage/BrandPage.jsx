@@ -85,6 +85,7 @@ export default function BrandPage() {
     const data = {
       ...product,
       quantity: 1,
+      inStock: product.quantity,
     };
     dispatch(addToCart(data));
 

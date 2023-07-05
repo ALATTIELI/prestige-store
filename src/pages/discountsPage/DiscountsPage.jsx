@@ -69,6 +69,7 @@ export default function DiscountsPage() {
     const data = {
       ...product,
       quantity: 1,
+      inStock: product.quantity,
     };
     dispatch(addToCart(data));
 

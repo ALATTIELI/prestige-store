@@ -2,10 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import {
-  getDeliveryCharges,
-  getProductById,
-} from "../../redux/apiCalls";
+import { getDeliveryCharges, getProductById } from "../../redux/apiCalls";
 import {
   clearCart,
   decreaseProductQuantity,
@@ -14,6 +11,7 @@ import {
   updateCart,
 } from "../../redux/cartRedux";
 import "./style.css";
+import { use } from "i18next";
 
 const Cart = () => {
   // eslint-disable-next-line no-unused-vars
@@ -52,6 +50,12 @@ const Cart = () => {
         } else {
           dispatch(removeFromCart(id));
         }
+        if (product.quantity === 0) {
+          if (CartItems.length === 1) {
+            dispatch(clearCart());
+          }
+          dispatch(removeFromCart(product));
+        }
       });
     };
     fetchProducts();
@@ -78,6 +82,7 @@ const Cart = () => {
   };
 
   const handleIncrease = (product) => {
+    if (product.quantity >= product.inStock) return;
     dispatch(increaseProductQuantity(product));
   };
 
@@ -88,6 +93,17 @@ const Cart = () => {
   const handleClearCart = () => {
     dispatch(clearCart());
   };
+
+  // handle products with empty quantity
+  useEffect(() => {
+    CartItems.map((item) => {
+      if (item.quantity === 0) {
+        dispatch(removeFromCart(item));
+      }
+      return null;
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [CartItems]);
 
   return (
     <>

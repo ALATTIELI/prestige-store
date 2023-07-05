@@ -87,6 +87,7 @@ export default function Product() {
     const data = {
       ...product,
       quantity: 1,
+      inStock: product.quantity,
     };
     dispatch(addToCart(data));
 
@@ -298,13 +299,24 @@ export default function Product() {
                     <span>{product_data.TotalPrice} AED</span>
                   )}
 
-                  <a
-                    href=" "
-                    className="cart-btn"
-                    onClick={(e) => handleAddToCart(e, product_data)}
-                  >
-                    {t("product.add_to_cart")}
-                  </a>
+                  {product_data.quantity > 0 ? (
+                    <a
+                      href=" "
+                      className="cart-btn"
+                      onClick={(e) => handleAddToCart(e, product_data)}
+                    >
+                      {t("product.add_to_cart")}
+                    </a>
+                  ) : (
+                    <a
+                      href=" "
+                      className="cart-btn"
+                      onClick={(e) => e.preventDefault()}
+                      style={{ backgroundColor: "#ccc", cursor: "not-allowed" }}
+                    >
+                      {t("product.out_of_stock")}
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

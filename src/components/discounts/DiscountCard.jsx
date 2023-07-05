@@ -2,10 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import {
-  getDiscountById,
-  getLatestDiscounts,
-} from "../../redux/apiCalls";
+import { getDiscountById, getLatestDiscounts } from "../../redux/apiCalls";
 import { addToCart } from "../../redux/cartRedux";
 
 const DiscountCard = () => {
@@ -66,6 +63,7 @@ const DiscountCard = () => {
     const data = {
       ...product,
       quantity: 1,
+      inStock: product.quantity,
     };
     dispatch(addToCart(data));
   };
@@ -92,6 +90,18 @@ const DiscountCard = () => {
                   className="discount_card_product"
                   key={productItem._id}
                   onClick={() => handleClick(productItem._id)}
+                  style={
+                    productItem.quantity === 0
+                      ? { opacity: "0.5", cursor: "not-allowed" }
+                      : {}
+                  }
+                  onMouseOver={
+                    productItem.quantity === 0
+                      ? (e) => {
+                          e.target.title = t("product.out_of_stock");
+                        }
+                      : null
+                  }
                 >
                   <div className="discount_card_product_img">
                     <span className="top_left_popup">
@@ -122,9 +132,22 @@ const DiscountCard = () => {
                           AED {productItem.price}
                         </span>
                       </div>
-                      <button onClick={() => handleAddToCart(productItem)}>
-                        <i className="fa fa-plus"></i>
-                      </button>
+                      {productItem.quantity > 0 ? (
+                        <button onClick={() => handleAddToCart(productItem)}>
+                          <i className="fa fa-plus"></i>
+                        </button>
+                      ) : (
+                        <button
+                          disabled
+                          style={{
+                            backgroundColor: "red",
+                            color: "white",
+                            cursor: "not-allowed",
+                          }}
+                        >
+                          <i className="fa fa-plus"></i>
+                        </button>
+                      )}
                     </div>
                   </div>
                 </div>

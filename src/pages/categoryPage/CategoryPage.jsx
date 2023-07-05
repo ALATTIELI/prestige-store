@@ -89,6 +89,7 @@ export default function CategoryPage() {
     const data = {
       ...product,
       quantity: 1,
+      inStock: product.quantity
     };
     dispatch(addToCart(data));
 
