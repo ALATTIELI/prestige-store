@@ -17,7 +17,7 @@ import UserProfile from "./pages/user/UserProfile";
 import UserOrders from "./pages/user/UserOrders";
 import Order from "./pages/user/Order";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
-import ProductsPage from "./pages/productsPage/ProductsPage";
+// import ProductsPage from "./pages/productsPage/ProductsPage";
 import LoginPage from "./pages/loginPage/LoginPage";
 import CategoryPage from "./pages/categoryPage/CategoryPage";
 import BrandPage from "./pages/brandPage/BrandPage";
