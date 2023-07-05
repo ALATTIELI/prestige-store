@@ -24,6 +24,7 @@ const Cart = () => {
   const [paymentMethod, setPaymentMethod] = useState("card");
   const [deliveryCharges, setDeliveryCharges] = useState(null);
 
+  // eslint-disable-next-line no-unused-vars
   const user = useSelector((state) => state.user.currentUser);
 
   document.title = "Cart";
