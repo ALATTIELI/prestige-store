@@ -5,7 +5,7 @@ const BASE_URL = process.env.REACT_APP_API_URL;
 
 let serverStatus = null;
 let lastCheckedTime = null;
-const SERVER_STATUS_EXPIRATION_TIME = 60 * 1000; // Set the expiration time (e.g., 60 seconds)
+const SERVER_STATUS_EXPIRATION_TIME = 60 * 60 * 1000; // Set the expiration time (e.g., 1 hour)
 
 // check if server is up
 export const checkServer = async () => {
