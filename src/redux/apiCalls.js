@@ -3,10 +3,26 @@ import { privateRequest, publicRequest } from "../requestMethods";
 
 const BASE_URL = process.env.REACT_APP_API_URL;
 
+let serverStatus = null;
+let lastCheckedTime = null;
+const SERVER_STATUS_EXPIRATION_TIME = 60 * 1000; // Set the expiration time (e.g., 60 seconds)
+
 // check if server is up
 export const checkServer = async () => {
+  const currentTime = Date.now();
+
+  // Check if server status exists and is still valid based on expiration time
+  if (
+    serverStatus !== null &&
+    currentTime - lastCheckedTime < SERVER_STATUS_EXPIRATION_TIME
+  ) {
+    return serverStatus;
+  }
+
   try {
     const response = await publicRequest.get(`${BASE_URL}/status`);
+    serverStatus = response;
+    lastCheckedTime = currentTime;
     return response;
   } catch (err) {
     return err;
@@ -81,7 +97,7 @@ export const getCurrentUser = async (dispatch) => {
 // get Delivery Charges
 export const getDeliveryCharges = async () => {
   // console.log("getDeliveryCharges");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   // console.log(st);
   if (st === 200) {
     try {
@@ -102,7 +118,7 @@ export const getDeliveryCharges = async () => {
 // get featured products
 export const getFeaturedProducts = async () => {
   // console.log("getFeaturedProducts");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   // console.log(st);
   if (st === 200) {
     try {
@@ -122,7 +138,7 @@ export const getFeaturedProducts = async () => {
 // get latest 5 discounts
 export const getLatestDiscounts = async () => {
   // console.log("getLatestDiscounts");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   // console.log(st);
   if (st === 200) {
     try {
@@ -145,7 +161,7 @@ export const getLatestDiscounts = async () => {
 // get latest 10 products
 export const getLatestProducts = async () => {
   // console.log("getLatestProducts");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   // console.log(st);
   if (st === 200) {
     try {
@@ -169,7 +185,7 @@ export const getLatestProducts = async () => {
 // get random products
 export const getRandomProducts = async () => {
   // console.log("getRandomProducts");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   // console.log(st);
   if (st === 200) {
     try {
@@ -193,7 +209,7 @@ export const getRandomProducts = async () => {
 // get orders made today
 export const getTodayOrders = async () => {
   // console.log("getTodayOrders");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   // console.log(st);
   if (st === 200) {
     try {
@@ -217,7 +233,7 @@ export const getTodayOrders = async () => {
 // get todays accepted orders
 export const getTodayAcceptedOrders = async () => {
   // console.log("getTodayAcceptedOrders");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   // console.log(st);
   if (st === 200) {
     try {
@@ -242,7 +258,7 @@ export const getTodayAcceptedOrders = async () => {
 // get products
 export const getProducts = async () => {
   // console.log("getProducts");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   // console.log(st);
   if (st === 200) {
     try {
@@ -262,7 +278,7 @@ export const getProducts = async () => {
 // get products by category
 export const getProductsByCategory = async (id) => {
   // console.log("getProductsByCategory");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   // console.log(st);
   if (st === 200) {
     try {
@@ -286,7 +302,7 @@ export const getProductsByCategory = async (id) => {
 // get products by brand
 export const getProductsByBrand = async (id) => {
   // console.log("getProductsByBrand");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   // console.log(st);
   if (st === 200) {
     try {
@@ -310,7 +326,7 @@ export const getProductsByBrand = async (id) => {
 // search products
 export const searchProducts = async (search) => {
   // console.log("searchProducts");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   // console.log(st);
   if (st === 200) {
     try {
@@ -330,7 +346,7 @@ export const searchProducts = async (search) => {
 // get product by id
 export const getProductById = async (id) => {
   // console.log("getProductById");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   // console.log(st);
   if (st === 200) {
     try {
@@ -352,7 +368,7 @@ export const getProductById = async (id) => {
 // get products with discounts
 export const getDiscountedProducts = async () => {
   // console.log("getDiscountedProducts");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   // console.log(st);
   if (st === 200) {
     try {
@@ -373,7 +389,7 @@ export const getDiscountedProducts = async () => {
 // get categories
 export const getCategories = async () => {
   // console.log("getCategories");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   // console.log(st);
   if (st === 200) {
     try {
@@ -393,7 +409,7 @@ export const getCategories = async () => {
 // get top categories
 export const getTopCategories = async () => {
   // console.log("getCategories");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   // console.log(st);
   if (st === 200) {
     try {
@@ -413,7 +429,7 @@ export const getTopCategories = async () => {
 // search categories
 export const searchCategories = async (search) => {
   // console.log("searchCategories");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   // console.log(st);
   if (st === 200) {
     try {
@@ -432,7 +448,7 @@ export const searchCategories = async (search) => {
 // get category by id
 export const getCategoryById = async (id) => {
   // console.log("getCategoryById");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   // console.log(st);
   if (st === 200) {
     try {
@@ -455,7 +471,7 @@ export const getCategoryById = async (id) => {
 // get brands
 export const getBrands = async () => {
   // console.log("getBrands");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   // console.log(st);
   if (st === 200) {
     try {
@@ -474,7 +490,7 @@ export const getBrands = async () => {
 // get brands for home page
 export const getLimitedBrands = async () => {
   // console.log("getLimitedBrands");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   // console.log(st);
   if (st === 200) {
     try {
@@ -493,7 +509,7 @@ export const getLimitedBrands = async () => {
 // get brand by id
 export const getBrandById = async (id) => {
   // console.log("getBrandById");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   // console.log(st);
   if (st === 200) {
     try {
@@ -512,7 +528,7 @@ export const getBrandById = async (id) => {
 // search brands by name
 export const searchBrands = async (search) => {
   // console.log("searchBrands");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   // console.log(st);
   if (st === 200) {
     try {
@@ -533,7 +549,7 @@ export const searchBrands = async (search) => {
 // Create order
 export const createOrder = async (order) => {
   console.log("createOrder");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   console.log(st);
   if (st === 200) {
     try {
@@ -553,7 +569,7 @@ export const createOrder = async (order) => {
 // get orders
 export const getOrders = async () => {
   console.log("getOrders");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   console.log(st);
   if (st === 200) {
     try {
@@ -572,7 +588,7 @@ export const getOrders = async () => {
 // get order by id
 export const getOrderById = async (id) => {
   console.log("getOrderById");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   console.log(st);
   if (st === 200) {
     try {
@@ -592,7 +608,7 @@ export const getOrderById = async (id) => {
 // search orders by id
 export const searchOrdersById = async (id) => {
   console.log("searchOrdersById");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   console.log(st);
   if (st === 200) {
     try {
@@ -615,7 +631,7 @@ export const searchOrdersById = async (id) => {
 // get orders by status
 export const getOrdersByStatus = async (status) => {
   console.log("getApprovedOrders");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   console.log(st);
   if (st === 200) {
     try {
@@ -636,7 +652,7 @@ export const getOrdersByStatus = async (status) => {
 // get discounts
 export const getDiscounts = async () => {
   // console.log("getDiscounts");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   // console.log(st);
   if (st === 200) {
     try {
@@ -656,7 +672,7 @@ export const getDiscounts = async () => {
 // search discounts
 export const searchDiscounts = async (search) => {
   // console.log("searchDiscounts");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   // console.log(st);
   if (st === 200) {
     try {
@@ -675,7 +691,7 @@ export const searchDiscounts = async (search) => {
 // get discount by id
 export const getDiscountById = async (id) => {
   // console.log("getDiscountById");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   // console.log(st);
   if (st === 200) {
     try {
@@ -696,7 +712,7 @@ export const getDiscountById = async (id) => {
 // get user by id
 export const getUserById = async (id) => {
   // console.log("getUserById");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   // console.log(st);
   if (st === 200) {
     try {
@@ -716,7 +732,7 @@ export const getUserById = async (id) => {
 // update user
 export const updateUser = async (id, user) => {
   // console.log("updateUser");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   // console.log(st);
   if (st === 200) {
     try {
@@ -740,7 +756,7 @@ export const updateUser = async (id, user) => {
 // delete user
 export const deleteUser = async (id) => {
   console.log("deleteUser");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   console.log(st);
   if (st === 200) {
     try {
@@ -761,7 +777,7 @@ export const deleteUser = async (id) => {
 // get terms and conditions
 export const getTnS = async () => {
   // console.log("getTnS");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   // console.log(st);
   if (st === 200) {
     try {
@@ -781,7 +797,7 @@ export const getTnS = async () => {
 // get privacy policy
 export const getPrivacyPolicy = async () => {
   // console.log("getPrivacyPolicy");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   // console.log(st);
   if (st === 200) {
     try {
@@ -801,7 +817,7 @@ export const getPrivacyPolicy = async () => {
 // get about us
 export const getAboutUs = async () => {
   // console.log("getAboutUs");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   // console.log(st);
   if (st === 200) {
     try {
@@ -821,7 +837,7 @@ export const getAboutUs = async () => {
 // get Return and Refund Policy
 export const getReturnRefund = async () => {
   // console.log("getReturnRefund");
-  var st = await checkServer().then((res) => res.status);
+  const st = serverStatus ? serverStatus.status : (await checkServer()).status;
   // console.log(st);
   if (st === 200) {
     try {
