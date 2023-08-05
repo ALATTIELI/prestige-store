@@ -1,0 +1,134 @@
+{
+  "navbar": {
+    "home": "Home",
+    "contact_us": "Contact Us",
+    "categories": "Categories",
+    "all_categories": "All Categories",
+    "search_and_hit_enter": "Search and hit enter..."
+  },
+  "discounts": {
+    "discounts": "Discounts",
+    "view_all": "View All"
+  },
+  "categories": {
+    "categories": "Categories",
+    "view_all": "View All"
+  },
+  "slider": {
+    "view": "View"
+  },
+  "new_arrivals": {
+    "new_arrivals": "New Arrivals"
+  },
+  "brands": {
+    "brands": "Brands",
+    "view_all_brands": "View All Brands"
+  },
+  "suggested_for_you": {
+    "suggested_for_you": "Suggested For You",
+    "view_all": "View All"
+  },
+  "delivery_across_UAE": {
+    "delivery_across_UAE": "Delivery Across UAE",
+    "description": "We deliver across the UAE within 2-3 days of your order."
+  },
+  "safe_payment": {
+    "safe_payment": "Safe Payment",
+    "description": "You card details will not be stored on our servers."
+  },
+  "shop_with_confidence": {
+    "shop_with_confidence": "Shop with confidence",
+    "description": "We are committed to providing you with the best online shopping experience possible."
+  },
+  "24_7_support": {
+    "24_7_support": "24/7 support",
+    "description": "we are 24/7 available to help you with any questions you may have."
+  },
+  "about_us": {
+    "about_us": "About Us",
+    "terms_and_conditions": "Terms and Conditions",
+    "privacy_policy": "Privacy Policy",
+    "returns_and_refunds": "Returns and Refunds"
+  },
+  "contact_us": {
+    "contact_us": "Contact Us",
+    "follow_us": "Follow Us",
+    "our_stores": "Our Stores",
+    "email": "Email",
+    "phone": "Phone"
+  },
+  "socials": {
+    "socials": "Social Media"
+  },
+  "user": {
+    "my_account": "My Account",
+    "my_profile": "My Profile",
+    "logout": "Logout",
+    "my_orders": "My Orders",
+    "edit_user": "Edit User",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "address_city": "City",
+    "address_street": "Street",
+    "order_id": "Order ID",
+    "status": "Status",
+    "date": "Date",
+    "amount": "Amount",
+    "view": "View",
+    "quantity": "Quantity",
+    "total_amount_paid": "Total Amount Paid",
+    "paid_by": "Paid By",
+    "order_status": {
+      "pending": "Pending",
+      "approved": "Approved",
+      "declined": "Declined"
+    },
+    "loading": "Loading...",
+    "no_orders": "No orders found"
+  },
+  "login": {
+    "login_using": "Login using"
+  },
+  "cart": {
+    "no_items_in_cart": "No items in cart",
+    "cart_summary": "Cart Summary",
+    "sub_total_price": "Sub Total Price :",
+    "delivery_fee": "Delivery Fee :",
+    "total_price": "Total Price :",
+    "payment_method": "Payment Method",
+    "cash_on_delivery": "Cash on Delivery",
+    "card": "Debit/Credit Card",
+    "checkout": "Checkout",
+    "empty": "The cart is empty",
+    "login": "Login to checkout"
+  },
+  "product": {
+    "brand": "Brand",
+    "stock": "Stock",
+    "add_to_cart": "Add to Cart",
+    "out_of_stock": "Out of Stock",
+    "description": "Description",
+    "SKU": "SKU",
+    "code": "Code"
+  },
+  "locations": {
+    "prestige_one_mobile_Phones_mbz_city_branch": "Prestige One Mobile Phones - MBZ City Branch",
+    "prestige_one_mobile_phones_west_yas_plaza_branch": "Prestige One Mobile Phones - West Yas Plaza Branch",
+    "prestige_one_mobile_phones_defence_road": "Prestige One Mobile Phones - Defence Road",
+    "al_shamkhah_prestige_phones": "Al Shamkhah Prestige Phones",
+    "prestige_zakher_phones": "Prestige Zakher Phones",
+    "prestige_yas_phone_L.L.C": "Prestige Yas Phone L.L.C",
+    "telephono": "Telephono",
+    "prestige_one_mobile_phones_yas_branch": "Prestige One Mobile Phones - Yas Branch",
+    "prestige_yas_phones_L.T.D": "Prestige Yas Phones L.T.D",
+    "view_in_google_maps": "View in Google Maps"
+  },
+  "checkout": {
+    "shipping": "Shipping"
+  },
+  "discountsPage": {
+    "title": "Discounts"
+  }
+}
