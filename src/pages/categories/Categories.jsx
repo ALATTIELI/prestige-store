@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import { getCategories, getImageById } from "../../redux/apiCalls";
+import { getCategories } from "../../redux/apiCalls";
 import "./categories.css";
 import CategoryIcon from "@mui/icons-material/Category";
 
@@ -57,7 +57,7 @@ const Categories = () => {
                     onClick={() => handleClick(productItem._id)}
                   >
                     <div className="cate_card_item_img">
-                      <img src={getImageById(productItem.image)} alt="" />
+                      <img src={productItem.image.url} alt="" />
                     </div>
                     <div className="cate_card_item_name">
                       <span>

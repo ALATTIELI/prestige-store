@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
 import Login from "../../components/Login/Login";
-import { getImageById, searchProducts } from "../../redux/apiCalls";
+import { searchProducts } from "../../redux/apiCalls";
 import { useSelector } from "react-redux";
 
 const Search = () => {
@@ -15,6 +15,7 @@ const Search = () => {
   const [search, setSearch] = React.useState("");
   const [loadingSearch, setLoadingSearch] = React.useState(true);
   const [search_results, setSearchResults] = React.useState([]);
+  // eslint-disable-next-line no-unused-vars
   const { t, i18n } = useTranslation();
   // fixed Header
   window.addEventListener("scroll", function () {
@@ -48,9 +49,11 @@ const Search = () => {
       } else {
         const res = await searchProducts(value);
         if (res !== null) {
-          setSearchResults(res);
-          setLoadingSearch(false);
-          sr.classList.add("active");
+          if (res.length > 0) {
+            setSearchResults(res);
+            setLoadingSearch(false);
+            sr.classList.add("active");
+          }
         } else {
           setLoadingSearch(true);
         }
@@ -103,8 +106,12 @@ const Search = () => {
                   search_results &&
                   search_results.map((item) => (
                     <Link to={`/product/${item._id}`}>
-                      <li key={item._id} className="search_results_item">
-                        <img src={getImageById(item.images[0])} alt="" />
+                      <li
+                        key={item._id}
+                        className="search_results_item"
+                        onClick={() => setSearch("")}
+                      >
+                        <img src={item.images[0].url} alt="" />
                         <span>{item.name_en}</span>
                       </li>
                     </Link>
@@ -126,7 +133,11 @@ const Search = () => {
               </Link>
             </div>
             <i className="icon-circle">
-              <a href="https://wa.me/971529744450">
+              <a
+                href="https://wa.me/971529744450"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <img
                   src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"
                   alt="whatsapp-logo"

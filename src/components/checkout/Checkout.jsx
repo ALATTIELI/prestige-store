@@ -22,16 +22,14 @@ export default function Checkout() {
 
   const [clientSecret, setClientSecret] = useState("");
 
-  const user = useSelector((state) => state.user.currentUser);
+  // const user = useSelector((state) => state.user.currentUser);
 
   useEffect(() => {
-    if (!user) {
-      navigate("/login");
-    } else if (CartItems.length === 0) {
+    if (CartItems.length === 0) {
       navigate("/cart");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [CartItems, user]);
+  }, [CartItems]);
 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads

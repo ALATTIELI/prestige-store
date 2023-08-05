@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Categories from "../../components/MainPage/Categories";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -11,6 +11,7 @@ const Navbar = () => {
   const [MobileMenu, setMobileMenu] = useState(false);
   const [Dropdown, setDropdown] = useState(false);
   const { t, i18n } = useTranslation();
+  const URI = useLocation().pathname;
 
   // console.log(i18n.resolvedLanguage);
   if (i18n.resolvedLanguage === "ar") {
@@ -37,21 +38,28 @@ const Navbar = () => {
         <div className="container d_flex">
           <div className="header_catgrories d_flex">
             <div className="categories_nav">
-              {Dropdown ? (
-                <h4 onClick={() => setDropdown(!Dropdown)}>
-                  <span className="header_catgrories_icon fa-solid fa-border-all"></span>
+              <h4
+                onClick={
+                  URI === "/"
+                    ? () => setDropdown(false)
+                    : () => setDropdown(!Dropdown)
+                }
+              >
+                <span className="header_catgrories_icon fa-solid fa-border-all"></span>
 
-                  <span>{t("navbar.categories")}</span>
-                  <KeyboardArrowUpIcon className="arrow-icon" />
-                </h4>
-              ) : (
-                <h4 onClick={() => setDropdown(!Dropdown)}>
-                  <span className="header_catgrories_icon fa-solid fa-border-all"></span>
-
-                  <span>{t("navbar.categories")}</span>
-                  <KeyboardArrowDownIcon className="arrow-icon" />
-                </h4>
-              )}
+                <span>{t("navbar.categories")}</span>
+                {URI === "/" ? (
+                  <></>
+                ) : (
+                  <>
+                    {Dropdown ? (
+                      <KeyboardArrowUpIcon className="arrow-icon" />
+                    ) : (
+                      <KeyboardArrowDownIcon className="arrow-icon" />
+                    )}
+                  </>
+                )}
+              </h4>
 
               {/* <button
                 className="toggle"

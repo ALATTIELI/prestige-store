@@ -3,9 +3,9 @@ import { t } from "i18next";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
-import { getImageById, getLimitedBrands } from "../../redux/apiCalls";
+import { getLimitedBrands } from "../../redux/apiCalls";
 
-const Catg = () => {
+const BrandsList = () => {
   // eslint-disable-next-line no-unused-vars
   const { t, i18n } = useTranslation();
   const [productItems, setProductItems] = useState([]);
@@ -49,7 +49,7 @@ const Catg = () => {
                 key={productItem._id}
                 onClick={() => handleClick(productItem._id)}
               >
-                <img src={getImageById(productItem.image)} alt="" />
+                <img src={productItem.image.url} alt="" />
                 <span>{productItem.name}</span>
               </div>
             );
@@ -70,4 +70,4 @@ const Catg = () => {
   );
 };
 
-export default Catg;
+export default BrandsList;

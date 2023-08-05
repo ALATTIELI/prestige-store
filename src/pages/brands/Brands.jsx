@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import { getBrands, getImageById } from "../../redux/apiCalls";
+import { getBrands } from "../../redux/apiCalls";
 import "./brands.css";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 
 const Brands = () => {
+  // eslint-disable-next-line no-unused-vars
   const { t, i18n } = useTranslation();
   const [productItems, setProductItems] = useState([]);
   // eslint-disable-next-line no-unused-vars
@@ -56,7 +57,7 @@ const Brands = () => {
                     onClick={() => handleClick(productItem._id)}
                   >
                     <div className="brand_card_item_img">
-                      <img src={getImageById(productItem.image)} alt="" />
+                      <img src={productItem.image.url} alt="" />
                     </div>
                     <div className="brand_card_item_name">
                       <span>

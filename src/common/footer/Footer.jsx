@@ -4,11 +4,12 @@ import { Link } from "react-router-dom";
 import "./style.css";
 
 const Footer = () => {
+  // eslint-disable-next-line no-unused-vars
   const { t, i18n } = useTranslation();
   return (
     <>
       <footer>
-        <div className=" footer-container">
+        <div className="footer-container">
           <div className="container footer-left">
             <div className="footer-box">
               <h2>{t("about_us.about_us")}</h2>
@@ -39,17 +40,10 @@ const Footer = () => {
                 <li>{t("contact_us.email")}: info@prestigestore.ae</li>
                 <li>{t("contact_us.phone")}: +971529744450</li>
               </ul>
+            </div>
+            <div className="footer-box">
+              <h2>{t("contact_us.follow_us")}</h2>
               <ul className="socials">
-                <li>
-                  <a
-                    href="https://www.facebook.com/prestigestore.ae/"
-                    className="socials"
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    <i className="fab fa-facebook-f"></i>
-                  </a>
-                </li>
                 <li>
                   <a
                     href="https://www.instagram.com/prestigegroup_uae/"
@@ -68,6 +62,19 @@ const Footer = () => {
               <img src="/images/pslogo.png" alt="footer-logo" />
             </div>
           </div>
+        </div>
+        <div className="footer-bottom">
+          <p>&copy; 2023 Prestige Store. All rights reserved.</p>
+          <p>
+            Built by&nbsp;
+            <a href="https://akkil.tech" target="_blank" rel="noreferrer">
+              BILAL AKKIL
+            </a>
+            &nbsp;&&nbsp;
+            <a href="/" target="_blank" rel="noreferrer">
+              ADEL AL-ATTIELI
+            </a>
+          </p>
         </div>
       </footer>
     </>

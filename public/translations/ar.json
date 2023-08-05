@@ -10,68 +10,56 @@
     "categories": "أصناف",
     "view_all": "عرض الكل"
   },
-
   "new_arrivals": {
     "new_arrivals": "وصل حديثا"
   },
-
   "discounts": {
     "discounts": "خصومات",
     "view_all": "عرض الكل"
   },
-
   "brands": {
     "brands": "العلامات التجارية",
     "view_all_brands": "عرض جميع العلامات التجارية"
   },
-
-  "mobile_phones": {
-    "mobile_phones": "هواتف محمولة",
+  "suggested_for_you": {
+    "suggested_for_you": "مقترحة لك",
     "view_all": "عرض الكل"
   },
-
   "delivery_across_UAE": {
     "delivery_across_UAE": "توصيل في جميع أنحاء الإمارات العربية المتحدة",
     "description": "يتم توصيل الطلبات خلال 2-3 ايام من وقت الطلب"
   },
-
   "safe_payment": {
     "safe_payment": "دفع آمن",
     "description": "لن يتم تسجيل بيانات البطاقة الائتمانية"
   },
-
   "shop_with_confidence": {
     "shop_with_confidence": "تسوق بثقة",
     "description": "نحن ملتزمون بتزويدك بأفضل تجربة تسوق عبر الإنترنت ممكنة"
   },
-
   "24_7_support": {
     "24_7_support": "دعم 24/7",
     "description": "متواجدون 24/7 لمساعدتك في أي وقت"
   },
-
   "about_us": {
     "about_us": "معلومات عنا",
     "terms_and_conditions": "الشروط والأحكام",
     "privacy_policy": "سياسة الخصوصية",
     "returns_and_refunds": "الإرجاع والاسترداد"
   },
-
   "contact_us": {
     "contact_us": "تواصل معنا",
+    "follow_us": "تابعنا",
     "our_stores": "متاجرنا",
     "email": "البريد الإلكتروني",
     "phone": "هاتف"
   },
-
   "socials": {
     "socials": "مواقع التواصل الاجتماعي"
   },
-
   "slider": {
     "view": "عرض"
   },
-
   "user": {
     "my_account": "حسابي",
     "my_profile": "ملفي",
@@ -96,16 +84,18 @@
       "pending": "قيد الانتظار",
       "approved": "موافق عليه",
       "declined": "مرفوض"
-    }
+    },
+    "loading": "جار التحميل",
+    "no_orders": "لا يوجد لديك طلبات"
   },
-
   "login": {
     "login_using": "تسجيل الدخول باستخدام"
   },
-
   "cart": {
     "no_items_in_cart": "لا يوجد عناصر في السلة",
     "cart_summary": "ملخص السلة",
+    "sub_total_price": "السعر الفرعي :",
+    "delivery_fee": "رسوم التوصيل :",
     "total_price": "السعر الكلي :",
     "payment_method": "طريقة الدفع",
     "cash_on_delivery": "الدفع عند الاستلام",
@@ -114,11 +104,11 @@
     "empty": "السلة فارغة",
     "login": "سجل الدخول لتتمكن من الشراء"
   },
-
   "product": {
     "brand": "العلامة التجارية",
     "stock": "المخزون",
     "add_to_cart": "أضف إلى السلة",
+    "out_of_stock": "إنتهى من المخزن",
     "description": "الوصف",
     "SKU": "SKU",
     "code": "الكود"

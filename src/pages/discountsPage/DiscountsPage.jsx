@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import {
   getDiscountById,
   getDiscountedProducts,
-  getImageById,
 } from "../../redux/apiCalls";
 import { addToCart } from "../../redux/cartRedux";
 import "./discountsPage.css";
@@ -70,8 +69,26 @@ export default function DiscountsPage() {
     const data = {
       ...product,
       quantity: 1,
+      inStock: product.quantity,
     };
     dispatch(addToCart(data));
+
+    // start an animation to show the product is added to the cart
+    const button = e.currentTarget;
+
+    console.log(button);
+
+    // replace the text with a rotating icon
+    button.innerHTML = `<i class="fas fa-spinner fa-spin"></i>`;
+
+    // after 1 second, replace the icon with a checkmark
+    setTimeout(() => {
+      button.innerHTML = `<i class="fas fa-check"></i>`;
+      // after 2 seconds, replace the checkmark with the original text
+      setTimeout(() => {
+        button.innerHTML = `<i class="fa fa-plus"></i>`;
+      }, 2000);
+    }, 1000);
   };
 
   return (
@@ -100,7 +117,7 @@ export default function DiscountsPage() {
                           {discount[product._id]}%
                         </span>
                       ) : null}
-                      <img src={getImageById(product.images[0])} alt="" />
+                      <img src={product.images[0].url} alt="" />
                     </div>
                     <div className="discountsPageProductDetails">
                       <div className="product-name">

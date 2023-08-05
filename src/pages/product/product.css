@@ -145,6 +145,11 @@
 .product-product-description-top {
   margin: 5px;
 }
+.product-product-description-top h2 {
+  margin: 20px 0px 10px 0;
+  font-weight: 300;
+  color: #43484d;
+}
 .product-product-description-bottom {
   display: flex;
   flex-direction: row;

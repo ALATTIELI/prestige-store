@@ -7,12 +7,16 @@ import {
 } from "@stripe/react-stripe-js";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
+import { getDeliveryCharges } from "../../redux/apiCalls";
 
 export default function CheckoutForm() {
   const stripe = useStripe();
   const elements = useElements();
   const Cart = useSelector((state) => state.cart);
-  const amount = Cart.total;
+  const subtotal = Cart.total;
+  const [deliveryCharges, setDeliveryCharges] = useState(0);
+
+  const amount = deliveryCharges ? subtotal + deliveryCharges : subtotal;
   const { i18n } = useTranslation();
 
   const user = useSelector((state) => state.user.currentUser);
@@ -20,11 +24,26 @@ export default function CheckoutForm() {
   //  wallet payment
   // const [paymentRequest, setPaymentRequest] = useState(null);
 
-  // const [email, setEmail] = useState("");
-  const email = user.email;
+  const [email, setEmail] = useState("");
+
   const [message, setMessage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
+  useEffect(() => {
+    if (user) {
+      setEmail(user.email);
+    }
+  }, [user]);
+
+  useEffect(() => {
+    const fetchDeliveryCharges = async () => {
+      const deliveryCharges = await getDeliveryCharges();
+      // convert value to number
+      const value = Number(deliveryCharges.value);
+      setDeliveryCharges(value);
+    };
+    fetchDeliveryCharges();
+  }, []);
   // wallet payment
   // useEffect(() => {
   //   if (stripe) {
@@ -116,13 +135,17 @@ export default function CheckoutForm() {
     layout: "tabs",
   };
 
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
   return (
     <form id="payment-form" onSubmit={handleSubmit}>
       <input
         id="email"
         type="text"
         value={email}
-        onChange={(e) => e.preventDefault()}
+        onChange={(e) => handleEmailChange(e)}
         placeholder="Enter email address"
       />
       <PaymentElement id="payment-element" options={paymentElementOptions} />

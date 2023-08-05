@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Elements } from "@stripe/react-stripe-js";
 import { AddressElement } from "@stripe/react-stripe-js";
 import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loadStripe } from "@stripe/stripe-js";
 import "./cashCheckout.css";
-import { createOrder } from "../../redux/apiCalls";
+import { createOrder, getDeliveryCharges } from "../../redux/apiCalls";
+import { clearCart } from "../../redux/cartRedux";
 
 // I might use Stripe Elements for the address form, but I'm not sure yet. It would eliminate the need for a custom address form.
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
@@ -14,24 +15,44 @@ const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 export default function CashCheckout() {
   const Cart = useSelector((state) => state.cart);
   const CartItems = Cart.products;
-  const amount = Cart.total;
+  const [deliveryCharges, setDeliveryCharges] = useState(null);
+  const sub_amount = Cart.total;
+  const amount = deliveryCharges ? sub_amount + deliveryCharges : sub_amount;
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   const [addressElement, setAddressElement] = useState({});
+  const dispatch = useDispatch();
 
   document.title = "Cash Checkout";
 
+  // check if user is logged in
   const user = useSelector((state) => state.user.currentUser);
-  const email = user.email;
+
+  const [email, setEmail] = useState("");
 
   useEffect(() => {
-    if (!user) {
-      navigate("/login");
-    } else if (CartItems.length === 0) {
+    if (CartItems.length === 0) {
       navigate("/cart");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [CartItems, user]);
+  }, [CartItems]);
+
+  useEffect(() => {
+    if (user) {
+      setEmail(user.email);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user]);
+
+  useEffect(() => {
+    const fetchDeliveryCharges = async () => {
+      const deliveryCharges = await getDeliveryCharges();
+      // convert value to number
+      const value = Number(deliveryCharges.value);
+      setDeliveryCharges(value);
+    };
+    fetchDeliveryCharges();
+  }, []);
 
   const appearance = {
     theme: "stripe",
@@ -80,7 +101,12 @@ export default function CashCheckout() {
       console.log(res);
       if (res) {
         alert(res.message);
-        // navigate("/orders");
+        if (res.order && res.order._id) {
+          dispatch(clearCart());
+          setTimeout(() => {
+            navigate("/");
+          }, 1000);
+        }
       }
     } catch (error) {
       console.log(error);
@@ -90,6 +116,11 @@ export default function CashCheckout() {
   const handleAddressChange = (event) => {
     let address = event;
     setAddressElement(address);
+  };
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+    console.log(email);
   };
 
   return (
@@ -102,7 +133,7 @@ export default function CashCheckout() {
             id="email"
             type="text"
             value={email}
-            onChange={(e) => e.preventDefault()}
+            onChange={(e) => handleEmailChange(e)}
             placeholder="Enter email address"
           />
           <AddressElement
